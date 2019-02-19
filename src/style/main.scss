@@ -1,0 +1,51 @@
+@import "_vars.scss";
+@import "_typefaces.scss";
+
+
+@import url('https://fonts.googleapis.com/css?family=Thasadith:400,700');
+
+body {
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 400;
+    background-color: #1C1E26;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.container {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+p, a {
+    color: #fff;
+    line-height: 1.7em;
+    font-size: 16pt;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+p {
+    opacity: 0.0;
+    transition: opacity 1.0s;
+}
+
+p.show {
+    opacity: 1.0;
+}
+
+p.choice {
+    text-align: center;
+}
+
+a:hover {
+    transition: color 0.3s;
+    color: #E56239;
+}
