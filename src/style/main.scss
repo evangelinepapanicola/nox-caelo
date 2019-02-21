@@ -1,9 +1,6 @@
 @import "_vars.scss";
 @import "_typefaces.scss";
 
-
-@import url('https://fonts.googleapis.com/css?family=Thasadith:400,700');
-
 body {
     font-family: 'Thasadith', sans-serif;
     font-weight: 400;
@@ -48,4 +45,10 @@ p.choice {
 a:hover {
     transition: color 0.3s;
     color: #E56239;
+}
+
+.variable-display {
+    color: green;
+    font-size: 16pt;
+    text-align: center;
 }
