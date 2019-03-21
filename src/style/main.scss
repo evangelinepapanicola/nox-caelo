@@ -52,3 +52,41 @@ a:hover {
     font-size: 16pt;
     text-align: center;
 }
+
+
+.namebox {
+    width: 400px;
+    height: 30px;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin-right: 10px;
+    background-color: rgb(95, 73, 121);
+    color: #fff;
+}
+
+.namebox::placeholder {
+    color: #fff;
+}
+
+button {
+    height: 40px;
+    width: 60px;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E56239;
+    color: #fff;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(95, 73, 121);
+    transition: background-color 0.2s;
+}

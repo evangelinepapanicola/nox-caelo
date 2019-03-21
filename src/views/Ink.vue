@@ -1,7 +1,10 @@
 <template>
   <div>
-    <div ref="story" class="container"></div>
-    <div class="variable-display">Money: <strong v-text="myMoney()" /> Weapon: <strong v-text="myWeapon()" /></div>
+    <div class="container"><input type="text" placeholder="What's your character's name?" class="namebox" v-model="playername"><button v-on:click="setName">Play</button></div>
+    <div v-show="nameSet">
+      <div ref="story" class="container"></div>
+      <div class="variable-display">Money: <strong v-text="myMoney()" /> Weapon: <strong v-text="myWeapon()" /></div>
+    </div>
   </div>
 </template>
 
@@ -18,7 +21,9 @@ export default {
   data: function() {
     return {
       story: null,
-      storyContainer: null
+      storyContainer: null,
+      playername: "",
+      nameSet: false
     };
   },
   mounted: function() {
@@ -48,9 +53,16 @@ export default {
       let weapon = this.story.variablesState["weaponEquipped"];
       return weapon;
       }
+    },
+    setName: function() {
+      this.story.variablesState["players_name"] = this.playername;
+      this.nameSet = true;
     }
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+
+</style>
