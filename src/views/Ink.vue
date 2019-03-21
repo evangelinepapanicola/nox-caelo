@@ -1,7 +1,13 @@
 <template>
   <div>
-    <div v-if="!nameSet" class="container"><input type="text" placeholder="What's your character's name?" class="namebox" v-model="playername"><button v-on:click="setName">Play</button></div>
-    <div v-show="nameSet">
+    <div v-if="!gameStarted" class="container">
+      <span v-if="!playerNameSet">
+        <input type="text" placeholder="What's your character's name?" class="namebox" v-model="playername">
+      </span>
+      <button v-on:click="startGame">Play</button>
+    </div>
+    
+    <div v-show="gameStarted">
       <div ref="story" class="container"></div>
       <div class="variable-display">Money: <strong v-text="myMoney()" /> Weapon: <strong v-text="myWeapon()" /></div>
     </div>
@@ -14,6 +20,7 @@ import * as ink from "../libs/ink";
 
 console.log(inkjs);
 console.log(ink);
+const localStorageStateKey = "noxcaelo-state";
 
 export default {
   name: "ink",
@@ -23,7 +30,8 @@ export default {
       story: null,
       storyContainer: null,
       playername: "",
-      nameSet: false
+      playerNameSet: false,
+      gameStarted: false
     };
   },
   mounted: function() {
@@ -36,8 +44,16 @@ export default {
         // console.log(storyContent);
         this.story = new inkjs.Story(storyContent);
         console.log(this.story);
-        ink.continueStory(this.story, this.storyContainer);
+        // this.story.state.LoadJson(window.localStorage.getItem(localStorageStateKey));
 
+        // if (this.story.variablesState["players_name"]) {
+        //   this.playerNameSet = true;
+        //   this.playername = this.story.variablesState["players_name"];
+        // }
+
+
+        ink.continueStory(this.story, this.storyContainer);
+      window.addEventListener("unload", this.saveState);
         //in story
       });
   },
@@ -54,9 +70,12 @@ export default {
       return weapon;
       }
     },
-    setName: function() {
+    saveState: function() {
+      //window.localStorage.setItem(localStorageStateKey, this.story.state.ToJson());
+    },
+    startGame: function() {
+      this.gameStarted = true;
       this.story.variablesState["players_name"] = this.playername;
-      this.nameSet = true;
     }
   }
 };
