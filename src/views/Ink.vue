@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container"><input type="text" placeholder="What's your character's name?" class="namebox" v-model="playername"><button v-on:click="setName">Play</button></div>
+    <div v-if="!nameSet" class="container"><input type="text" placeholder="What's your character's name?" class="namebox" v-model="playername"><button v-on:click="setName">Play</button></div>
     <div v-show="nameSet">
       <div ref="story" class="container"></div>
       <div class="variable-display">Money: <strong v-text="myMoney()" /> Weapon: <strong v-text="myWeapon()" /></div>
