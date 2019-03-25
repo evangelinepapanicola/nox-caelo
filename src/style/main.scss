@@ -2,7 +2,7 @@
 @import "_typefaces.scss";
 
 body {
-    font-family: 'Thasadith', sans-serif;
+    font-family: 'ZCOOL XiaoWei', serif;
     font-weight: 400;
     background-color: #1C1E26;
 }
@@ -36,16 +36,27 @@ p {
 
 p.show {
     opacity: 1.0;
+    transition: opacity 0.5s;
 }
 
-p.choice {
-    text-align: center;
+span.choice {
+    display: inline-flex;
 }
 
-a:hover {
-    transition: color 0.3s;
-    color: #E56239;
+span.choice a {
+    background-color: rgb(132, 106, 161);
+    padding: 5px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
+
+span.choice a:hover {
+    transition: background-color 0.3s;
+    background-color: #E56239;
+}
+
 
 .variable-display {
     color: green;
@@ -56,9 +67,10 @@ a:hover {
 
 .namebox {
     width: 400px;
+    max-width: 100%;
     height: 30px;
-    font-family: 'Thasadith', sans-serif;
-    font-weight: 700;
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-weight: 400;
     font-size: 20px;
     border-radius: 5px;
     border: none;
@@ -75,8 +87,8 @@ a:hover {
 button {
     height: 40px;
     width: 60px;
-    font-family: 'Thasadith', sans-serif;
-    font-weight: 700;
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-weight: 400;
     font-size: 20px;
     border-radius: 5px;
     border: none;
@@ -84,9 +96,28 @@ button {
     color: #fff;
     transition: background-color 0.2s;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: rgb(95, 73, 121);
     transition: background-color 0.2s;
+}
+
+.dialog-box {
+    background-color: rgb(95, 73, 121);
+    max-width: 900px;
+    margin-bottom: 100px;
+    border-radius: 0px 0px 30px 30px;
+}
+
+.image-box {
+    margin-top: 20px;
+    background-color: rgb(132, 106, 161);
+    max-width: 900px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.image-box img {
+    width: 100%;
 }

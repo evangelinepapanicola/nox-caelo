@@ -2,14 +2,25 @@
   <div>
     <div v-if="!gameStarted" class="container">
       <span v-if="!playerNameSet">
-        <input type="text" placeholder="What's your character's name?" class="namebox" v-model="playername">
+        <input
+          type="text"
+          placeholder="What's your character's name?"
+          class="namebox"
+          v-model="playername"
+        />
       </span>
       <button v-on:click="startGame">Play</button>
     </div>
-    
+
     <div v-show="gameStarted">
-      <div ref="story" class="container"></div>
-      <div class="variable-display">Money: <strong v-text="myMoney()" /> Weapon: <strong v-text="myWeapon()" /></div>
+      <div id="imagebox" class="container image-box">
+        <img src="../../public/img/900x450.png" />
+      </div>
+      <div id="dialogbox" ref="story" class="container dialog-box"></div>
+      <div class="variable-display">
+        Money: <strong v-text="myMoney()" /> Weapon:
+        <strong v-text="myWeapon()" />
+      </div>
     </div>
   </div>
 </template>
@@ -51,23 +62,22 @@ export default {
         //   this.playername = this.story.variablesState["players_name"];
         // }
 
-
         ink.continueStory(this.story, this.storyContainer);
-      window.addEventListener("unload", this.saveState);
+        window.addEventListener("unload", this.saveState);
         //in story
       });
   },
   methods: {
     myMoney: function() {
-      if (this.story !== null){
-      let moneyy = this.story.variablesState["money"];
-      return moneyy;
+      if (this.story !== null) {
+        let moneyy = this.story.variablesState["money"];
+        return moneyy;
       }
     },
     myWeapon: function() {
-      if (this.story !== null){
-      let weapon = this.story.variablesState["weaponEquipped"];
-      return weapon;
+      if (this.story !== null) {
+        let weapon = this.story.variablesState["weaponEquipped"];
+        return weapon;
       }
     },
     saveState: function() {
@@ -81,7 +91,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>

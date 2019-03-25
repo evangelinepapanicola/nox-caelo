@@ -17,6 +17,10 @@ export function showAfter(delay, el) {
   setTimeout(function() {
     el.classList.add("show");
   }, delay);
+
+  // document.getElementById("dialogbox").addEventListener("click", function() {
+  //   el.classList.add("show");
+  // });
 }
 
 export function scrollToBottom() {
@@ -43,79 +47,79 @@ export function scrollToBottom() {
 
 export function continueStory(story, storyContainer) {
   var paragraphIndex = 0;
-  var delay = 0.0;
+  var delay = 50;
+  document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
+  var paragraphText = story.Continue();
+  console.log(paragraphText);
+  var tags = story.currentTags;
 
-  // Generate story text - loop through available content
-  while (story.canContinue) {
-    // Get ink to generate the next paragraph
-    var paragraphText = story.Continue();
-    var tags = story.currentTags;
+  var customClasses = [];
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
 
-    var customClasses = [];
-    for (var i = 0; i < tags.length; i++) {
-      var tag = tags[i];
+    // Detect tags of the form "X: Y". Currently used for IMAGE and CLASS but could be
+    // customised to be used for other things too.
+    var splitTag = splitPropertyTag(tag);
 
-      // Detect tags of the form "X: Y". Currently used for IMAGE and CLASS but could be
-      // customised to be used for other things too.
-      var splitTag = splitPropertyTag(tag);
+    // IMAGE: src
+    if (splitTag && splitTag.property == "IMAGE") {
+      var imageElement = document.createElement("img");
+      imageElement.src = splitTag.val;
+      storyContainer.appendChild(imageElement);
 
-      // IMAGE: src
-      if (splitTag && splitTag.property == "IMAGE") {
-        var imageElement = document.createElement("img");
-        imageElement.src = splitTag.val;
-        storyContainer.appendChild(imageElement);
-
-        showAfter(delay, imageElement);
-        delay += 200.0;
-      }
-
-      // CLASS: className
-      else if (splitTag && splitTag.property == "CLASS") {
-        customClasses.push(splitTag.val);
-      }
-
-      // CLEAR - removes all existing content.
-      // RESTART - clears everything and restarts the story from the beginning
-      else if (tag == "CLEAR" || tag == "RESTART") {
-        removeAll("p", storyContainer);
-        removeAll("img", storyContainer);
-
-        // Comment out this line if you want to leave the header visible when clearing
-        setVisible(".header", false, storyContainer);
-
-        if (tag == "RESTART") {
-          restart();
-          return;
-        }
-      }
+      showAfter(delay, imageElement);
+      delay += 50.0;
     }
 
-    // Create paragraph element
-    var paragraphElement = document.createElement("p");
-    paragraphElement.innerHTML = paragraphText;
-    storyContainer.appendChild(paragraphElement);
+    // CLASS: className
+    else if (splitTag && splitTag.property == "CLASS") {
+      customClasses.push(splitTag.val);
+    }
 
-    // Add any custom classes derived from ink tags
-    for (var i = 0; i < customClasses.length; i++)
-      paragraphElement.classList.add(customClasses[i]);
+    // CLEAR - removes all existing content.
+    // RESTART - clears everything and restarts the story from the beginning
+    else if (tag == "CLEAR" || tag == "RESTART") {
+      removeAll("p", storyContainer);
+      removeAll("img", storyContainer);
 
-    // Fade in paragraph after a short delay
-    showAfter(delay, paragraphElement);
+      // Comment out this line if you want to leave the header visible when clearing
+      setVisible(".header", false, storyContainer);
 
-    delay += 200.0;
+      if (tag == "RESTART") {
+        restart();
+        return;
+      }
+    }
   }
+
+  // Create paragraph element
+  removeAll("p", storyContainer);
+  removeAll("img", storyContainer);
+  var paragraphElement = document.createElement("p");
+  paragraphElement.innerHTML = paragraphText;
+  storyContainer.appendChild(paragraphElement);
+
+  // Add any custom classes derived from ink tags
+  for (var i = 0; i < customClasses.length; i++)
+    paragraphElement.classList.add(customClasses[i]);
+
+  // // Fade in paragraph after a short delay
+  showAfter(delay, paragraphElement);
+  //paragraphElement.classList.add("show");
+
+  //}
 
   // Create HTML choices from ink choices
   story.currentChoices.forEach(function(choice) {
+    document.getElementById("dialogbox").setAttribute("style", "cursor:default");
     // Create paragraph with anchor element
-    var choiceParagraphElement = document.createElement("p");
+    var choiceParagraphElement = document.createElement("span");
     choiceParagraphElement.classList.add("choice");
     choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`;
     storyContainer.appendChild(choiceParagraphElement);
 
     // Fade choice in after a short delay
     showAfter(delay, choiceParagraphElement);
-    delay += 200.0;
 
     // Click on choice
     var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
@@ -124,7 +128,7 @@ export function continueStory(story, storyContainer) {
       event.preventDefault();
 
       // Remove all existing choices
-      var existingChoices = storyContainer.querySelectorAll("p.choice");
+      var existingChoices = storyContainer.querySelectorAll("span.choice");
       for (var i = 0; i < existingChoices.length; i++) {
         var c = existingChoices[i];
         c.parentNode.removeChild(c);
@@ -135,16 +139,122 @@ export function continueStory(story, storyContainer) {
 
       removeAll("p", storyContainer);
       removeAll("img", storyContainer);
+      removeAll("span", storyContainer);
 
       // Comment out this line if you want to leave the header visible when clearing
       setVisible(".header", false, storyContainer);
 
       // Aaand loop
-      continueStory(story, storyContainer);
+      //continueStory(story, storyContainer);
     });
   });
 
-  scrollToBottom();
+  // Generate story text - loop through available content
+  document.getElementById("dialogbox").addEventListener("click", function() {
+    // Get ink to generate the next paragraph
+    if (story.canContinue) {
+      document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
+      var paragraphText = story.Continue();
+      console.log(paragraphText);
+      var tags = story.currentTags;
+
+      var customClasses = [];
+      for (var i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+
+        // Detect tags of the form "X: Y". Currently used for IMAGE and CLASS but could be
+        // customised to be used for other things too.
+        var splitTag = splitPropertyTag(tag);
+
+        // IMAGE: src
+        if (splitTag && splitTag.property == "IMAGE") {
+          var imageElement = document.createElement("img");
+          imageElement.src = splitTag.val;
+          storyContainer.appendChild(imageElement);
+
+          showAfter(delay, imageElement);
+          delay += 50.0;
+        }
+
+        // CLASS: className
+        else if (splitTag && splitTag.property == "CLASS") {
+          customClasses.push(splitTag.val);
+        }
+
+        // CLEAR - removes all existing content.
+        // RESTART - clears everything and restarts the story from the beginning
+        else if (tag == "CLEAR" || tag == "RESTART") {
+          removeAll("p", storyContainer);
+          removeAll("img", storyContainer);
+
+          // Comment out this line if you want to leave the header visible when clearing
+          setVisible(".header", false, storyContainer);
+
+          if (tag == "RESTART") {
+            restart();
+            return;
+          }
+        }
+      }
+
+      // Create paragraph element
+      removeAll("p", storyContainer);
+      removeAll("img", storyContainer);
+      var paragraphElement = document.createElement("p");
+      paragraphElement.innerHTML = paragraphText;
+      storyContainer.appendChild(paragraphElement);
+
+      // Add any custom classes derived from ink tags
+      for (var i = 0; i < customClasses.length; i++)
+        paragraphElement.classList.add(customClasses[i]);
+
+      // // Fade in paragraph after a short delay
+      showAfter(delay, paragraphElement);
+      //paragraphElement.classList.add("show");
+
+      //}
+
+      // Create HTML choices from ink choices
+      story.currentChoices.forEach(function(choice) {
+        document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+        // Create paragraph with anchor element
+        var choiceParagraphElement = document.createElement("span");
+        choiceParagraphElement.classList.add("choice");
+        choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`;
+        storyContainer.appendChild(choiceParagraphElement);
+
+        // Fade choice in after a short delay
+        showAfter(delay, choiceParagraphElement);
+
+        // Click on choice
+        var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
+        choiceAnchorEl.addEventListener("click", function(event) {
+          // Don't follow <a> link
+          event.preventDefault();
+
+          // Remove all existing choices
+          var existingChoices = storyContainer.querySelectorAll("span.choice");
+          for (var i = 0; i < existingChoices.length; i++) {
+            var c = existingChoices[i];
+            c.parentNode.removeChild(c);
+          }
+
+          // Tell the story where to go next
+          story.ChooseChoiceIndex(choice.index);
+
+          removeAll("p", storyContainer);
+          removeAll("img", storyContainer);
+          removeAll("span", storyContainer);
+
+          // Comment out this line if you want to leave the header visible when clearing
+          setVisible(".header", false, storyContainer);
+
+          // Aaand loop
+          //continueStory(story, storyContainer);
+        });
+      });
+    }
+  });
 }
 
 export function restart(story) {
