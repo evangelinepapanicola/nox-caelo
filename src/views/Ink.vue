@@ -16,11 +16,11 @@
       <div id="imagebox" class="container image-box">
         <img src="../../public/img/900x450.png" />
       </div>
-      <div id="dialogbox" ref="story" class="container dialog-box"></div>
-      <div class="variable-display">
-        Money: <strong v-text="myMoney()" /> Weapon:
+      <div class="variable-display container">
+        <i class="fas fa-coins"></i><strong v-text="myMoney()" />
         <strong v-text="myWeapon()" />
       </div>
+      <div id="dialogbox" ref="story" class="container dialog-box"></div>
     </div>
   </div>
 </template>

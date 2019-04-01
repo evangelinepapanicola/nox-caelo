@@ -59,9 +59,14 @@ span.choice a:hover {
 
 
 .variable-display {
-    color: green;
-    font-size: 16pt;
-    text-align: center;
+    background-color: rgb(113, 87, 143);
+    max-width: 900px;
+    color: #fff;
+    font-size: 20px;
+}
+
+i {
+    margin-right: 5px;
 }
 
 
@@ -109,6 +114,17 @@ button:hover {
     max-width: 900px;
     margin-bottom: 100px;
     border-radius: 0px 0px 30px 30px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dialog-box:focus {
+    outline: none !important;
 }
 
 .image-box {
