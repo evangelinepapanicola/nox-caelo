@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "npm run inklecate && vue-cli-service serve",
+    "build": "npm run inklecate && vue-cli-service build",
+    "inklecate": "node tasks/inklecate/inklecate.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
