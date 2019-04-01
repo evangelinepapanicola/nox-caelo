@@ -1,8 +1,7 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
-    css: {
-      sourceMap: true
-    },
-    lintOnSave: false
-  };
-  
+  publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
+  css: {
+    sourceMap: true
+  },
+  lintOnSave: false
+};

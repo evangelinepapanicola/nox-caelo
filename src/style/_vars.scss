@@ -1,0 +1,33 @@
+// ===== PURPLE SHADES =====
+
+$darkest-purple: #1C1E26; //main page background
+$purple: rgb(95, 73, 121); //e.g. dialog box, for main elements
+$lighter-purple: rgb(113, 87, 143); // e.g. inventory bar
+$lightest-purple: rgb(132, 106, 161); //buttons, image box
+
+// ===== OTHER KEY COLOURS =====
+
+$spacey-orange: #E56239;
+
+// ===== FONTS =====
+
+$title-font: 'ZCOOL XiaoWei', serif;
+$body-font: 'Quicksand', sans-serif;
+
+$title-font-size: 70px;
+$body-font-size: 20px;
+
+
+// ===== TABLETS =====
+@media all and (max-width: 1000px) {
+    $title-font-size: 70px;
+    $body-font-size: 20px;
+}
+
+
+// ===== MOBILE DEVICES =====
+@media all and (max-width: 425px) {
+    $title-font-size: 50px;
+    $body-font-size: 16px;
+}
+

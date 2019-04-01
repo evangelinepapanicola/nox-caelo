@@ -111,7 +111,9 @@ export function continueStory(story, storyContainer) {
 
   // Create HTML choices from ink choices
   story.currentChoices.forEach(function(choice) {
-    document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+    document
+      .getElementById("dialogbox")
+      .setAttribute("style", "cursor:default");
     // Create paragraph with anchor element
     var choiceParagraphElement = document.createElement("span");
     choiceParagraphElement.classList.add("choice");
@@ -153,7 +155,9 @@ export function continueStory(story, storyContainer) {
   document.getElementById("dialogbox").addEventListener("click", function() {
     // Get ink to generate the next paragraph
     if (story.canContinue) {
-      document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
+      document
+        .getElementById("dialogbox")
+        .setAttribute("style", "cursor:pointer");
       var paragraphText = story.Continue();
       console.log(paragraphText);
       var tags = story.currentTags;
@@ -216,7 +220,9 @@ export function continueStory(story, storyContainer) {
 
       // Create HTML choices from ink choices
       story.currentChoices.forEach(function(choice) {
-        document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+        document
+          .getElementById("dialogbox")
+          .setAttribute("style", "cursor:default");
         // Create paragraph with anchor element
         var choiceParagraphElement = document.createElement("span");
         choiceParagraphElement.classList.add("choice");
@@ -342,21 +348,3 @@ export function splitPropertyTag(tag) {
 
   return null;
 }
-
-// WIP save functionality testing
-// function saveGame(){
-//     localStorage.removeItem('Save1');
-//     let save = story.state.ToJson();
-//     localStorage.setItem('Save1', save);
-//     console.log(localStorage);
-// }
-
-// function loadSaveData() {
-//     let loadedsave = localStorage.getItem('Save1');
-//     story.state.LoadJson(loadedsave);
-//     story.ChoosePathString(choice.index);
-//     console.log(loadedsave);
-// }
-
-// document.getElementById("savebtn").addEventListener("click", saveGame);
-// document.getElementById("loadbtn").addEventListener("click", loadSaveData);

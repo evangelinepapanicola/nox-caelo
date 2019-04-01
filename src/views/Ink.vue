@@ -1,24 +1,25 @@
 <template>
-  <div>
-    <div v-if="!gameStarted" class="container">
-      <span v-if="!playerNameSet">
-        <input
-          type="text"
-          placeholder="What's your character's name?"
-          class="namebox"
-          v-model="playername"
-        />
-      </span>
-      <button v-on:click="startGame">Play</button>
+  <div class="game">
+    <div v-if="!gameStarted" class="front">
+      <div class="game-title container">nox caelo</div>
+      <div class="container naming">
+          <input v-if="!playerNameSet"
+            type="text"
+            placeholder="What's your character's name?"
+            class="namebox"
+            v-model="playername"
+          />
+        <button v-on:click="startGame">Play</button>
+      </div>
     </div>
-
     <div v-show="gameStarted">
+      <div class="game-title container">nox caelo</div>
       <div id="imagebox" class="container image-box">
         <img src="../../public/img/900x450.png" />
       </div>
       <div class="variable-display container">
-        <i class="fas fa-coins"></i><strong v-text="myMoney()" />
-        <strong v-text="myWeapon()" />
+        <i class="fas fa-coins"></i><strong class="inventory-item" v-text="myMoney()" />
+        <strong class="inventory-item" v-text="myWeapon()" /><strong class="inventory-item" v-text="Tomes()" />
       </div>
       <div id="dialogbox" ref="story" class="container dialog-box"></div>
     </div>
@@ -80,12 +81,25 @@ export default {
         return weapon;
       }
     },
+    Tomes: function() {
+      if (this.story !== null) {
+        let tomes = this.story.variablesState["questsItems"];
+        if (tomes != 0){
+          return tomes;
+        }
+      }
+    },
     saveState: function() {
       //window.localStorage.setItem(localStorageStateKey, this.story.state.ToJson());
     },
     startGame: function() {
       this.gameStarted = true;
-      this.story.variablesState["players_name"] = this.playername;
+      if (this.playername !== "") {
+        this.story.variablesState["players_name"] = this.playername;
+      } else {
+        this.story.variablesState["players_name"] = "Nox";
+      }
+      
     }
   }
 };

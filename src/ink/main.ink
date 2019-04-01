@@ -133,10 +133,10 @@ A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I'
         {get_weapon && money < 1: You realise you don't actually have any money.}
         
         + + {get_weapon && money >= 1}[Yes please!]
-            "A wise purchase!"
-            You put on the Cool Sunglasses. You've never looked so badass!
             ~money--
             ~coolSunglasses = true 
+            "A wise purchase!"
+            You put on the Cool Sunglasses. You've never looked so badass!
             ->general_store_options
         
         + + [No thank you.]
@@ -149,10 +149,10 @@ A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I'
         {get_weapon && money < 1: You realise you don't actually have any money.}
         
         + + {get_weapon && money >= 1}[Yes please!]
-            "A wise purchase!"
-            You buy the apple, putting it in your backpack for later.
             ~money--
             ~apple = true 
+            "A wise purchase!"
+            You buy the apple, putting it in your backpack for later.
             ->general_store_options
         
         + + [No thank you.]
@@ -185,35 +185,29 @@ A jolly lady greets you as you enter. "Welcome love! Take a look at the wares I'
  {money < 2: You reach into your pockets and realise you haven't got enough money. "Come back when you can afford it!" the man says. You skulk back out of the alleyway. -> town_square}
  
     * * [Choose the sword]
+        ~money = money - 2
+        ~weaponEquipped = "sword"
+        ~visibleWeapon = true
         "Alright, the sword it is. Be careful, It's heavy."
         The old man hands you the sword. He's right, it is heavy - but you feel confident in wielding it. It has a nice decorative handle, and the name "Dawnbreaker" is engraved on the hilt.
         
         You hand over £2, and thank the man.
-        
-        ~money = money - 2
-        ~weaponEquipped = "sword"
-        ~visibleWeapon = true
-        
         -> get_weapon
         
     * * [Choose the bow]
+        ~money = money - 2
+        ~weaponEquipped = "bow"
+        ~visibleWeapon = true
         "Fancy yourself a ranger, huh? The bow it is. The quiver it comes with will mean you never run out of arrows."
         You've always had a thing for archery, but this bow is like none you've ever seen before. It's very decorative, and looks like something you'd find in an art museum. You inspect the quiver it comes with, and find that every time you pull out an arrow, another one pops up in it's place, seemingly out of nowhere.
         
         You hand over £2, and thank the man.
-        
-        ~money = money - 2
-        ~weaponEquipped = "bow"
-        ~visibleWeapon = true
-        
         -> get_weapon
         
     * * [Decide you don't need one]
+        ~weaponEquipped = "fists"
         "Whaddya mean you don't need one? Changed your mind, eh?"
         You're not sure what it is - maybe seeing the weapons made it all a bit too real, or perhaps neither of them are really your style. Either way, you decide not to buy one, leaving you with no weapon.
-        
-        ~weaponEquipped = "fists"
-        
         -> get_weapon
  
  * [I'm {players_name}.]
@@ -276,13 +270,13 @@ The boy snarls, "I'm just doing my job, leave me be!"
 You look at the fountain. It's a pretty standard fountain, with a statue of {met_scarlet: Scarlet|a pretty lady} holding a wine glass (which is where the water is coming from)
 
 * [Scoop some coins out of the water]
-You scoop some coins out of the water, while several people give you dirty looks. You gain £2! Handy that they use the same currency here. 
 ~money = money+2
+You scoop some coins out of the water, while several people give you dirty looks. You gain £2! Handy that they use the same currency here.
 -> _fountain
 
-+ {money > 5} [Throw a coin in]
-You make a wish, and throw in £1.
++ {money > 0 && weaponEquipped != ""} [Throw a coin in]
 ~money--
+You make a wish, and throw in £1.
 -> _fountain
 
 + [Look at something else]
@@ -660,7 +654,7 @@ With a leap you drive all of your strength into a sharp kick to Marg's stomach. 
         
 = fight_won
 Out of breath, you look around at the crowd as they cheer, chanting your name.
-"{players_name}! {players_name}! {players_name}! {players_name}!"
+"{players_name}! {players_name}! {players_name}! {players_name}!" #UPPERCASE
 You have won the fight.
 
 Leaning on Cereza for support, you limp back into the arena entrance. As you enter, the people raise their drinks and cheer once again. 
@@ -676,7 +670,6 @@ Cereza chuckes. "Hah, the confidence of a champion. I understand you have things
 Marg chuckles. "Don't worry, the fight is over. Congratulations, nobody has beaten me in a long, long time. Here - I believe this is yours." He hands you a large book with a red velvet hardback cover. You look at the title etched on to it: "The Tome of Warfare."
 
 ~questsItems++
-
 You say your goodbyes to Cereza and the rest of the arena folk, and make your way out to find Parvus again.
 
 Tome in hand, you journey back to Luna.
@@ -694,15 +687,13 @@ Tome in hand, you journey back to Luna.
 === fox_house ===
 This is where Fox House would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
 
-~questsItems++
-
 * [Pretend you did the quest and go back]
+~questsItems++
 ->town_square
 
 === labyrinth_of_fury ===
-This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
-
 ~questsItems++
+This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
 
 * [Pretend you did the quest and go back]
 ->town_square
