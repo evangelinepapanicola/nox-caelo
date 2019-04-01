@@ -9,5 +9,5 @@
 </template>
 
 <style lang="scss">
-@import url("./style/main.scss");
+@import "./style/main.scss";
 </style>

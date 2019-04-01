@@ -102,12 +102,13 @@ button {
     transition: background-color 0.2s;
     cursor: pointer;
     margin-top: 10px;
+
+    &:hover {
+        background-color: rgb(95, 73, 121);
+        transition: background-color 0.2s;
+    }
 }
 
-button:hover {
-    background-color: rgb(95, 73, 121);
-    transition: background-color 0.2s;
-}
 
 .dialog-box {
     background-color: rgb(95, 73, 121);
