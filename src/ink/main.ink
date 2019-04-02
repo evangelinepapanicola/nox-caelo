@@ -426,7 +426,8 @@ I'm curious to see what tricks you have up your sleeve. I'm a regular in this ar
 "{players_name}! You're up!" You hear the announcer call your name.
 "Looks like it's your time to shine, little one." Cereza pats you hard on the back, and the two of you head into the Arena. "GOOD LUCK!" Cereza yells as she goes to take her seat, while you nervously head into the center ring.
 You hear the crowd roaring and chanting as you enter, it's almost deafening.
-"EVERYBODY PLEASE WELCOME YOUR NEW CHALLENGER! {players_name}! FROM! LUNAAAA!" The announcer yells, and the crowd roars even louder.
+"EVERYBODY PLEASE WELCOME YOUR NEW CHALLENGER! {players_name}! FROM! LUNAAAA!" #uppercase 
+The announcer yells, and the crowd roars even louder.
 
 You take some time to look around the huge arena. There are two gates, the one you came from and the one on the opposite side. On the west and east sides of the ring are high platforms. There is also a mud pit in the centre. You decide you should find a good position, before Marg appears.
 
@@ -442,7 +443,8 @@ You decide to stand by the mud pit.
 * (hide)[Hide by Marg's door]
 You hide by Marg's door, hoping to catch him by surprise.
 
-- "FIGHTING {players_name} TODAY, WE HAVE MARG THE DESTROYERRRR!" The announcer calls out, and everyone gasps. You start to hear people muttering and whispering to eachother.
+- "FIGHTING {players_name} TODAY, WE HAVE MARG THE DESTROYERRRR!" #uppercase
+The announcer calls out, and everyone gasps. You start to hear people muttering and whispering to eachother.
 The opposite gate clunks open, and from the shadows you see a huge, monsterous troll appear, his stomping footsteps shaking the arena slightly. He roars, and the crowd starts to chant his name. 
 {weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
 
@@ -654,7 +656,7 @@ With a leap you drive all of your strength into a sharp kick to Marg's stomach. 
         
 = fight_won
 Out of breath, you look around at the crowd as they cheer, chanting your name.
-"{players_name}! {players_name}! {players_name}! {players_name}!" #UPPERCASE
+"{players_name}! {players_name}! {players_name}! {players_name}!" #uppercase
 You have won the fight.
 
 Leaning on Cereza for support, you limp back into the arena entrance. As you enter, the people raise their drinks and cheer once again. 

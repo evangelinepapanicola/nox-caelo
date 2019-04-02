@@ -1,3 +1,20 @@
+DEV MODE: Choose how you'd like to test -
+
++ [Play as normal]
+->normal_story
+
++ [Skip to fight sequence (sword)]
+~weaponEquipped = "sword"
+~money = 2
+~visibleWeapon = true
+-> ignis_arena._fight
+
++ [Skip to town square]
+-> town_square
+
+
+=== normal_story ===
+
 It's a quiet, uneventful night at home, as usual.
 You are {players_name} - and right now, you're watching TV after a long day of chores.
 

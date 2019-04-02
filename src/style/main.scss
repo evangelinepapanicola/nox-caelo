@@ -12,6 +12,9 @@ body {
     color: #fff;
     text-align: center;
     font-size: $title-font-size;
+    @media all and (max-width: $mobile) {
+        font-size: $title-font-size-mobile
+    }
 }
 
 .container {
@@ -33,6 +36,9 @@ p, a {
     font-size: $body-font-size;
     text-decoration: none;
     transition: color 0.3s;
+    @media all and (max-width: $mobile) {
+        font-size: $body-font-size-mobile;
+    }
 }
 
 p {
@@ -72,6 +78,9 @@ span.choice a:hover {
     .inventory-item {
         margin-right: 10px;
     }
+    @media all and (max-width: $mobile) {
+        font-size: $body-font-size-mobile;
+    }
 }
 
 i {
@@ -96,6 +105,9 @@ i {
     &::placeholder {
         color: #fff;
     }
+    @media all and (max-width: $mobile) {
+        font-size: $body-font-size-mobile;
+    }
 }
 
 button {
@@ -111,6 +123,10 @@ button {
     transition: background-color 0.2s;
     cursor: pointer;
     margin-top: 10px;
+
+    @media all and (max-width: $mobile) {
+        font-size: $body-font-size-mobile;
+    }
 
     &:hover {
         background-color: $lightest-purple;
@@ -153,4 +169,8 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

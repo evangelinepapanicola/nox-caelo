@@ -72,24 +72,24 @@ export function continueStory(story, storyContainer) {
     }
 
     // CLASS: className
-    else if (splitTag && splitTag.property == "CLASS") {
+    //else if (splitTag && splitTag.property == "CLASS") {
       customClasses.push(splitTag.val);
-    }
+    //}
 
     // CLEAR - removes all existing content.
     // RESTART - clears everything and restarts the story from the beginning
-    else if (tag == "CLEAR" || tag == "RESTART") {
-      removeAll("p", storyContainer);
-      removeAll("img", storyContainer);
+    // else if (tag == "CLEAR" || tag == "RESTART") {
+    //   removeAll("p", storyContainer);
+    //   removeAll("img", storyContainer);
 
-      // Comment out this line if you want to leave the header visible when clearing
-      setVisible(".header", false, storyContainer);
+    //   // Comment out this line if you want to leave the header visible when clearing
+    //   setVisible(".header", false, storyContainer);
 
-      if (tag == "RESTART") {
-        restart();
-        return;
-      }
-    }
+    //   if (tag == "RESTART") {
+    //     restart();
+    //     return;
+    //   }
+    // }
   }
 
   // Create paragraph element
@@ -102,6 +102,8 @@ export function continueStory(story, storyContainer) {
   // Add any custom classes derived from ink tags
   for (var i = 0; i < customClasses.length; i++)
     paragraphElement.classList.add(customClasses[i]);
+    console.log(customClasses);
+    //console.log(splitTag.val);
 
   // // Fade in paragraph after a short delay
   showAfter(delay, paragraphElement);
@@ -181,24 +183,24 @@ export function continueStory(story, storyContainer) {
         }
 
         // CLASS: className
-        else if (splitTag && splitTag.property == "CLASS") {
+        //else if (splitTag && splitTag.property == "CLASS") {
           customClasses.push(splitTag.val);
-        }
+        //}
 
         // CLEAR - removes all existing content.
         // RESTART - clears everything and restarts the story from the beginning
-        else if (tag == "CLEAR" || tag == "RESTART") {
-          removeAll("p", storyContainer);
-          removeAll("img", storyContainer);
+        // else if (tag == "CLEAR" || tag == "RESTART") {
+        //   removeAll("p", storyContainer);
+        //   removeAll("img", storyContainer);
 
-          // Comment out this line if you want to leave the header visible when clearing
-          setVisible(".header", false, storyContainer);
+        //   // Comment out this line if you want to leave the header visible when clearing
+        //   setVisible(".header", false, storyContainer);
 
-          if (tag == "RESTART") {
-            restart();
-            return;
-          }
-        }
+        //   if (tag == "RESTART") {
+        //     restart();
+        //     return;
+        //   }
+        // }
       }
 
       // Create paragraph element
@@ -209,9 +211,10 @@ export function continueStory(story, storyContainer) {
       storyContainer.appendChild(paragraphElement);
 
       // Add any custom classes derived from ink tags
-      for (var i = 0; i < customClasses.length; i++)
+      for (var i = 0; i < customClasses.length; i++) 
         paragraphElement.classList.add(customClasses[i]);
-
+        console.log(customClasses);
+        //console.log(splitTag.val);
       // // Fade in paragraph after a short delay
       showAfter(delay, paragraphElement);
       //paragraphElement.classList.add("show");
