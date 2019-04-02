@@ -1,4 +1,4 @@
-# nox-caelo-vue
+# nox-caelo
 
 ## Project setup
 ```
