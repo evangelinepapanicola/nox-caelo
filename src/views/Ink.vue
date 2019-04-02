@@ -15,7 +15,7 @@
     <div v-show="gameStarted">
       <div class="game-title container">nox caelo</div>
       <div id="imagebox" class="container image-box">
-        <img src="../../public/img/900x450.png" />
+        <img src="../../public/img/900x350.png" />
       </div>
       <div class="variable-display container">
         <i class="fas fa-coins"></i><strong class="inventory-item" v-text="myMoney()" />
