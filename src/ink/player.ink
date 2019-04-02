@@ -13,3 +13,4 @@ VAR apple = false
 VAR coolSunglasses = false
 VAR fightSuccess = 0
 VAR highGround = false
+VAR location = "house"

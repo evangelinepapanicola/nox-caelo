@@ -73,7 +73,7 @@ export function continueStory(story, storyContainer) {
 
     // CLASS: className
     //else if (splitTag && splitTag.property == "CLASS") {
-      customClasses.push(splitTag.val);
+    customClasses.push(splitTag.val);
     //}
 
     // CLEAR - removes all existing content.
@@ -102,8 +102,8 @@ export function continueStory(story, storyContainer) {
   // Add any custom classes derived from ink tags
   for (var i = 0; i < customClasses.length; i++)
     paragraphElement.classList.add(customClasses[i]);
-    console.log(customClasses);
-    //console.log(splitTag.val);
+  console.log(customClasses);
+  //console.log(splitTag.val);
 
   // // Fade in paragraph after a short delay
   showAfter(delay, paragraphElement);
@@ -184,7 +184,7 @@ export function continueStory(story, storyContainer) {
 
         // CLASS: className
         //else if (splitTag && splitTag.property == "CLASS") {
-          customClasses.push(splitTag.val);
+        customClasses.push(splitTag.val);
         //}
 
         // CLEAR - removes all existing content.
@@ -211,10 +211,10 @@ export function continueStory(story, storyContainer) {
       storyContainer.appendChild(paragraphElement);
 
       // Add any custom classes derived from ink tags
-      for (var i = 0; i < customClasses.length; i++) 
+      for (var i = 0; i < customClasses.length; i++)
         paragraphElement.classList.add(customClasses[i]);
-        console.log(customClasses);
-        //console.log(splitTag.val);
+      console.log(customClasses);
+      //console.log(splitTag.val);
       // // Fade in paragraph after a short delay
       showAfter(delay, paragraphElement);
       //paragraphElement.classList.add("show");

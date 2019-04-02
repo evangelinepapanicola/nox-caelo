@@ -56,6 +56,8 @@ You follow Cerberus out into the hallway. The realisation hits, and sure enough 
 
 === walk ===
 
+~location = "forest"
+
 It's a cold, but clear night in the Luna Woods. As you walk down the main path through the trees, Cerberus runs around excitedly.
 
 Eventually, the path comes to a split - as you are used to. You can go either way:

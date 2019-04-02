@@ -3,23 +3,29 @@
     <div v-if="!gameStarted" class="front">
       <div class="game-title container">nox caelo</div>
       <div class="container naming">
-          <input v-if="!playerNameSet"
-            type="text"
-            placeholder="What's your character's name?"
-            class="namebox"
-            v-model="playername"
-          />
+        <input
+          v-if="!playerNameSet"
+          type="text"
+          placeholder="What's your character's name?"
+          class="namebox"
+          v-model="playername"
+        />
         <button v-on:click="startGame">Play</button>
       </div>
     </div>
     <div v-show="gameStarted">
       <div class="game-title container">nox caelo</div>
       <div id="imagebox" class="container image-box">
-        <img src="../../public/img/900x350.png" />
+        <img ref="scene" :src="changeScene()" />
       </div>
       <div class="variable-display container">
-        <i class="fas fa-coins"></i><strong class="inventory-item" v-text="myMoney()" />
-        <strong class="inventory-item" v-text="myWeapon()" /><strong class="inventory-item" v-text="Tomes()" />
+        <i class="fas fa-coins"></i>
+        <strong class="inventory-item" v-text="myMoney()" />
+        <strong class="inventory-item" v-text="myWeapon()" />
+        <strong
+          class="inventory-item"
+          v-text="Tomes()"
+        />
       </div>
       <div id="dialogbox" ref="story" class="container dialog-box"></div>
     </div>
@@ -84,9 +90,29 @@ export default {
     Tomes: function() {
       if (this.story !== null) {
         let tomes = this.story.variablesState["questsItems"];
-        if (tomes != 0){
+        if (tomes != 0) {
           return tomes;
         }
+      }
+    },
+    changeScene: function() {
+      const imageURLs = {
+        house: require('../assets/house.png'),
+        forest: require('../assets/forest.png'),
+        town: require('../assets/town-square.png')
+      }
+
+      if (this.story !== null){
+        let currentArea = this.story.variablesState["location"];
+
+        for (let p of Object.keys(imageURLs)) {
+          if (p == currentArea) {
+            return imageURLs[p];
+          }
+        }
+
+         console.log(this.$refs.scene);
+        // return require('../assets/house.png');
       }
     },
     saveState: function() {
@@ -99,7 +125,6 @@ export default {
       } else {
         this.story.variablesState["players_name"] = "Nox";
       }
-      
     }
   }
 };
