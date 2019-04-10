@@ -5,6 +5,63 @@ body {
     font-family: $body-font;
     font-weight: 400;
     background-color: $darkest-purple;
+    background-image:
+    radial-gradient(
+        #fff 0,
+        #fff 6px,
+        transparent 6px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 2px,
+        transparent 2px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 3px,
+        transparent 3px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 1px,
+        transparent 1px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 5px,
+        transparent 5px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 1px,
+        transparent 1px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 2px,
+        transparent 2px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 1px,
+        transparent 1px
+    ),
+    radial-gradient(
+        #fff 0,
+        #fff 2px,
+        transparent 2px
+    );
+    background-size: 600px 600px;
+    background-position:
+        25px 58px,
+        263px 33px,
+        462px 118px,
+        121px 209px,
+        317px 373px,
+        414px 206px,
+        158px 430px,
+        243px 586px,
+        472px 493px;
 }
 
 .game-title {
@@ -74,9 +131,14 @@ span.choice a:hover {
     background-color: $lighter-purple;
     max-width: 900px;
     color: #fff;
-    font-size: $body-font-size;
+    font-size: 16px;
+    padding: 10px 20px;
     .inventory-item {
         margin-right: 10px;
+        vertical-align: middle;
+    }
+    img.inventory-item{
+        margin-right: 5px;
     }
     @media all and (max-width: $mobile) {
         font-size: $body-font-size-mobile;
@@ -120,7 +182,7 @@ button {
     border: none;
     background-color: $spacey-orange;
     color: #fff;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
     cursor: pointer;
     margin-top: 10px;
 
@@ -130,10 +192,10 @@ button {
 
     &:hover {
         background-color: $lightest-purple;
-        transition: background-color 0.2s;
+        transition: all 0.2s;
     }
-}
 
+}
 
 .dialog-box {
     background-color: $purple;
@@ -174,3 +236,33 @@ button {
 .uppercase {
     text-transform: uppercase;
 }
+  
+
+.fade-enter-active{
+    transition: opacity 2s;
+} 
+.fade-leave-active {
+    transition: opacity 1s;
+  }
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+.bounce-enter-active {
+    animation: bounce-in 1s;
+  }
+  .bounce-leave-active {
+    animation: bounce-in 1s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

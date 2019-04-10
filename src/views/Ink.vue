@@ -1,34 +1,37 @@
 <template>
   <div class="game">
-    <div v-if="!gameStarted" class="front">
-      <div class="game-title container">nox caelo</div>
-      <div class="container naming">
-        <input
-          v-if="!playerNameSet"
-          type="text"
-          placeholder="What's your character's name?"
-          class="namebox"
-          v-model="playername"
-        />
-        <button v-on:click="startGame">Play</button>
+    <transition name="fade" mode="out-in" appear>
+      <div v-if="!gameStarted" class="front" key="front">
+        <div class="game-title container">nox caelo</div>
+        <div class="container naming">
+          <input
+            v-if="!playerNameSet"
+            type="text"
+            placeholder="What's your character's name?"
+            class="namebox"
+            v-model="playername"
+            v-on:keyup.enter="startGame"
+          />
+          <button v-on:click="startGame">Play</button>
+        </div>
       </div>
-    </div>
-    <div v-show="gameStarted">
-      <div class="game-title container">nox caelo</div>
-      <div id="imagebox" class="container image-box">
-        <img ref="scene" :src="changeScene()" />
+    </transition>
+    <transition name="bounce" mode="out-in">
+      <div v-show="gameStarted" key="back">
+        <div class="game-title container">nox caelo</div>
+        <div id="imagebox" class="container image-box">
+          <img ref="scene" :src="changeScene" />
+        </div>
+        <div class="variable-display container">
+          <img class="inventory-item" src="../assets/money.png" />
+          <strong class="inventory-item" v-text="myMoney" />
+          <strong class="inventory-item" v-text="myWeapon" />
+          <img class="inventory-item" src="../assets/tomes.png" />
+          <strong class="inventory-item" v-text="Tomes" />
+        </div>
+        <div id="dialogbox" ref="story" class="container dialog-box"></div>
       </div>
-      <div class="variable-display container">
-        <i class="fas fa-coins"></i>
-        <strong class="inventory-item" v-text="myMoney()" />
-        <strong class="inventory-item" v-text="myWeapon()" />
-        <strong
-          class="inventory-item"
-          v-text="Tomes()"
-        />
-      </div>
-      <div id="dialogbox" ref="story" class="container dialog-box"></div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -68,41 +71,45 @@ export default {
         //   this.playerNameSet = true;
         //   this.playername = this.story.variablesState["players_name"];
         // }
-
         ink.continueStory(this.story, this.storyContainer);
         window.addEventListener("unload", this.saveState);
         //in story
       });
   },
-  methods: {
-    myMoney: function() {
-      if (this.story !== null) {
-        let moneyy = this.story.variablesState["money"];
-        return moneyy;
+  computed: {
+    myMoney() {
+      if (this.story) {
+        return this.story.variablesState["money"];
+      } else {
+        return 0;
       }
     },
-    myWeapon: function() {
-      if (this.story !== null) {
-        let weapon = this.story.variablesState["weaponEquipped"];
-        return weapon;
+    myWeapon() {
+      if (this.story) {
+        return this.story.variablesState["weaponEquipped"];
+      } else {
+        return "";
       }
     },
-    Tomes: function() {
-      if (this.story !== null) {
+    Tomes() {
+      if (this.story) {
         let tomes = this.story.variablesState["questsItems"];
-        if (tomes != 0) {
+        //if (tomes != 0) {
+          console.log("Tomes (Vue output):" + tomes);
           return tomes;
-        }
+        //}
+      } else {
+          return null;
       }
     },
-    changeScene: function() {
+    changeScene() {
       const imageURLs = {
-        house: require('../assets/house.png'),
-        forest: require('../assets/forest.png'),
-        town: require('../assets/town-square.png')
-      }
+        house: require("../assets/house.png"),
+        forest: require("../assets/forest.png"),
+        town: require("../assets/town-square.png")
+      };
 
-      if (this.story !== null){
+      if (this.story) {
         let currentArea = this.story.variablesState["location"];
 
         for (let p of Object.keys(imageURLs)) {
@@ -111,10 +118,13 @@ export default {
           }
         }
 
-         console.log(this.$refs.scene);
-        // return require('../assets/house.png');
+        console.log(this.$refs.scene);
+      } else {
+        return null;
       }
-    },
+    }
+  },
+  methods: {
     saveState: function() {
       //window.localStorage.setItem(localStorageStateKey, this.story.state.ToJson());
     },
