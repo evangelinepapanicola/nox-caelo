@@ -46,6 +46,8 @@ export function scrollToBottom() {
 }
 
 export function continueStory(story, storyContainer) {
+  // === FIRST ITERATION TO START STORY ===
+
   var paragraphIndex = 0;
   var delay = 50;
   document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
@@ -91,6 +93,9 @@ export function continueStory(story, storyContainer) {
     //   }
     // }
   }
+
+  console.log("Tomes (Ink output): " + story.variablesState["questsItems"]);
+  //tomes = story.variablesState["questsItems"];
 
   // Create paragraph element
   removeAll("p", storyContainer);
@@ -153,6 +158,8 @@ export function continueStory(story, storyContainer) {
     });
   });
 
+  // === REST OF STORY / ON CLICK EVENT ===
+
   // Generate story text - loop through available content
   document.getElementById("dialogbox").addEventListener("click", function() {
     // Get ink to generate the next paragraph
@@ -202,6 +209,9 @@ export function continueStory(story, storyContainer) {
         //   }
         // }
       }
+
+      console.log("Tomes (Ink output): " + story.variablesState["questsItems"]);
+      //tomes = story.variablesState["questsItems"];
 
       // Create paragraph element
       removeAll("p", storyContainer);
