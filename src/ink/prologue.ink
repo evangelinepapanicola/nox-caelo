@@ -12,9 +12,14 @@ DEV MODE: Choose how you'd like to test -
 + [Skip to town square]
 -> town_square
 
++ [Skip to town square (with money and weapon)]
+~weaponEquipped = "sword"
+~money = 2
+~visibleWeapon = true
+-> town_square
 
 === normal_story ===
-
+~location = "house"
 It's a quiet, uneventful night at home, as usual.
 You are {players_name} - and right now, you're watching TV after a long day of chores.
 

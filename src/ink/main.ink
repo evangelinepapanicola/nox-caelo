@@ -41,7 +41,7 @@ You stand up so Parvus can breathe, and put Cerberus back on the ground.
     -> town_square
     
 === town_square === 
-
+~location = "town"
 You find yourself in the town square. {!People are roaming about, coming in and out of shops and chatting.}
 
 + [Investigate the fountain]
@@ -62,7 +62,7 @@ You find yourself in the town square. {!People are roaming about, coming in and 
 {questsItems > 0: -> dungeons_info}
 
 = town_gates
-
+~location = "town"
 You head back to the town gates, where Parvus is waiting for you.
 
 {visibleWeapon == true: "Aha! I see you got yourself a weapon. Well done. You still need some armour, though." ->town_gates_options|"Haven't you got yourself a weapon and some armour yet? Come on! Luna won't save itself."}
@@ -73,7 +73,7 @@ You head back to the town gates, where Parvus is waiting for you.
     ->town_square
     
 = town_gates_options
-
+~location = "town"
 * [I couldn't find any armour.]
 "Oh," Parvus sighs. "Luna is SO useless in the fashion department! Luckily I found this for you as backup." He hands you some folded up clothes. "There's some stalls just around the corner you can use to change."
     * * [Change clothes]
@@ -96,7 +96,7 @@ You head back to the town gates, where Parvus is waiting for you.
 * ->dungeons_info
 
 = crescent_street
-
+~location = "town"
 {You decide to take a look down|You're on} Crescent street. This seems to be where all the main shops are.
 
 + [Enter the General Store]
@@ -284,7 +284,7 @@ You make a wish, and throw in £1.
 
 
 = dungeons_info
-
+~location = "town"
 {questsItems == 3: -> final_battle_info}
 
 {!"Anyway, it looks like we're ready to get going!" Parvus says excitedly.}
