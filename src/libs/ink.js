@@ -94,8 +94,28 @@ export function continueStory(story, storyContainer) {
     // }
   }
 
-  console.log("Tomes (Ink output): " + story.variablesState["questsItems"]);
-  //tomes = story.variablesState["questsItems"];
+  // VARIABLE UPDATES
+  document.getElementById("money").innerHTML = story.variablesState["money"];
+  document.getElementById("weapon").innerHTML =
+    story.variablesState["weaponEquipped"];
+  if (story.variablesState["questsItems"] != 0) {
+    document.getElementById("tomes").innerHTML =
+      story.variablesState["questsItems"];
+  }
+
+  const imageURLs = {
+    house: require("../assets/house.png"),
+    forest: require("../assets/forest.png"),
+    town: require("../assets/town-square.png")
+  };
+
+  let currentArea = story.variablesState["location"];
+
+  for (let p of Object.keys(imageURLs)) {
+    if (p == currentArea) {
+      document.getElementById("scene").setAttribute("src", imageURLs[p]);
+    }
+  }
 
   // Create paragraph element
   removeAll("p", storyContainer);
@@ -210,8 +230,29 @@ export function continueStory(story, storyContainer) {
         // }
       }
 
-      console.log("Tomes (Ink output): " + story.variablesState["questsItems"]);
-      //tomes = story.variablesState["questsItems"];
+      // VARIABLE UPDATES
+      document.getElementById("money").innerHTML =
+        story.variablesState["money"];
+      document.getElementById("weapon").innerHTML =
+        story.variablesState["weaponEquipped"];
+      if (story.variablesState["questsItems"] != 0) {
+        document.getElementById("tomes").innerHTML =
+          story.variablesState["questsItems"];
+      }
+
+      const imageURLs = {
+        house: require("../assets/house.png"),
+        forest: require("../assets/forest.png"),
+        town: require("../assets/town-square.png")
+      };
+
+      let currentArea = story.variablesState["location"];
+
+      for (let p of Object.keys(imageURLs)) {
+        if (p == currentArea) {
+          document.getElementById("scene").setAttribute("src", imageURLs[p]);
+        }
+      }
 
       // Create paragraph element
       removeAll("p", storyContainer);

@@ -20,14 +20,14 @@
       <div v-show="gameStarted" key="back">
         <div class="game-title container">nox caelo</div>
         <div id="imagebox" class="container image-box">
-          <img ref="scene" :src="changeScene" />
+          <img id="scene" ref="scene" />
         </div>
         <div class="variable-display container">
           <img class="inventory-item" src="../assets/money.png" />
-          <strong class="inventory-item" v-text="myMoney" />
-          <strong class="inventory-item" v-text="myWeapon" />
+          <strong id="money" class="inventory-item" />
+          <strong id="weapon" class="inventory-item" />
           <img class="inventory-item" src="../assets/tomes.png" />
-          <strong class="inventory-item" v-text="Tomes" />
+          <strong id="tomes" class="inventory-item" />
         </div>
         <div id="dialogbox" ref="story" class="container dialog-box"></div>
       </div>
@@ -95,11 +95,11 @@ export default {
       if (this.story) {
         let tomes = this.story.variablesState["questsItems"];
         //if (tomes != 0) {
-          console.log("Tomes (Vue output):" + tomes);
-          return tomes;
+        console.log("Tomes (Vue output):" + tomes);
+        return tomes;
         //}
       } else {
-          return null;
+        return null;
       }
     },
     changeScene() {
