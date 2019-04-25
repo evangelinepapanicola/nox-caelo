@@ -29,8 +29,16 @@
           <img class="inventory-item" src="../assets/tomes.png" />
           <strong id="tomes" class="inventory-item" />
         </div>
-        <div id="dialogbox" ref="story" class="container dialog-box"></div>
+        <div id="dialogbox" ref="story" class="container dialog-box"><button v-on:click="logToggle = true" class="log" :disabled="isDisabled">Log</button></div>
+        <transition name="fade-popup" mode="out-in" appear>
+        <div id="log" class="log-popup container" v-show="logToggle">
+          <button class="close-popup" v-on:click="logToggle = false">x</button>
+        </div>
+        </transition>
       </div>
+    </transition>
+    <transition name="fade-overlay" mode="out-in" appear>
+    <div v-on:click="logToggle = false" v-if="logToggle" class="overlay"></div>
     </transition>
   </div>
 </template>
@@ -52,7 +60,8 @@ export default {
       storyContainer: null,
       playername: "",
       playerNameSet: false,
-      gameStarted: false
+      gameStarted: false,
+      logToggle: false
     };
   },
   mounted: function() {
@@ -77,50 +86,12 @@ export default {
       });
   },
   computed: {
-    myMoney() {
-      if (this.story) {
-        return this.story.variablesState["money"];
+    isDisabled: function() {
+      let p = document.querySelectorAll('p.show')[1];
+      if (this.gameStarted == true && document.getElementById('log').contains(p) == true) {
+        return false;
       } else {
-        return 0;
-      }
-    },
-    myWeapon() {
-      if (this.story) {
-        return this.story.variablesState["weaponEquipped"];
-      } else {
-        return "";
-      }
-    },
-    Tomes() {
-      if (this.story) {
-        let tomes = this.story.variablesState["questsItems"];
-        //if (tomes != 0) {
-        console.log("Tomes (Vue output):" + tomes);
-        return tomes;
-        //}
-      } else {
-        return null;
-      }
-    },
-    changeScene() {
-      const imageURLs = {
-        house: require("../assets/house.png"),
-        forest: require("../assets/forest.png"),
-        town: require("../assets/town-square.png")
-      };
-
-      if (this.story) {
-        let currentArea = this.story.variablesState["location"];
-
-        for (let p of Object.keys(imageURLs)) {
-          if (p == currentArea) {
-            return imageURLs[p];
-          }
-        }
-
-        console.log(this.$refs.scene);
-      } else {
-        return null;
+        return true;
       }
     }
   },

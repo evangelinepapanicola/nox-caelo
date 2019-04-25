@@ -2,6 +2,11 @@
 @import "_typefaces.scss";
 
 body {
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none;  // Firefox
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
     font-family: $body-font;
     font-weight: 400;
     background-color: $darkest-purple;
@@ -85,6 +90,9 @@ body {
         flex-wrap: wrap;
         padding-top: 10px; 
     }
+    @media all and (max-width: 945px) {
+        padding: 15px;
+    }
 }
 
 p, a {
@@ -119,12 +127,12 @@ span.choice a {
     transition: background-color 0.3s;
     margin-right: 20px;
     margin-bottom: 10px;
+    &:hover {
+        transition: background-color 0.3s;
+        background-color: $spacey-orange;
+    }
 }
 
-span.choice a:hover {
-    transition: background-color 0.3s;
-    background-color: $spacey-orange;
-}
 
 
 .variable-display {
@@ -200,7 +208,6 @@ button {
 .dialog-box {
     background-color: $purple;
     max-width: 900px;
-    margin-bottom: 100px;
     border-radius: 0px 0px 30px 30px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -209,10 +216,111 @@ button {
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-
+    position: relative;
     &:focus {
         outline: none !important;
     }
+    padding-bottom: 46px;
+}
+
+.log {
+    background-color: $darker-purple;
+    width: 90px;
+    height: 45px;
+    border-radius: 70px 0px 25px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: background-color 0.3s;
+
+    &:hover {
+        transition: background-color 0.3s;
+        background-color: $spacey-orange;
+    }
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    &:focus {
+        outline: none !important;
+    }
+    &:disabled {
+        background-color: $disabled;
+    }
+}
+
+.close-popup {
+    background-color: $darker-purple;
+    width: 40px;
+    height: 40px;
+    border-radius: 70px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color 0.3s;
+    margin-top: 0px;
+    font-size: 25px;
+    font-weight: 700;
+    &:hover {
+        transition: background-color 0.3s;
+        background-color: $spacey-orange;
+    }
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    &:focus {
+        outline: none !important;
+    }
+}
+
+.log-popup {
+    background-color: $lightest-purple;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 95%;
+    width: 800px;
+    z-index: 1;
+    border-radius: 20px;
+    height: 500px;
+    overflow-y: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: $purple;
+    border-radius: 0px 20px 20px 0px;;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $darkest-purple; 
+    border-radius: 0px 20px 20px 0px;;
+  }
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: $darkest-purple;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
 }
 
 .image-box {
@@ -222,6 +330,7 @@ button {
 
     & img {
         width: 100%;
+        border-radius: 25px 25px 0px 0px;
     }
 }
 
@@ -246,6 +355,30 @@ button {
   }
 
 .fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+
+.fade-popup-enter-active{
+    transition: all 0.5s;
+} 
+.fade-popup-leave-active {
+    transition: all 0.5s;
+  }
+
+.fade-popup-enter, .fade-popup-leave-to {
+    opacity: 0;
+    top: 100%;
+}
+
+.fade-overlay-enter-active{
+    transition: opacity 0.5s;
+} 
+.fade-overlay-leave-active {
+    transition: opacity 0.5s;
+  }
+
+.fade-overlay-enter, .fade-overlay-leave-to {
     opacity: 0;
 }
 

@@ -260,6 +260,11 @@ export function continueStory(story, storyContainer) {
       var paragraphElement = document.createElement("p");
       paragraphElement.innerHTML = paragraphText;
       storyContainer.appendChild(paragraphElement);
+      //add same text to log
+      var logElement = document.createElement("p");
+      logElement.innerHTML = paragraphText;
+      logElement.setAttribute("class", "show");
+      document.getElementById("log").appendChild(logElement);
 
       // Add any custom classes derived from ink tags
       for (var i = 0; i < customClasses.length; i++)
