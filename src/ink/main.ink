@@ -238,8 +238,38 @@ You thank the old man for his help and leave the alleyway.
  
 = _alley
 
-Sorry, I haven't written this area yet. I'll send you back to the town square!
--> town_square
+{questsItems == 0: 
+The old man is still stood alone in the alleyway.
+"You still here kiddo? Haven't ya got something better to do?"
+You nod, and head back to the town square.
+->town_square
+}
+
+{questsItems == 1: 
+The old man sees you enter and smiles.
+"{players_name}! Long time no see! How've you been?"
+* [Great, I've been travelling!]
+"Well well, you have been busy. Make sure you keep your weapon safe."
+You nod, and head back to the town square.
+->town_square
+* [Exhausted, I've been travelling]
+"Well well, you have been busy. Make sure you keep your weapon safe."
+You nod, and head back to the town square.
+->town_square
+}
+
+{questsItems == 2: 
+The old man sees you enter and smiles.
+"{players_name}! It's good to see you again. How are you doing?"
+* [Great, I've been travelling again.]
+"Again? You're quite the adventurer huh? Well knock yourself out, as long as you keep your weapon safe. Don't let it fall into the wrong hands, okay?"
+You nod, and head back to the town square.
+->town_square
+* [Sooooo tired, way too much travelling]
+"Again? You're quite the adventurer huh? Well knock yourself out, as long as you keep your weapon safe. Don't let it fall into the wrong hands, okay?"
+You nod, and head back to the town square.
+->town_square
+}
 
 = _paperboy
 
@@ -687,11 +717,52 @@ Tome in hand, you journey back to Luna.
 {weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
 
 === fox_house ===
-This is where Fox House would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
+"Off we go then!" Parvus exclaims.
+After some preparation, the two of you set out on your journey to Fox House.
+-> who_is_she
 
-* [Pretend you did the quest and go back]
-~questsItems++
-->town_square
+= who_is_she
+During your journey, you try to find out more about Lady Emeralda.
+
+* [What's Lady Emeralda like?]
+"Lady Emeralda is a very powerful woman. She's well known for her efforts in ending wars peacefully. She is a strong advocate for peace, but she is also extremely capable of defending her allies in times of war."
+->who_is_she
+
+* [What is her favourite food?]
+    "That's a weird question, I honestly have no idea. My guess would be apples. I seem to recall her having several apple trees planted all around Fox House."
+    -> who_is_she
+    
+* [How do I convince her to give me the Tome of Charisma?]
+"Honestly, it's going to be tough. Her main job is to guard it after all. Just try to be diplomatic about it. "
+-> who_is_she
+
+* -> fox_house_arrival
+
+= fox_house_arrival
+As you're talking, you arrive at some huge, towering iron gates, where two guards are stood with one guard dog. Cerberus barks at the sight of the dog.
+"HALT!" One of the guards yells. "What is your business here?"
+"We've travelled from Luna to speak with Lady Emeralda, please" Parvus exclaims.
+"Is she expecting you?"
+"No, well - we weren't sure how long travel would take, and we did not want to waste Lady Emeralda's time," Parvus explains. "We just request half an hour of her time, please, it is of high importance."
+"If it is so important, might I ask why you wish to speak with milady?" The guard looks at you both, curiously. Parvus turns to you.
+
+* [Luna is in grave danger. Scarlet has turned against her people.]
+The guards look at eachother, and give eachother a nod. "Alright, if it is aid you seek, and your people are in danger - we shall allow you to speak with milady."
+"Thank you!" You both say with gratitude.
+->inside_fox_house
+
+* [We need the Tome of Charisma.]
+The guard chuckles. "You need it do you? I hope you realise we don't just give away the tome willy nilly. Many people come daily asking for the tome purely for their own greedy, selfish reasons. I suggest you leave."
+"Wait!" Parvus says. "Please, this isn't a greedy request. Luna is in grave danger. Only the Tome's power can save it."
+The guards glance at eachother.
+"Alright. We'll let you through. But if this is all some farce, you'll be in deep trouble, I hope you know that."
+"We understand." Parvus says.
+->inside_fox_house
+
+= inside_fox_house
+
+
+->DONE
 
 === labyrinth_of_fury ===
 ~questsItems++
