@@ -24,24 +24,33 @@
         </div>
         <div class="variable-display container">
           <div class="money">
-              <img class="inventory-item money" src="../assets/money.png" />
-              <sub id="money" class="inventory-item" />
+            <img class="inventory-item money" src="../assets/money.png" />
+            <sub id="money" class="inventory-item" />
           </div>
           <img id="weapon" class="inventory-item" />
           <img id="warfare" class="inventory-item" />
-          <img id="charisma" class="inventory-item"  />
-          <img id="perseverance" class="inventory-item"  />
+          <img id="charisma" class="inventory-item" />
+          <img id="perseverance" class="inventory-item" />
         </div>
-        <div id="dialogbox" ref="story" class="container dialog-box"><button v-on:click="logToggle = true" class="log" :disabled="isDisabled">Log</button></div>
+        <div id="dialogbox" ref="story" class="container dialog-box">
+          <button id="logbtn" v-on:click="logToggle = true" class="log" disabled>Log</button>
+        </div>
         <transition name="fade-popup" mode="out-in" appear>
-        <div id="log" class="log-popup container" v-show="logToggle">
-          <button class="close-popup" v-on:click="logToggle = false">x</button>
-        </div>
+          <div id="log" class="log-popup container" v-show="logToggle">
+            <div class="log-title">quest log</div>
+            <button class="close-popup" v-on:click="logToggle = false">
+              x
+            </button>
+          </div>
         </transition>
       </div>
     </transition>
     <transition name="fade-overlay" mode="out-in" appear>
-    <div v-on:click="logToggle = false" v-if="logToggle" class="overlay"></div>
+      <div
+        v-on:click="logToggle = false"
+        v-if="logToggle"
+        class="overlay"
+      ></div>
     </transition>
   </div>
 </template>
@@ -90,8 +99,11 @@ export default {
   },
   computed: {
     isDisabled: function() {
-      let p = document.querySelectorAll('p.show')[1];
-      if (this.gameStarted == true && document.getElementById('log').contains(p) == true) {
+      let p = document.querySelectorAll("p.show")[1];
+      if (
+        this.gameStarted == true &&
+        document.getElementById("log").contains(p) == true
+      ) {
         return false;
       } else {
         return true;

@@ -96,17 +96,12 @@ export function continueStory(story, storyContainer) {
 
   // VARIABLE UPDATES
   document.getElementById("money").innerHTML = story.variablesState["money"];
-  document.getElementById("weapon").innerHTML =
-    story.variablesState["weaponEquipped"];
-  if (story.variablesState["questsItems"] != 0) {
-    document.getElementById("tomes").innerHTML =
-      story.variablesState["questsItems"];
-  }
-
+  //scenes
   const imageURLs = {
     house: require("../assets/house.png"),
     forest: require("../assets/forest.png"),
-    town: require("../assets/town-square.png")
+    town: require("../assets/town-square.png"),
+    journey: require("../assets/journey.png")
   };
 
   let currentArea = story.variablesState["location"];
@@ -115,6 +110,38 @@ export function continueStory(story, storyContainer) {
     if (p == currentArea) {
       document.getElementById("scene").setAttribute("src", imageURLs[p]);
     }
+  }
+  //weapons
+  const weapons = {
+    sword: require("../assets/sword.png"),
+    fists: require("../assets/fists.png"),
+    bow: require("../assets/bow.png")
+  };
+
+  let weapon = story.variablesState["weaponEquipped"];
+
+  for (let w of Object.keys(weapons)) {
+    if (w == weapon) {
+      document.getElementById("weapon").setAttribute("src", weapons[w]);
+    }
+  }
+
+  if (story.variablesState["warfare"] == true) {
+    document
+      .getElementById("warfare")
+      .setAttribute("src", require("../assets/warfare.png"));
+  }
+
+  if (story.variablesState["charisma"] == true) {
+    document
+      .getElementById("charisma")
+      .setAttribute("src", require("../assets/charisma.png"));
+  }
+
+  if (story.variablesState["perseverance"] == true) {
+    document
+      .getElementById("perseverance")
+      .setAttribute("src", require("../assets/perseverance.png"));
   }
 
   // Create paragraph element
@@ -181,12 +208,15 @@ export function continueStory(story, storyContainer) {
   // === REST OF STORY / ON CLICK EVENT ===
 
   // Generate story text - loop through available content
-  document.getElementById("dialogbox").addEventListener("click", function() {
+  document.getElementById("dialogbox").addEventListener("click", function(e) {
     // Get ink to generate the next paragraph
-    if (story.canContinue) {
+    var logbutton = document.getElementById("logbtn");
+    if (e.target !== logbutton && story.canContinue) {
       document
         .getElementById("dialogbox")
         .setAttribute("style", "cursor:pointer");
+      
+      document.getElementById("logbtn").disabled = false;
       var paragraphText = story.Continue();
       console.log(paragraphText);
       var tags = story.currentTags;
@@ -233,7 +263,7 @@ export function continueStory(story, storyContainer) {
       // VARIABLE UPDATES
       document.getElementById("money").innerHTML =
         story.variablesState["money"];
-        //scenes
+      //scenes
       const imageURLs = {
         house: require("../assets/house.png"),
         forest: require("../assets/forest.png"),
@@ -264,15 +294,21 @@ export function continueStory(story, storyContainer) {
       }
 
       if (story.variablesState["warfare"] == true) {
-        document.getElementById("warfare").setAttribute("src", require("../assets/warfare.png"));
+        document
+          .getElementById("warfare")
+          .setAttribute("src", require("../assets/warfare.png"));
       }
 
       if (story.variablesState["charisma"] == true) {
-        document.getElementById("charisma").setAttribute("src", require("../assets/charisma.png"));
+        document
+          .getElementById("charisma")
+          .setAttribute("src", require("../assets/charisma.png"));
       }
 
       if (story.variablesState["perseverance"] == true) {
-        document.getElementById("perseverance").setAttribute("src", require("../assets/perseverance.png"));
+        document
+          .getElementById("perseverance")
+          .setAttribute("src", require("../assets/perseverance.png"));
       }
 
       // Create paragraph element
@@ -324,7 +360,11 @@ export function continueStory(story, storyContainer) {
             var c = existingChoices[i];
             c.parentNode.removeChild(c);
           }
-
+          console.log(this);
+          var choicelogElement = document.createElement("span");
+          choicelogElement.classList.add("logchoice");
+          choicelogElement.innerHTML = this.textContent;
+          document.getElementById("log").appendChild(choicelogElement);
           // Tell the story where to go next
           story.ChooseChoiceIndex(choice.index);
 
