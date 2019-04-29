@@ -350,7 +350,7 @@ Have you heard about the murders going on here?
                 ->three_locations
     
     + + {not labyrinth_of_fury}[The Labyrinth of Fury, huh?]
-    "The Labyrinth of Fury is, well, a huge maze. At the heart of it is the Tome of Perserverance. You'll need plenty of patience for this one."
+    "The Labyrinth of Fury is, well, a huge maze. At the heart of it is the Tome of Perseverance. You'll need plenty of patience for this one."
         * * * [Head to the Labyrinth of Fury]
                 -> labyrinth_of_fury
         + + + [Tell me about the other places]
@@ -366,6 +366,7 @@ Have you heard about the murders going on here?
     
 === ignis_arena ===
 "Alright, let's get going!"
+~location = "journey"
 And with that, you and Parvus begin your 3 days of travelling to Ignis Arena. You travel there on horseback, stopping to rest and camp every now and then.
 
 On day 2, you're settled down by an open fire, with Cerberus snoozing in your lap. You wonder if you'll ever get to go home again.
@@ -702,6 +703,7 @@ Cereza chuckes. "Hah, the confidence of a champion. I understand you have things
 Marg chuckles. "Don't worry, the fight is over. Congratulations, nobody has beaten me in a long, long time. Here - I believe this is yours." He hands you a large book with a red velvet hardback cover. You look at the title etched on to it: "The Tome of Warfare."
 
 ~questsItems++
+~warfare = true
 You say your goodbyes to Cereza and the rest of the arena folk, and make your way out to find Parvus again.
 
 Tome in hand, you journey back to Luna.
@@ -718,6 +720,7 @@ Tome in hand, you journey back to Luna.
 
 === fox_house ===
 "Off we go then!" Parvus exclaims.
+~location = "journey"
 After some preparation, the two of you set out on your journey to Fox House.
 -> who_is_she
 
@@ -760,12 +763,87 @@ The guards glance at eachother.
 ->inside_fox_house
 
 = inside_fox_house
+As you enter the posh looking mansion that is Fox House, a lady dressed in a smart suit greets you both and leads you into a waiting area.
+While you sit in the fancy, plush seats of the waiting area there is an awkward silence. You can read the nervousness on Parvus' face.
+After 5 minutes or so pass, Parvus stands up, "I'm gonna go use the bathroom, I'll be back in a few moments..." he says quietly. The well dressed lady escorts him away.
+As you sit there alone, nervously, the door to Lady Emeralda's meeting room creaks open and a tall gentleman with a curly moustache leaves, chuckling to himself. You then see a woman poke her head around the door, with curly red hair and a green dress with a pattern of little foxes printed on - Lady Emeralda.
+"I believe you are next inline to see me?" She asks.
+
+* [That's right!]
+"Come on in, then", she says, with a smile on her face. You walk up and shake her hand, introducing yourself.
+"Nice to meet you, {players_name}! Have a seat."
+->the_negotiation
+* [Yes, my friend is supposed to be joining us, but he is using the facilities.]
+"Oh", Emeralda says, with a serious look on her face. "Well, since you are the only ones here at present, I can wait 5 minutes."
+A minute passes.
+Two minutes pass. Still no sign of Parvus.
+Three minutes...
+Four minutes...
+5 minutes pass, and Parvus is still nowhere to be seen. Lady Emeralda starts to look impatient.
+* * [I'm sorry, let's start without him.]
+    "Okay, come on in then.", she says. You walk up and shake her hand, introducing yourself.
+    "Nice to meet you, {players_name}. Have a seat."
+    ->the_negotiation
+* * [I don't know why he's taking so long... can we wait a bit longer?]
+    Lady Emeralda crosses her arms. "This is a waste of my time. You can come and speak to me now if you'd like, but I am not waiting any longer."
+    You nod, and you both enter the meeting room. You introduce yourself.
+    ->the_negotiation
+
+=the_negotiation
+You take your seat opposite Emeralda and try to calm your nerves.
+"So, {players_name}. What brings you here today?"
+
++ [We need the Tome of Charisma.]
+~emeralda -= 1
+Emeralda gives you a look that makes you feel like she's trying really hard not to roll her eyes.
+"Do you know how often people come into my home and ask for this? A lot!"
+
++ [I want to discuss the current state of Luna.]
+~emeralda += 1
+Emeralda looks at you inquisitvely. "Really, go on."
+
++ [Scarlet is evil.]
+~emeralda -= 1
+Emeralda chuckles. "Well well, you do realise you are speaking about a dear friend of mine?"
+
+- You explain to Emeralda what Parvus had told you, about the murders in Luna and how you think Scarlet is to blame.
+"But where is your proof? This all sounds like a conspiracy to me."
+Before you can respond, you both hear a knock on the door.
+"Hello? Who's there?" Emeralda pipes up.
+You hear Parvus' voice behind the door quietly say "Um, it's Parvus. I'm sorry I'm late! But I have tea for everyone."
+You explain to Emeralda that Parvus is who you were waiting for.
+"Come in!" Emeralda says, and Parvus enters the room timidly, holding a tray with teacups and saucers.
+Parvus puts the tray down on the table and sits down in the seat next to you. "Your lovely assisstant was feeling unwell, so I offered to bring the tea through instead."
+"How kind of you" Emeralda says before taking a long sip of tea.
+"Now, back to the discussion. What proof do you have that Scarlet is committing these crimes against her own people?"
+You look at Parvus desparately, but he doesn't seem to be answering.
++ [She is the only one capable of covering it up]
+    ~emeralda -= 1
+    "How do you know that for sure? You mean to tell me that nobody in Luna, absolutely nobody, is capable of committing a murder with little to no evidence besides Scarlet? That's a strong claim to make."
++ {apple == true}[Here's my proof! (Give her your apple)]
+    ~emeralda += 1
+     "An... apple? How is this proof exactly?"
+     You explain it's actually not proof, you just thought she might like an apple.
+     "I must admit, apples are my favourite."   
++ [She's, uh... mean]
+    ~emeralda -= 1
+    Emeralda almost spittakes. "Well. Wow."
++ [We don't have any]
+    ~emeralda += 1
+    "I appreciate your honesty. But I can't -"
+- Before Emeralda can speak further, you see her pause for a moment as her expression changes completely. You see her go from a serious frown to a soft, neutral, almost emotionless face. It's unusual and unsettling.
+"Perhaps I am being too strict. The Tome of Charisma is such a dangerous weapon in the wrong hands, but... you two are lovely people."
+{emeralda >= 0: Emeralda stands up and heads toward the cabinet in the back of her meeting room. She undoes the complex lock, and pulls out a green, velvet covered book. She places it on the table: The Tome of Charisma.}
+{emeralda < 0: <> It then suddenly tenses up again, back to how it was before. "This is some farce. You come in to my home, accuse my friend of murder, and then blatantly lie to my face about having evidence. You should leave at once." -> negotiation_fail}
+
+=negotiation_fail
 
 
-->DONE
+->END
 
 === labyrinth_of_fury ===
 ~questsItems++
+~perseverance = true
 This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
 
 * [Pretend you did the quest and go back]

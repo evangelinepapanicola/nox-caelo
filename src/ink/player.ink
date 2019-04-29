@@ -14,3 +14,6 @@ VAR coolSunglasses = false
 VAR fightSuccess = 0
 VAR highGround = false
 VAR location = "house"
+VAR emeralda = 0
+VAR perseverance = false
+VAR warfare = false

@@ -233,17 +233,12 @@ export function continueStory(story, storyContainer) {
       // VARIABLE UPDATES
       document.getElementById("money").innerHTML =
         story.variablesState["money"];
-      document.getElementById("weapon").innerHTML =
-        story.variablesState["weaponEquipped"];
-      if (story.variablesState["questsItems"] != 0) {
-        document.getElementById("tomes").innerHTML =
-          story.variablesState["questsItems"];
-      }
-
+        //scenes
       const imageURLs = {
         house: require("../assets/house.png"),
         forest: require("../assets/forest.png"),
-        town: require("../assets/town-square.png")
+        town: require("../assets/town-square.png"),
+        journey: require("../assets/journey.png")
       };
 
       let currentArea = story.variablesState["location"];
@@ -252,6 +247,32 @@ export function continueStory(story, storyContainer) {
         if (p == currentArea) {
           document.getElementById("scene").setAttribute("src", imageURLs[p]);
         }
+      }
+      //weapons
+      const weapons = {
+        sword: require("../assets/sword.png"),
+        fists: require("../assets/fists.png"),
+        bow: require("../assets/bow.png")
+      };
+
+      let weapon = story.variablesState["weaponEquipped"];
+
+      for (let w of Object.keys(weapons)) {
+        if (w == weapon) {
+          document.getElementById("weapon").setAttribute("src", weapons[w]);
+        }
+      }
+
+      if (story.variablesState["warfare"] == true) {
+        document.getElementById("warfare").setAttribute("src", require("../assets/warfare.png"));
+      }
+
+      if (story.variablesState["charisma"] == true) {
+        document.getElementById("charisma").setAttribute("src", require("../assets/charisma.png"));
+      }
+
+      if (story.variablesState["perseverance"] == true) {
+        document.getElementById("perseverance").setAttribute("src", require("../assets/perseverance.png"));
       }
 
       // Create paragraph element

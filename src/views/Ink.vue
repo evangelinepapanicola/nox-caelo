@@ -23,11 +23,14 @@
           <img id="scene" ref="scene" />
         </div>
         <div class="variable-display container">
-          <img class="inventory-item" src="../assets/money.png" />
-          <strong id="money" class="inventory-item" />
-          <strong id="weapon" class="inventory-item" />
-          <img class="inventory-item" src="../assets/tomes.png" />
-          <strong id="tomes" class="inventory-item" />
+          <div class="money">
+              <img class="inventory-item money" src="../assets/money.png" />
+              <sub id="money" class="inventory-item" />
+          </div>
+          <img id="weapon" class="inventory-item" />
+          <img id="warfare" class="inventory-item" />
+          <img id="charisma" class="inventory-item"  />
+          <img id="perseverance" class="inventory-item"  />
         </div>
         <div id="dialogbox" ref="story" class="container dialog-box"><button v-on:click="logToggle = true" class="log" :disabled="isDisabled">Log</button></div>
         <transition name="fade-popup" mode="out-in" appear>
