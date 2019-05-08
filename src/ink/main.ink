@@ -341,11 +341,11 @@ Have you heard about the murders going on here?
         + + + [Tell me about the other places]
                 ->three_locations
                 
-    + + {not fox_house}[What's Fox House like?]
+    + + {not fox_house_temp}[What's Fox House like?]
     "Fox House is, despite the name, not a house full of cute fuzzy foxes." Parvus says, in a disapointed tone.
     "Fox House is where you'll find Lady Emeralda, who is closely guarding the Tome of Charisma. It'll take a lot of convincing for her to hand it over."
         * * * [Head to Fox House]
-                -> fox_house
+                -> fox_house_temp
         + + + [Tell me about the other places]
                 ->three_locations
     
@@ -840,6 +840,15 @@ You look at Parvus desparately, but he doesn't seem to be answering.
 
 
 ->END
+
+=== fox_house_temp ===
+
+~questsItems++
+~charisma = true
+This is where Fox House would be, but I haven't finished writing it yet. Sorry! Here's the quest item anyway.
+
+* [Pretend you did the quest and go back]
+->town_square
 
 === labyrinth_of_fury ===
 ~questsItems++

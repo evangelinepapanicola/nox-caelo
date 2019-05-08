@@ -17,3 +17,4 @@ VAR location = "house"
 VAR emeralda = 0
 VAR perseverance = false
 VAR warfare = false
+VAR charisma = false

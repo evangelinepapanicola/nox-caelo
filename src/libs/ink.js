@@ -51,7 +51,15 @@ export function continueStory(story, storyContainer) {
   var paragraphIndex = 0;
   var delay = 50;
   document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
-  var paragraphText = story.Continue();
+
+  var paragraphText;
+
+  if (story.canContinue) {
+    paragraphText = story.Continue();
+  } else {
+    paragraphText = story.currentText;
+  }
+  
   console.log(paragraphText);
   var tags = story.currentTags;
 
@@ -215,7 +223,7 @@ export function continueStory(story, storyContainer) {
       document
         .getElementById("dialogbox")
         .setAttribute("style", "cursor:pointer");
-      
+
       document.getElementById("logbtn").disabled = false;
       var paragraphText = story.Continue();
       console.log(paragraphText);

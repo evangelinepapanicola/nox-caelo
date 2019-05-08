@@ -18,6 +18,7 @@
     </transition>
     <transition name="bounce" mode="out-in">
       <div v-show="gameStarted" key="back">
+        <button v-on:click="resetGame">reset</button>
         <div class="game-title container">nox caelo</div>
         <div id="imagebox" class="container image-box">
           <img id="scene" ref="scene" />
@@ -33,7 +34,14 @@
           <img id="perseverance" class="inventory-item" />
         </div>
         <div id="dialogbox" ref="story" class="container dialog-box">
-          <button id="logbtn" v-on:click="logToggle = true" class="log" disabled>Log</button>
+          <button
+            id="logbtn"
+            v-on:click="logToggle = true"
+            class="log"
+            disabled
+          >
+            Log
+          </button>
         </div>
         <transition name="fade-popup" mode="out-in" appear>
           <div id="log" class="log-popup container" v-show="logToggle">
@@ -83,18 +91,21 @@ export default {
         return response.json();
       })
       .then(storyContent => {
-        // console.log(storyContent);
-        this.story = new inkjs.Story(storyContent);
-        console.log(this.story);
-        // this.story.state.LoadJson(window.localStorage.getItem(localStorageStateKey));
 
-        // if (this.story.variablesState["players_name"]) {
-        //   this.playerNameSet = true;
-        //   this.playername = this.story.variablesState["players_name"];
-        // }
-        ink.continueStory(this.story, this.storyContainer);
-        window.addEventListener("unload", this.saveState);
-        //in story
+        this.story = new inkjs.Story(storyContent);
+
+        if (window.localStorage.getItem(localStorageStateKey)) {
+          this.story.state.LoadJson(
+            window.localStorage.getItem(localStorageStateKey)
+          );
+        }
+
+        console.log(this.story);
+
+          ink.continueStory(this.story, this.storyContainer);
+
+          window.addEventListener("unload", this.saveState);
+
       });
   },
   computed: {
@@ -112,7 +123,11 @@ export default {
   },
   methods: {
     saveState: function() {
-      //window.localStorage.setItem(localStorageStateKey, this.story.state.ToJson());
+      console.log('called savestate');
+      window.localStorage.setItem(
+        localStorageStateKey,
+        this.story.state.ToJson()
+      );
     },
     startGame: function() {
       this.gameStarted = true;
@@ -121,6 +136,11 @@ export default {
       } else {
         this.story.variablesState["players_name"] = "Nox";
       }
+    },
+    resetGame: function() {
+      window.removeEventListener("unload", this.saveState);
+      localStorage.clear();
+      location.reload();
     }
   }
 };
