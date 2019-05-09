@@ -52,13 +52,9 @@ export function continueStory(story, storyContainer) {
   var delay = 50;
   document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
 
-  var paragraphText;
 
-  if (story.canContinue) {
-    paragraphText = story.Continue();
-  } else {
-    paragraphText = story.currentText;
-  }
+   var paragraphText = story.currentText;
+
   
   console.log(paragraphText);
   var tags = story.currentTags;
