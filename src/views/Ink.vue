@@ -19,7 +19,7 @@
         <div class="game-title container">nox caelo</div>
         <div class="container welcome-back">
           <div>Welcome back!</div>
-          <button v-on:click="gameStarted = true">
+          <button v-on:click="continueGame">
             Continue where you left off
           </button>
           <button v-on:click="resetGame">Erase data and start again</button>
@@ -121,7 +121,6 @@ export default {
           localStorageStateKey
         );
 
-        window.addEventListener("unload", this.saveState);
       });
   },
   computed: {
@@ -146,12 +145,17 @@ export default {
       );
     },
     startGame: function() {
+      window.addEventListener("unload", this.saveState);
       this.gameStarted = true;
       if (this.playername !== "") {
         this.story.variablesState["players_name"] = this.playername;
       } else {
         this.story.variablesState["players_name"] = "Nox";
       }
+    },
+    continueGame: function() {
+      window.addEventListener("unload", this.saveState);
+      this.gameStarted = true;
     },
     resetGame: function() {
       window.removeEventListener("unload", this.saveState);
