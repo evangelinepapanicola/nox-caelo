@@ -275,6 +275,23 @@ button {
     }
 }
 
+.welcome-back {
+    color: #fff;
+    font-size: $body-font-size;
+    @media all and (max-width: $mobile) {
+        font-size: $body-font-size-mobile;
+    }
+    text-align: center;
+    button {
+        width: auto;
+        height: auto;
+        padding: 10px 20px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
 .close-popup {
     background-color: $darker-purple;
     width: 40px;

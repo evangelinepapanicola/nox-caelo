@@ -1,7 +1,7 @@
 <template>
   <div class="game">
     <transition name="fade" mode="out-in" appear>
-      <div v-if="!gameStarted" class="front" key="front">
+      <div v-if="!saveMade && !gameStarted" class="front" key="front">
         <div class="game-title container">nox caelo</div>
         <div class="container naming">
           <input
@@ -15,10 +15,18 @@
           <button v-on:click="startGame">Play</button>
         </div>
       </div>
+      <div v-else-if="!gameStarted" class="front">
+        <div class="game-title container">nox caelo</div>
+        <div class="container welcome-back">
+          <div>Welcome back!</div>
+          <button v-on:click="gameStarted = true">Continue where you left off</button>
+          <button v-on:click="resetGame">Erase data and start again</button>
+        </div>
+      </div>
     </transition>
     <transition name="bounce" mode="out-in">
       <div v-show="gameStarted" key="back">
-        <button v-on:click="resetGame">reset</button>
+        <!-- <button v-on:click="resetGame">reset</button> -->
         <div class="game-title container">nox caelo</div>
         <div id="imagebox" class="container image-box">
           <img id="scene" ref="scene" />
@@ -81,6 +89,7 @@ export default {
       playername: "",
       playerNameSet: false,
       gameStarted: false,
+      saveMade: false,
       logToggle: false
     };
   },
@@ -95,9 +104,12 @@ export default {
         this.story = new inkjs.Story(storyContent);
 
         if (window.localStorage.getItem(localStorageStateKey)) {
+          this.saveMade = true;
           this.story.state.LoadJson(
             window.localStorage.getItem(localStorageStateKey)
           );
+        } else {
+          this.saveMade = false;
         }
 
         console.log(this.story);
