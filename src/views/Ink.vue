@@ -19,7 +19,9 @@
         <div class="game-title container">nox caelo</div>
         <div class="container welcome-back">
           <div>Welcome back!</div>
-          <button v-on:click="gameStarted = true">Continue where you left off</button>
+          <button v-on:click="gameStarted = true">
+            Continue where you left off
+          </button>
           <button v-on:click="resetGame">Erase data and start again</button>
         </div>
       </div>
@@ -100,7 +102,6 @@ export default {
         return response.json();
       })
       .then(storyContent => {
-
         this.story = new inkjs.Story(storyContent);
 
         if (window.localStorage.getItem(localStorageStateKey)) {
@@ -114,10 +115,13 @@ export default {
 
         console.log(this.story);
 
-          ink.continueStory(this.story, this.storyContainer, localStorageStateKey);
+        ink.continueStory(
+          this.story,
+          this.storyContainer,
+          localStorageStateKey
+        );
 
-          window.addEventListener("unload", this.saveState);
-
+        window.addEventListener("unload", this.saveState);
       });
   },
   computed: {
@@ -135,7 +139,7 @@ export default {
   },
   methods: {
     saveState: function() {
-      console.log('called savestate');
+      console.log("called savestate");
       window.localStorage.setItem(
         localStorageStateKey,
         this.story.state.ToJson()
