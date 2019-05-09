@@ -28,7 +28,6 @@
     </transition>
     <transition name="bounce" mode="out-in">
       <div v-show="gameStarted" key="back">
-        <!-- <button v-on:click="resetGame">reset</button> -->
         <div class="game-title container">nox caelo</div>
         <div id="imagebox" class="container image-box">
           <img id="scene" ref="scene" />

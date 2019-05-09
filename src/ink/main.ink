@@ -238,9 +238,16 @@ You thank the old man for his help and leave the alleyway.
  
 = _alley
 
-{questsItems == 0: 
+{questsItems == 0 && coolSunglasses == false: 
 The old man is still stood alone in the alleyway.
 "You still here kiddo? Haven't ya got something better to do?"
+You nod, and head back to the town square.
+->town_square
+}
+
+{questsItems == 0 && coolSunglasses == true: 
+The old man is still stood alone in the alleyway.
+"Those are some neat lookin sunglasses you gotta there kiddo! Did ya come all the way back here just to show me? Haven't ya got something better to do?"
 You nod, and head back to the town square.
 ->town_square
 }
@@ -248,11 +255,11 @@ You nod, and head back to the town square.
 {questsItems == 1: 
 The old man sees you enter and smiles.
 "{players_name}! Long time no see! How've you been?"
-* [Great, I've been travelling!]
++ [Great, I've been travelling!]
 "Well well, you have been busy. Make sure you keep your weapon safe."
 You nod, and head back to the town square.
 ->town_square
-* [Exhausted, I've been travelling]
++ [Exhausted, I've been travelling]
 "Well well, you have been busy. Make sure you keep your weapon safe."
 You nod, and head back to the town square.
 ->town_square
@@ -261,11 +268,11 @@ You nod, and head back to the town square.
 {questsItems == 2: 
 The old man sees you enter and smiles.
 "{players_name}! It's good to see you again. How are you doing?"
-* [Great, I've been travelling again.]
++ [Great, I've been travelling again.]
 "Again? You're quite the adventurer huh? Well knock yourself out, as long as you keep your weapon safe. Don't let it fall into the wrong hands, okay?"
 You nod, and head back to the town square.
 ->town_square
-* [Sooooo tired, way too much travelling]
++ [Sooooo tired, way too much travelling]
 "Again? You're quite the adventurer huh? Well knock yourself out, as long as you keep your weapon safe. Don't let it fall into the wrong hands, okay?"
 You nod, and head back to the town square.
 ->town_square
@@ -834,12 +841,15 @@ You look at Parvus desparately, but he doesn't seem to be answering.
 - Before Emeralda can speak further, you see her pause for a moment as her expression changes completely. You see her go from a serious frown to a soft, neutral, almost emotionless face. It's unusual and unsettling.
 "Perhaps I am being too strict. The Tome of Charisma is such a dangerous weapon in the wrong hands, but... you two are lovely people."
 {emeralda >= 0: Emeralda stands up and heads toward the cabinet in the back of her meeting room. She undoes the complex lock, and pulls out a green, velvet covered book. She places it on the table: The Tome of Charisma.}
-{emeralda < 0: <> It then suddenly tenses up again, back to how it was before. "This is some farce. You come in to my home, accuse my friend of murder, and then blatantly lie to my face about having evidence. You should leave at once." -> negotiation_fail}
+{emeralda < 0: <> It then suddenly tenses up again, back to how it was before. "Wait, what on earth am I saying... my thoughts are clouded. You can't come here, accuse my friend of murder, and then blatantly lie to my face about having evidence. You should leave at once." -> negotiation_fail}
 
 =negotiation_fail
+You and Parvus are promptly escorted out of the building. You try to defend yourselves, but Emeralda and the guards aren't having it.
+With no Tome of Charisma, your quest comes to an end.
 
-
-->END
++ [Try again]
+~emeralda = 0
+->the_negotiation
 
 === fox_house_temp ===
 
