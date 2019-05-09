@@ -45,15 +45,21 @@ export function scrollToBottom() {
   requestAnimationFrame(step);
 }
 
-export function continueStory(story, storyContainer) {
+export function continueStory(story, storyContainer, localStorageStateKey) {
   // === FIRST ITERATION TO START STORY ===
 
   var paragraphIndex = 0;
   var delay = 50;
   document.getElementById("dialogbox").setAttribute("style", "cursor:pointer");
 
+  var paragraphText;
 
-   var paragraphText = story.currentText;
+  if (window.localStorage.getItem(localStorageStateKey)) {
+    paragraphText = story.currentText;
+  } else {
+    paragraphText = story.Continue();
+  }
+   
 
   
   console.log(paragraphText);

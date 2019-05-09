@@ -102,7 +102,7 @@ export default {
 
         console.log(this.story);
 
-          ink.continueStory(this.story, this.storyContainer);
+          ink.continueStory(this.story, this.storyContainer, localStorageStateKey);
 
           window.addEventListener("unload", this.saveState);
 
