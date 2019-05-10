@@ -882,6 +882,16 @@ This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorr
 * [Pretend you did the quest and go back]
 ->town_square
 
+=== labyrinth_of_fury_temporary ===
+"Better get going, then!"
+~location = "journey"
+You and Parvus prepare and set off on a few days of travelling. On the second day it starts to rain heavily, so you both decide to take shelter in a nearby cave.
+Now would be a good time to interrogate Parvus.
+* [What do these tomes actually do?]
+* [Why do we need the tomes?]
+* [Why did you seek my help in particular?] 
+->END
+
 //TEMPORARY
 === met_scarlet ===
 

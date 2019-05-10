@@ -11,6 +11,7 @@
             class="namebox"
             v-model="playername"
             v-on:keyup.enter="startGame"
+            maxlength="30"
           />
           <button v-on:click="startGame">Play</button>
         </div>

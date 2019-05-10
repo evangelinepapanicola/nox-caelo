@@ -24,6 +24,12 @@ DEV MODE: Choose how you'd like to test -
 ~visibleWeapon = true
 -> fox_house.the_negotiation
 
++ [Skip to the labyrinth]
+~weaponEquipped = "fists"
+~money = 2
+~visibleWeapon = true
+-> labyrinth_of_fury_temporary
+
 === normal_story ===
 ~location = "house"
 It's a quiet, uneventful night at home, as usual.
