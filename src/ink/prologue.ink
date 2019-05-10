@@ -18,6 +18,12 @@ DEV MODE: Choose how you'd like to test -
 ~visibleWeapon = true
 -> town_square
 
++ [Skip to negotiation]
+~weaponEquipped = "fists"
+~money = 2
+~visibleWeapon = true
+-> fox_house.the_negotiation
+
 === normal_story ===
 ~location = "house"
 It's a quiet, uneventful night at home, as usual.

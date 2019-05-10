@@ -348,11 +348,11 @@ Have you heard about the murders going on here?
         + + + [Tell me about the other places]
                 ->three_locations
                 
-    + + {not fox_house_temp}[What's Fox House like?]
+    + + {not fox_house}[What's Fox House like?]
     "Fox House is, despite the name, not a house full of cute fuzzy foxes." Parvus says, in a disapointed tone.
     "Fox House is where you'll find Lady Emeralda, who is closely guarding the Tome of Charisma. It'll take a lot of convincing for her to hand it over."
         * * * [Head to Fox House]
-                -> fox_house_temp
+                -> fox_house
         + + + [Tell me about the other places]
                 ->three_locations
     
@@ -798,7 +798,20 @@ Four minutes...
 
 =the_negotiation
 You take your seat opposite Emeralda and try to calm your nerves.
-"So, {players_name}. What brings you here today?"
+"Before we start, {players_name}, tell me about yourself. Forgive me if I sound rude, but you don't seem like you're... from these parts."
+
++ [Tell the truth]
+~emeralda +=1
+You're completely honest with Emeralda. You tell her about how Parvus found you in the forest, and then you ended up in Luna.
+"From a different realm you say? How unusual. If it were anyone else I wouldn't believe you. But I can tell you're being honest."
+You breathe a sigh of relief.
+
++ [Lie]
+~emeralda -=1
+You tell her you've lived in Luna for a few years, but you moved there from another continent. You try to explain how the traditions of where you grew up are very different.
+She nods, but also squints slightly and you aren't sure if she entirely believes you. "Riight. I see."
+
+- "So, {players_name}. What brings you here today?"
 
 + [We need the Tome of Charisma.]
 ~emeralda -= 1
@@ -840,8 +853,18 @@ You look at Parvus desparately, but he doesn't seem to be answering.
     "I appreciate your honesty. But I can't -"
 - Before Emeralda can speak further, you see her pause for a moment as her expression changes completely. You see her go from a serious frown to a soft, neutral, almost emotionless face. It's unusual and unsettling.
 "Perhaps I am being too strict. The Tome of Charisma is such a dangerous weapon in the wrong hands, but... you two are lovely people."
-{emeralda >= 0: Emeralda stands up and heads toward the cabinet in the back of her meeting room. She undoes the complex lock, and pulls out a green, velvet covered book. She places it on the table: The Tome of Charisma.}
-{emeralda < 0: <> It then suddenly tenses up again, back to how it was before. "Wait, what on earth am I saying... my thoughts are clouded. You can't come here, accuse my friend of murder, and then blatantly lie to my face about having evidence. You should leave at once." -> negotiation_fail}
+{emeralda >= 1: Emeralda stands up and heads toward the cabinet in the back of her meeting room. She undoes the complex lock, and pulls out a green, velvet covered book. She places it on the table: The Tome of Charisma. -> negotiation_win}
+{emeralda < 1: <> It then suddenly tenses up again, back to how it was before. "Wait, what on earth am I saying... my thoughts are clouded. You can't come here, accuse my friend of murder, and then blatantly lie to my face about having evidence. You should leave at once." -> negotiation_fail}
+
+
+=negotiation_win
+~questsItems++
+~charisma = true
+Parvus immediately takes the tome and puts it in his satchel.
+"Thank you so much, Lady Emeralda", Parvus says, grinning.
+You also thank Emeralda, but something feels... off. It was almost too easy to convince her.
+Nevertheless, you and Parvus leave Fox House, and make your way back to Luna.
+->town_square
 
 =negotiation_fail
 You and Parvus are promptly escorted out of the building. You try to defend yourselves, but Emeralda and the guards aren't having it.
@@ -850,15 +873,6 @@ With no Tome of Charisma, your quest comes to an end.
 + [Try again]
 ~emeralda = 0
 ->the_negotiation
-
-=== fox_house_temp ===
-
-~questsItems++
-~charisma = true
-This is where Fox House would be, but I haven't finished writing it yet. Sorry! Here's the quest item anyway.
-
-* [Pretend you did the quest and go back]
-->town_square
 
 === labyrinth_of_fury ===
 ~questsItems++
