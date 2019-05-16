@@ -109,7 +109,8 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
     house: require("../assets/house.png"),
     forest: require("../assets/forest.png"),
     town: require("../assets/town-square.png"),
-    journey: require("../assets/journey.png")
+    journey: require("../assets/journey.png"),
+    labyrinth: require("../assets/labyrinth.png")
   };
 
   let currentArea = story.variablesState["location"];
@@ -285,7 +286,8 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
         house: require("../assets/house.png"),
         forest: require("../assets/forest.png"),
         town: require("../assets/town-square.png"),
-        journey: require("../assets/journey.png")
+        journey: require("../assets/journey.png"),
+        labyrinth: require("../assets/labyrinth.png")
       };
 
       let currentArea = story.variablesState["location"];

@@ -6,7 +6,7 @@ You're falling for what feels like ages, almost like you're skydiving at midnigh
 
 CRASH!
 ~location = "town"
-The three of you land in a heap on a pavement, Parvus breaking your fall and Cerberus on top of you still in your arms. It's daylight. You look around and you're in a place you don't recognise... a city that looks almost like it's from medieval times. People are walking the streets, seemingly going about their daily lives just fine.
+The three of you land in a heap on a pavement, Verso breaking your fall and Cerberus on top of you still in your arms. It's daylight. You look around and you're in a place you don't recognise... a city that looks almost like it's from medieval times. People are walking the streets, seemingly going about their daily lives just fine.
 
 -> whats_goin_on
 
@@ -14,10 +14,10 @@ The three of you land in a heap on a pavement, Parvus breaking your fall and Cer
 
 + (where_are_we)[Where are we?]
 
-{got_up: "Welcome, my dear, to the kingdom of Luna!" Parvus says, with his arms outstretched. ->explore_luna|You hear some wheezing sounds coming from Parvus. Maybe you should stop crushing him before you ask questions.->whats_goin_on}
+{got_up: "Welcome, my dear, to the kingdom of Luna!" Verso says, with his arms outstretched. ->explore_luna|You hear some wheezing sounds coming from Verso. Maybe you should stop crushing him before you ask questions.->whats_goin_on}
 
-* (got_up)[Stop crushing Parvus]
-You stand up so Parvus can breathe, and put Cerberus back on the ground.
+* (got_up)[Stop crushing Verso]
+You stand up so Verso can breathe, and put Cerberus back on the ground.
 ->whats_goin_on
 
 * -> explore_luna
@@ -32,10 +32,10 @@ You stand up so Parvus can breathe, and put Cerberus back on the ground.
     "That, my friend, is a story for another time... and by that, I mean I am bound by an oath that means I cannot tell you." -> explore_luna
     
 * [What now?]
-    "We begin 'Parvus' master plan to save the people of Luna', which begins with you getting ready to go dungeoneering. I'll explain more later. For now, I suggest you go explore the town, get yourself a weapon and some... suitable armour..." he says, looking at your dog walking clothes with a face that says "trying not too look disgusted".
+    "We begin 'Verso's master plan to save the people of Luna', which begins with you getting ready to go dungeoneering. I'll explain more later. For now, I suggest you go explore the town, get yourself a weapon and some... suitable armour..." he says, looking at your dog walking clothes with a face that says "trying not too look disgusted".
     "Meet me back here by the town gates when you're ready to go!"
     
-    You stand there, still gobsmacked and coming to terms with what on earth just happened. You're not entirely sure what the right thing is to do in this situation, but your phone has no signal or battery, and you have no idea how you'd even attempt to get back home. You aren't sure what this Parvus guy's intentions are, but perhaps It's worth hearing him out.
+    You stand there, still gobsmacked and coming to terms with what on earth just happened. You're not entirely sure what the right thing is to do in this situation, but your phone has no signal or battery, and you have no idea how you'd even attempt to get back home. You aren't sure what this Verso guy's intentions are, but perhaps It's worth hearing him out.
     
     You go for a walk to clear your head. 
     -> town_square
@@ -63,7 +63,7 @@ You find yourself in the town square. {!People are roaming about, coming in and 
 
 = town_gates
 ~location = "town"
-You head back to the town gates, where Parvus is waiting for you.
+You head back to the town gates, where Verso is waiting for you.
 
 {visibleWeapon == true: "Aha! I see you got yourself a weapon. Well done. You still need some armour, though." ->town_gates_options|"Haven't you got yourself a weapon and some armour yet? Come on! Luna won't save itself."}
 
@@ -75,15 +75,15 @@ You head back to the town gates, where Parvus is waiting for you.
 = town_gates_options
 ~location = "town"
 * [I couldn't find any armour.]
-"Oh," Parvus sighs. "Luna is SO useless in the fashion department! Luckily I found this for you as backup." He hands you some folded up clothes. "There's some stalls just around the corner you can use to change."
+"Oh," Verso sighs. "Luna is SO useless in the fashion department! Luckily I found this for you as backup." He hands you some folded up clothes. "There's some stalls just around the corner you can use to change."
     * * [Change clothes]
-        You go and find the stalls Parvus was talking about and change into the "armour" he gave you. Weirdly, it's a perfect fit. You look like a brave warrior, a knight, or perhaps like you got lost on the way to Comic-Con.
+        You go and find the stalls Verso was talking about and change into the "armour" he gave you. Weirdly, it's a perfect fit. You look like a brave warrior, a knight, or perhaps like you got lost on the way to Comic-Con.
         
         "There you go! You look perfect."
         ->town_gates_options
     
 * {visibleWeapon == true} [Isn't owning this weapon sort of... illegal?]
-"Well, uhh...", Parvus stumbles over his words. "Sort of. Regular townsfolk aren't really allowed weapons. But you're no ordinary townsfolk, and besides, this is for justice! Plus, you're sort of forgetting that this whole mission is against the law, really. Taking down Scarlet is uh, kinda treason."
+"Well, uhh...", Verso stumbles over his words. "Sort of. Regular townsfolk aren't really allowed weapons. But you're no ordinary townsfolk, and besides, this is for justice! Plus, you're sort of forgetting that this whole mission is against the law, really. Taking down Scarlet is uh, kinda treason."
 -> town_gates_options
 
 * {visibleWeapon == false} [I've decided I don't need a weapon.]
@@ -324,7 +324,7 @@ You make a wish, and throw in £1.
 ~location = "town"
 {questsItems == 3: -> final_battle_info}
 
-{!"Anyway, it looks like we're ready to get going!" Parvus says excitedly.}
+{!"Anyway, it looks like we're ready to get going!" Verso says excitedly.}
 {!"So here's what you need to do. There are three legendary tomes that we can use to defeat Scarlet. The problem is, they're all hidden in 3 separate locations. I need you to go out there and retrieve them."}
 
 * [How do you know that Scarlet is bad?]
@@ -349,7 +349,7 @@ Have you heard about the murders going on here?
                 ->three_locations
                 
     + + {not fox_house}[What's Fox House like?]
-    "Fox House is, despite the name, not a house full of cute fuzzy foxes." Parvus says, in a disapointed tone.
+    "Fox House is, despite the name, not a house full of cute fuzzy foxes." Verso says, in a disapointed tone.
     "Fox House is where you'll find Lady Emeralda, who is closely guarding the Tome of Charisma. It'll take a lot of convincing for her to hand it over."
         * * * [Head to Fox House]
                 -> fox_house
@@ -374,10 +374,10 @@ Have you heard about the murders going on here?
 === ignis_arena ===
 "Alright, let's get going!"
 ~location = "journey"
-And with that, you and Parvus begin your 3 days of travelling to Ignis Arena. You travel there on horseback, stopping to rest and camp every now and then.
+And with that, you and Verso begin your 3 days of travelling to Ignis Arena. You travel there on horseback, stopping to rest and camp every now and then.
 
 On day 2, you're settled down by an open fire, with Cerberus snoozing in your lap. You wonder if you'll ever get to go home again.
-Parvus notices you deep in thought.
+Verso notices you deep in thought.
 "Thank you."
 * [For what?]
 "For helping me with all of this.
@@ -386,10 +386,10 @@ Parvus notices you deep in thought.
 * [Don't worry about it.]
 - <> It really means a lot to me. I was born and raised in Luna, the people are my family. I can't bear to watch any more die. But I know how big this task I ask of you is. You must be missing so much from your realm."
 
-You and Parvus chat for a while, and then rest before continuing on your journey.
+You and Verso chat for a while, and then rest before continuing on your journey.
 Eventually, you arrive at the huge stone walls around the entrance to Ignis Arena.
 
-"Alright, good luck!" Parvus exclaims. "I'll be waiting out here for you."
+"Alright, good luck!" Verso exclaims. "I'll be waiting out here for you."
 
 You swallow every ounce of fear inside of you, and make your way into the arena entrance.
 
@@ -711,7 +711,7 @@ Marg chuckles. "Don't worry, the fight is over. Congratulations, nobody has beat
 
 ~questsItems++
 ~warfare = true
-You say your goodbyes to Cereza and the rest of the arena folk, and make your way out to find Parvus again.
+You say your goodbyes to Cereza and the rest of the arena folk, and make your way out to find Verso again.
 
 Tome in hand, you journey back to Luna.
 
@@ -726,7 +726,7 @@ Tome in hand, you journey back to Luna.
 {weaponEquipped == "bow": ->bow_fight} {weaponEquipped == "sword": ->sword_fight} {weaponEquipped == "fists": ->fist_fight}
 
 === fox_house ===
-"Off we go then!" Parvus exclaims.
+"Off we go then!" Verso exclaims.
 ~location = "journey"
 After some preparation, the two of you set out on your journey to Fox House.
 -> who_is_she
@@ -751,10 +751,10 @@ During your journey, you try to find out more about Lady Emeralda.
 = fox_house_arrival
 As you're talking, you arrive at some huge, towering iron gates, where two guards are stood with one guard dog. Cerberus barks at the sight of the dog.
 "HALT!" One of the guards yells. "What is your business here?"
-"We've travelled from Luna to speak with Lady Emeralda, please" Parvus exclaims.
+"We've travelled from Luna to speak with Lady Emeralda, please" Verso exclaims.
 "Is she expecting you?"
-"No, well - we weren't sure how long travel would take, and we did not want to waste Lady Emeralda's time," Parvus explains. "We just request half an hour of her time, please, it is of high importance."
-"If it is so important, might I ask why you wish to speak with milady?" The guard looks at you both, curiously. Parvus turns to you.
+"No, well - we weren't sure how long travel would take, and we did not want to waste Lady Emeralda's time," Verso explains. "We just request half an hour of her time, please, it is of high importance."
+"If it is so important, might I ask why you wish to speak with milady?" The guard looks at you both, curiously. Verso turns to you.
 
 * [Luna is in grave danger. Scarlet has turned against her people.]
 The guards look at eachother, and give eachother a nod. "Alright, if it is aid you seek, and your people are in danger - we shall allow you to speak with milady."
@@ -763,16 +763,16 @@ The guards look at eachother, and give eachother a nod. "Alright, if it is aid y
 
 * [We need the Tome of Charisma.]
 The guard chuckles. "You need it do you? I hope you realise we don't just give away the tome willy nilly. Many people come daily asking for the tome purely for their own greedy, selfish reasons. I suggest you leave."
-"Wait!" Parvus says. "Please, this isn't a greedy request. Luna is in grave danger. Only the Tome's power can save it."
+"Wait!" Verso says. "Please, this isn't a greedy request. Luna is in grave danger. Only the Tome's power can save it."
 The guards glance at eachother.
 "Alright. We'll let you through. But if this is all some farce, you'll be in deep trouble, I hope you know that."
-"We understand." Parvus says.
+"We understand." Verso says.
 ->inside_fox_house
 
 = inside_fox_house
 As you enter the posh looking mansion that is Fox House, a lady dressed in a smart suit greets you both and leads you into a waiting area.
-While you sit in the fancy, plush seats of the waiting area there is an awkward silence. You can read the nervousness on Parvus' face.
-After 5 minutes or so pass, Parvus stands up, "I'm gonna go use the bathroom, I'll be back in a few moments..." he says quietly. The well dressed lady escorts him away.
+While you sit in the fancy, plush seats of the waiting area there is an awkward silence. You can read the nervousness on Verso's face.
+After 5 minutes or so pass, Verso stands up, "I'm gonna go use the bathroom, I'll be back in a few moments..." he says quietly. The well dressed lady escorts him away.
 As you sit there alone, nervously, the door to Lady Emeralda's meeting room creaks open and a tall gentleman with a curly moustache leaves, chuckling to himself. You then see a woman poke her head around the door, with curly red hair and a green dress with a pattern of little foxes printed on - Lady Emeralda.
 "I believe you are next inline to see me?" She asks.
 
@@ -783,10 +783,10 @@ As you sit there alone, nervously, the door to Lady Emeralda's meeting room crea
 * [Yes, my friend is supposed to be joining us, but he is using the facilities.]
 "Oh", Emeralda says, with a serious look on her face. "Well, since you are the only ones here at present, I can wait 5 minutes."
 A minute passes.
-Two minutes pass. Still no sign of Parvus.
+Two minutes pass. Still no sign of Verso.
 Three minutes...
 Four minutes...
-5 minutes pass, and Parvus is still nowhere to be seen. Lady Emeralda starts to look impatient.
+5 minutes pass, and Verso is still nowhere to be seen. Lady Emeralda starts to look impatient.
 * * [I'm sorry, let's start without him.]
     "Okay, come on in then.", she says. You walk up and shake her hand, introducing yourself.
     "Nice to meet you, {players_name}. Have a seat."
@@ -802,7 +802,7 @@ You take your seat opposite Emeralda and try to calm your nerves.
 
 + [Tell the truth]
 ~emeralda +=1
-You're completely honest with Emeralda. You tell her about how Parvus found you in the forest, and then you ended up in Luna.
+You're completely honest with Emeralda. You tell her about how Verso found you in the forest, and then you ended up in Luna.
 "From a different realm you say? How unusual. If it were anyone else I wouldn't believe you. But I can tell you're being honest."
 You breathe a sigh of relief.
 
@@ -826,17 +826,17 @@ Emeralda looks at you inquisitvely. "Really, go on."
 ~emeralda -= 1
 Emeralda chuckles. "Well well, you do realise you are speaking about a dear friend of mine?"
 
-- You explain to Emeralda what Parvus had told you, about the murders in Luna and how you think Scarlet is to blame.
+- You explain to Emeralda what Verso had told you, about the murders in Luna and how you think Scarlet is to blame.
 "But where is your proof? This all sounds like a conspiracy to me."
 Before you can respond, you both hear a knock on the door.
 "Hello? Who's there?" Emeralda pipes up.
-You hear Parvus' voice behind the door quietly say "Um, it's Parvus. I'm sorry I'm late! But I have tea for everyone."
-You explain to Emeralda that Parvus is who you were waiting for.
-"Come in!" Emeralda says, and Parvus enters the room timidly, holding a tray with teacups and saucers.
-Parvus puts the tray down on the table and sits down in the seat next to you. "Your lovely assisstant was feeling unwell, so I offered to bring the tea through instead."
+You hear Verso's voice behind the door quietly say "Um, it's Verso. I'm sorry I'm late! But I have tea for everyone."
+You explain to Emeralda that Verso is who you were waiting for.
+"Come in!" Emeralda says, and Verso enters the room timidly, holding a tray with teacups and saucers.
+Verso puts the tray down on the table and sits down in the seat next to you. "Your lovely assisstant was feeling unwell, so I offered to bring the tea through instead."
 "How kind of you" Emeralda says before taking a long sip of tea.
 "Now, back to the discussion. What proof do you have that Scarlet is committing these crimes against her own people?"
-You look at Parvus desparately, but he doesn't seem to be answering.
+You look at Verso desparately, but he doesn't seem to be answering.
 + [She is the only one capable of covering it up]
     ~emeralda -= 1
     "How do you know that for sure? You mean to tell me that nobody in Luna, absolutely nobody, is capable of committing a murder with little to no evidence besides Scarlet? That's a strong claim to make."
@@ -860,14 +860,14 @@ You look at Parvus desparately, but he doesn't seem to be answering.
 =negotiation_win
 ~questsItems++
 ~charisma = true
-Parvus immediately takes the tome and puts it in his satchel.
-"Thank you so much, Lady Emeralda", Parvus says, grinning.
+Verso immediately takes the tome and puts it in his satchel.
+"Thank you so much, Lady Emeralda", Verso says, grinning.
 You also thank Emeralda, but something feels... off. It was almost too easy to convince her.
-Nevertheless, you and Parvus leave Fox House, and make your way back to Luna.
+Nevertheless, you and Verso leave Fox House, and make your way back to Luna.
 ->town_square
 
 =negotiation_fail
-You and Parvus are promptly escorted out of the building. You try to defend yourselves, but Emeralda and the guards aren't having it.
+You and Verso are promptly escorted out of the building. You try to defend yourselves, but Emeralda and the guards aren't having it.
 With no Tome of Charisma, your quest comes to an end.
 
 + [Try again]
@@ -885,11 +885,81 @@ This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorr
 === labyrinth_of_fury_temporary ===
 "Better get going, then!"
 ~location = "journey"
-You and Parvus prepare and set off on a few days of travelling. On the second day it starts to rain heavily, so you both decide to take shelter in a nearby cave.
-Now would be a good time to interrogate Parvus.
+You and Verso prepare and set off on a few days of travelling. On the second day it starts to rain heavily, so you both decide to take shelter in a nearby cave.
+->interrogate_verso
+
+=interrogate_verso
+{!Now would be a good time to interrogate Verso.|Now would be a good time to interrogate Verso.|Now would be a good time to interrogate Verso.}
+
 * [What do these tomes actually do?]
+Verso hears you loud and clear - but does not look you in the eye as he responds, "On their own, the tomes have little use. But with all three, the wielder of the three tomes can transform into a powerful being."
+->interrogate_verso
+
 * [Why do we need the tomes?]
-* [Why did you seek my help in particular?] 
+"In order to get through to Scarlet... in order for her to even take notice of us, we need to have the charisma to persuade her to own up to her actions, the perseverance to push through anything she throws at us, and with the Tome of Warfare we will have the power to defend ourselves if we need to."
+->interrogate_verso
+
+* [Why did you seek my help in particular?]
+"I travelled far and wide, I cried out to anyone and everyone for help and nobody believed me. Nobody was willing to help. Except you."
+->interrogate_verso
+
+* ->the_labyrinth
+
+=the_labyrinth
+Eventually the rain stops, and you're both able to continue on the rest of your journey. 
+After some further travelling, you find your way through a tall rainforest and approach some huge, tall stone walls.
+You notice what appears to be a green lizard man perched on a chair by the entrance to the labyrinth. 
+You approach him. 
+* [Who are you?]
+"You may call me Rax... welcome to the labyrinthhh..." he says, in a raspy, hissing voice. "What do you sseek..."
+"We're here for the Tome of Perseverance" Verso says.
+"The tome...", the lizard hisses. "Many come into the labyrinth sseeking tome... many do not return..." he trails off. "You may enter, sshould you wissh to try and claimm it."
+Verso looks at you with a serious expression. "I'll be waiting for you out here."
+And with that, you make your way into the Labyrinth of Fury.
+->in_the_maze
+
+=in_the_maze
+~location = "labyrinth"
+Ignoring dead ends, you can go left or right. Which way do you go?
++ (first_left)[Left]
+You ignore the dead end to your left and walk past it. You can go left or proceed onward round the bend to the right.
++ + [Left]
+You go left, walk down the corridor and continue onward walking around all the twists and turns, and you find yourself in a large, open room full of more dust and cobwebs.
+-> maze_complete
++ + [Forward/right]
+You go around the bend and push onwards. Unfortunately you find yourself at a dead end.
++ + + [Go back]
+->first_left
+
++ + [Go back]
+-> in_the_maze
+
++ (first_right)[Right]
+You go right, ignoring the dead end ahead of you and turn right again. You walk through the small corridor, turn left. You ignore the two dead ends (the one in front of you and the one to your left). You go right around the bend into a long corridor, with a dead end to your left and an opening into another corridor to your right.
++ + [Keep going forwards]
+You decide to press on... but you end up at a dead end.
++ + + [Go back]
+-> first_right
++ + (next_corridor)[Go left into the next corridor]
+You go left into another corridor. Do you go left or right?
++ + + [Go left]
+You go left down the corridor, and find yourself at a dead end, full of skeletons...
++ + + + [Go back]
+-> next_corridor
++ + + [Go right]
+You go right down the corridor, and find yourself at a dead end, full of skeletons...
++ + + + [Go back]
+-> next_corridor
++ + + [Go back]
+-> first_right
++ + [Go back]
+-> in_the_maze
+
+=maze_complete
+In the center of the room, you see... Rax? You call out to him.
+The lizard hisses. "No... I am Trax... brave one, you have found the ccenter of the labyrinthhh...", he looks at you and holds out a blue, velvety coloured book. "You may have it... the tome of perseverance..."
+You approach Trax slowly, and grip the opposite end of the tome in your hands. As you hold the tome, you start feeling light, as if you're floating upwards like a balloon. You look at your arms and you can see yourself disintegrating, as if you're scattering into tiny pieces. Your vision fades to white for a minute.
+As your vision comes back, 
 ->END
 
 //TEMPORARY
