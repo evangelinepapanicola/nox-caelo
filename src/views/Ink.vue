@@ -123,19 +123,6 @@ export default {
 
       });
   },
-  computed: {
-    isDisabled: function() {
-      let p = document.querySelectorAll("p.show")[1];
-      if (
-        this.gameStarted == true &&
-        document.getElementById("log").contains(p) == true
-      ) {
-        return false;
-      } else {
-        return true;
-      }
-    }
-  },
   methods: {
     saveState: function() {
       console.log("called savestate");
