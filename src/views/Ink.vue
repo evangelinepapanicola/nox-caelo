@@ -76,6 +76,7 @@
 <script>
 import * as inkjs from "inkjs";
 import * as ink from "../libs/ink";
+import {SCORM} from 'pipwerks-scorm-api-wrapper';
 
 console.log(inkjs);
 console.log(ink);
@@ -96,6 +97,7 @@ export default {
     };
   },
   mounted: function() {
+    SCORM.init();
     this.storyContainer = this.$refs.story;
     fetch("story.json")
       .then(response => {
