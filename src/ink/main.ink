@@ -957,9 +957,34 @@ You go right down the corridor, and find yourself at a dead end, full of skeleto
 
 =maze_complete
 In the center of the room, you see... Rax? You call out to him.
-The lizard hisses. "No... I am Trax... brave one, you have found the ccenter of the labyrinthhh...", he looks at you and holds out a blue, velvety coloured book. "You may have it... the tome of perseverance..."
+The lizard hisses. "No... I am Trax... brave one, you have found the ccentre of the labyrinthhh...", he looks at you and holds out a blue, velvety coloured book. "You may have it... the tome of perseverance..."
 You approach Trax slowly, and grip the opposite end of the tome in your hands. As you hold the tome, you start feeling light, as if you're floating upwards like a balloon. You look at your arms and you can see yourself disintegrating, as if you're scattering into tiny pieces. Your vision fades to white for a minute.
-As your vision comes back, 
+As your vision comes back, you feel your body rebuild itself as you land back outside the labyrinth, holding the Tome of Perseverance.
+Rax nods his head as you appear in front of him. "Sso you did it... congratulationss... you musst have met my brother, Trax... "
+->talk_with_rax
+= talk_with_rax
+* [I sure did]
+"He'ss been guarding the tome for the past 200 yearss..."
+-> talk_with_rax
+* [How did I get back out here?]
+"Trax used his powerss to teleport you..."
+* * [His... powers?]
+"Yess... Trax and I have sspecial abilitiess. We have made an oath to maintain peacce in thesse landss, and in exchange the god of persseverance has granted uss these powerss..."
+->talk_with_rax
+
+* -> rax_questions
+
+=rax_questions
+
+"It wass good to meet you, brave one... what may I call you..."
+* [{players_name}.]
+"{players_name}... very well then..."
+"Before you leave, {players_name}... what do you intend to do with the tome?"
+* * [Answer honestly]
+* * [Lie]
+
+- - Before you can respond, Verso interrupts - "
+
 ->END
 
 //TEMPORARY
