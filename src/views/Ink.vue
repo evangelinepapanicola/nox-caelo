@@ -23,7 +23,7 @@
           <button v-on:click="continueGame">
             Continue where you left off
           </button>
-          <button v-on:click="resetGame">Erase data and start again</button>
+          <!-- <button v-on:click="resetGame">Erase data and start again</button> -->
         </div>
       </div>
     </transition>
@@ -76,8 +76,9 @@
 <script>
 import * as inkjs from "inkjs";
 import * as ink from "../libs/ink";
-import {SCORM} from 'pipwerks-scorm-api-wrapper';
+import SCORM from "../libs/scorm";
 
+console.log(SCORM);
 console.log(inkjs);
 console.log(ink);
 const localStorageStateKey = "noxcaelo-state";
@@ -93,11 +94,11 @@ export default {
       playerNameSet: false,
       gameStarted: false,
       saveMade: false,
-      logToggle: false
+      logToggle: false,
+      scorm: null
     };
   },
   mounted: function() {
-    SCORM.init();
     this.storyContainer = this.$refs.story;
     fetch("story.json")
       .then(response => {
@@ -106,11 +107,32 @@ export default {
       .then(storyContent => {
         this.story = new inkjs.Story(storyContent);
 
-        if (window.localStorage.getItem(localStorageStateKey)) {
+        // if (window.localStorage.getItem(localStorageStateKey)) {
+        //   this.saveMade = true;
+        //   this.story.state.LoadJson(
+        //     window.localStorage.getItem(localStorageStateKey)
+        //   );
+        // } else {
+        //   this.saveMade = false;
+        // }
+
+        this.scorm = new SCORM();
+
+        let scormData = this.scorm.getSuspendData(localStorageStateKey);
+        console.log(JSON.parse(scormData));
+        try {
+          JSON.parse(scormData);
+          console.log(JSON.parse(scormData));
+        } catch (e) {
+          scormData = null
+        }
+
+        if (scormData != null) {
           this.saveMade = true;
           this.story.state.LoadJson(
-            window.localStorage.getItem(localStorageStateKey)
+            JSON.parse(scormData)
           );
+          console.log(JSON.parse(scormData));
         } else {
           this.saveMade = false;
         }
@@ -122,13 +144,17 @@ export default {
           this.storyContainer,
           localStorageStateKey
         );
-
       });
   },
   methods: {
     saveState: function() {
       console.log("called savestate");
-      window.localStorage.setItem(
+      // window.localStorage.setItem(
+      //   localStorageStateKey,
+      //   this.story.state.ToJson()
+      // );
+
+      this.scorm.setSuspendData(
         localStorageStateKey,
         this.story.state.ToJson()
       );

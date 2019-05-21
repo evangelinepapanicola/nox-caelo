@@ -1,4 +1,7 @@
 import * as inkjs from "inkjs";
+import SCORM from "../libs/scorm";
+
+const scorm = new SCORM();
 
 // var storyContainer = document.getElementById('story');
 // let story;
@@ -54,7 +57,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
 
   var paragraphText;
 
-  if (window.localStorage.getItem(localStorageStateKey)) {
+  if (scorm.getSuspendData(localStorageStateKey)) {
     paragraphText = story.currentText;
   } else {
     paragraphText = story.Continue();

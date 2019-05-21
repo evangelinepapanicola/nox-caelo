@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="microsite-scorm" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adl_cp_rootv1p1">
+
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+	</metadata>
+
+	<organizations default="microsite">
+		<organization identifier="microsite" structure="hierarchical">
+			<title>nox caelo</title>
+			<item identifier="course" isvisible="true" identifierref="microsite1">
+				<title>nox caelo</title>
+			</item>
+		</organization>
+	</organizations>
+
+	<resources>
+		<resource identifier="microsite1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+			<file href="index.html"/>
+		</resource>
+	</resources>
+
+</manifest>
