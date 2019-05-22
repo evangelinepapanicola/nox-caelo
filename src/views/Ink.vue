@@ -129,9 +129,7 @@ export default {
 
         if (scormData != null) {
           this.saveMade = true;
-          this.story.state.LoadJson(
-            JSON.parse(scormData)
-          );
+          this.story.state.LoadJson(scormData);
           console.log(JSON.parse(scormData));
         } else {
           this.saveMade = false;

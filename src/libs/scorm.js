@@ -17,7 +17,7 @@ export default class SCORM {
 
     this.complete();
 
-    window.onunload = this.scorm.quit;
+    //window.onunload = this.scorm.quit;
   }
 
   getSuspendData(key = null) {
