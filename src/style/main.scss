@@ -340,6 +340,9 @@ button {
         font-weight: 700;
         margin-bottom: 30px;
     }
+    @media all and (max-width: $mobile) {
+
+    }
 }
 
 /* width */
@@ -361,8 +364,7 @@ button {
 
 .overlay {
     width: 100%;
-    min-height: 100%;
-    height: auto;
+    height: 100%;
     background-color: $darkest-purple;
     position: absolute;
     top: 0;
@@ -408,6 +410,11 @@ button {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.italic {
+    font-family: 'Petit Formal Script', cursive;
+    font-weight: normal;
 }
   
 

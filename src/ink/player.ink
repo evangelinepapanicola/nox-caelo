@@ -18,3 +18,5 @@ VAR emeralda = 0
 VAR perseverance = false
 VAR warfare = false
 VAR charisma = false
+VAR scarletletter = false
+VAR favouriteFood = ""

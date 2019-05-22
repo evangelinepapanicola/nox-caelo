@@ -28,7 +28,14 @@ DEV MODE: Choose how you'd like to test -
 ~weaponEquipped = "fists"
 ~money = 2
 ~visibleWeapon = true
--> labyrinth_of_fury_temporary
+-> labyrinth_of_fury
+
++ [Skip to town square (With 2 quest items)]
+~weaponEquipped = "fists"
+~money = 2
+~visibleWeapon = true
+~questsItems = 2
+-> town_square
 
 === normal_story ===
 ~location = "house"

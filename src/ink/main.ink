@@ -42,6 +42,19 @@ You stand up so Verso can breathe, and put Cerberus back on the ground.
     
 === town_square === 
 ~location = "town"
+
+{questsItems == 2: 
+As you re-enter Luna, a small man carrying a large sack runs up to you, who you can only assume is the postman.
+"{players_name}! {players_name}! I have post for you!" He hands you a letter and immediately takes off in another direction.
+Wary, you look down at the letter in your hands. It's in a fancy looking envelope with a wax seal. You open it.
+"Dear {players_name}, #italic 
+Word has come to me that you are a new citizen here in Luna. I would love to meet you. #italic
+Therefore I would like to invite you to the royal palace for a chat over some tea. #italic
+Yours sincerely, #italic
+Scarlet." #italic
+You pocket the letter for later.
+~scarletletter = true
+}
 You find yourself in the town square. {!People are roaming about, coming in and out of shops and chatting.}
 
 + [Investigate the fountain]
@@ -60,6 +73,9 @@ You find yourself in the town square. {!People are roaming about, coming in and 
 
 {questsItems == 0: ->town_gates}
 {questsItems > 0: -> dungeons_info}
+
+* {scarletletter == true} [Head to the Royal Palace]
+-> royal_palace
 
 = town_gates
 ~location = "town"
@@ -83,7 +99,7 @@ You head back to the town gates, where Verso is waiting for you.
         ->town_gates_options
     
 * {visibleWeapon == true} [Isn't owning this weapon sort of... illegal?]
-"Well, uhh...", Verso stumbles over his words. "Sort of. Regular townsfolk aren't really allowed weapons. But you're no ordinary townsfolk, and besides, this is for justice! Plus, you're sort of forgetting that this whole mission is against the law, really. Taking down Scarlet is uh, kinda treason."
+"Well, uhh...", Verso stumbles over his words. "Sort of. Regular townsfolk aren't really allowed weapons. But you're no ordinary townsfolk, and besides, this is for justice! Plus, you're sort of forgetting that this whole mission is against the law, really. Taking down Scarlet is uh, kinda treason. She is the queen after all."
 -> town_gates_options
 
 * {visibleWeapon == false} [I've decided I don't need a weapon.]
@@ -304,7 +320,7 @@ The boy snarls, "I'm just doing my job, leave me be!"
 
 = _fountain
 
-You look at the fountain. It's a pretty standard fountain, with a statue of {met_scarlet: Scarlet|a pretty lady} holding a wine glass (which is where the water is coming from)
+You look at the fountain. It's a pretty standard fountain, with a statue of {royal_palace.inside_the_palace: Scarlet|a pretty lady} holding a wine glass (which is where the water is coming from)
 
 * [Scoop some coins out of the water]
 ~money = money+2
@@ -875,14 +891,6 @@ With no Tome of Charisma, your quest comes to an end.
 ->the_negotiation
 
 === labyrinth_of_fury ===
-~questsItems++
-~perseverance = true
-This is where the Labyrinth of Fury would be, but I haven't written it yet. Sorry! Here's the quest item anyway.
-
-* [Pretend you did the quest and go back]
-->town_square
-
-=== labyrinth_of_fury_temporary ===
 "Better get going, then!"
 ~location = "journey"
 You and Verso prepare and set off on a few days of travelling. On the second day it starts to rain heavily, so you both decide to take shelter in a nearby cave.
@@ -961,6 +969,7 @@ The lizard hisses. "No... I am Trax... brave one, you have found the ccentre of 
 ~questsItems++
 ~perseverance = true
 You approach Trax slowly, and grip the opposite end of the tome in your hands. As you hold the tome, you start feeling light, as if you're floating upwards like a balloon. You look at your arms and you can see yourself disintegrating, as if you're scattering into tiny pieces. Your vision fades to white for a minute.
+~location = "journey"
 As your vision comes back, you feel your body rebuild itself as you land back outside the labyrinth, holding the Tome of Perseverance.
 Rax nods his head as you appear in front of him. "Sso you did it... congratulationss... you musst have met my brother, Trax... "
 ->talk_with_rax
@@ -987,15 +996,48 @@ Rax nods his head as you appear in front of him. "Sso you did it... congratulati
 
 - - Before you can respond, Verso interrupts - "We're using it to save the people of Luna. Now, lets go, {players_name}."
 Rax gives Verso a suspicious glance, and as you both turn around and walk off, you feel like Rax's eyes are pressing into your back.
+You and Verso journey back to Luna, talking very little on the way back.
+->town_square
 
+=== royal_palace ===
+You walk up the long, winding path to the royal palace using the directions given on the letter from Scarlet.
+As you approach the palace gates, two guards stop you.
+->royal_guards
+= royal_guards
+"Halt! What is your business with the queen?"
++ [We're best buds]
+You try to convince the guards that you and Scarlet are best friends. They ignore you and tell you to stop wasting your time.
+->royal_guards
++ [Present letter]
+You show the guards your letter from Scarlet, along with the official wax seal. They nod.
+"You may proceed."
+-> inside_the_palace
+=inside_the_palace
+As you enter the palace, you are greeted by a tall man with pointy ears in a waistcoat.
+"Ah, {players_name} is it? I shall escort you to the tea room."
+The palace is huge and luxurious, the floors and walls all made of marble and a beautiful smell of vanilla throughout. You're walking for what feels like forever, up long spiral staircases and through long corridors.
+Eventually, you arrive at two huge doors. The man opens them and gestures for you to enter. "After you," he says.
+You enter into a room with a long dining table. The only other person in the room is a lady with long, dark red hair in a black, long sleeved dress. You assume this must be Scarlet.
+"Ah, {players_name}, yes, do come in.", the lady says with a soft voice. {coolSunglasses == true: "Is it too bright in here? I can turn the lights down if you want, so you can take those sunglasses off."} The man who escorted you here closes the door behind you.
+"Please, take a seat."
+You take a seat at the dining table.
+"Luna isn't a particularly large kingdom, so I like to greet every person who moves here formally, over some tea. Now, before we chat, I must ask, what is your favourite food?"
+* [Apple pie]
+~favouriteFood = "applepie"
+* [Cinnamon swirls]
+~favouriteFood = "cinnamon"
+* [Chocolate cake]
+~favouriteFood = "cake"
+* [Pizza]
+~favouriteFood = "pizza"
+- "Perfect, that can be arranged," and she snaps her fingers. Seconds later, the doors open and five people in chef's clothing enter, carrying {favouriteFood == "applepie": plates upon plates of steaming hot apple pie. The smell of freshly cooked pastry and warm apple filling wafts toward you.}{favouriteFood == "cinnamon": plates upon plates of freshly baked cinnamon swirls. The smell of baked cinnamon, sugar and sweet pastry immediately wafts toward you.}{favouriteFood == "cake": plates upon plates of fudgy chocolate cake. It's still hot, and the smell of hot chocolate pudding immediately wafts toward you.}{favouriteFood == "pizza": plates upon plates of freshly cooked pizza, with all varieties of toppings. The smell of hot pizza dough and melted cheese immediately wafts toward you.}
+You wonder what the extent of her powers are exactly, if she's able to instantly summon your favourite food like this.
+The chefs pour you both cups of tea. "Perfect, dig in, {players_name}!" Scarlet says, and immediately starts eating.
+After finishing her food, Scarlet leans forward, placing her chin in her hands and asks, "So, have you made any friends in Luna yet?"
+* [Tell her about Verso]
+* [None]
 
-
-->END
-
-//TEMPORARY
-=== met_scarlet ===
-
-->END
+- -> END
 
 === final_battle_info ===
 
