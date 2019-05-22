@@ -958,6 +958,8 @@ You go right down the corridor, and find yourself at a dead end, full of skeleto
 =maze_complete
 In the center of the room, you see... Rax? You call out to him.
 The lizard hisses. "No... I am Trax... brave one, you have found the ccentre of the labyrinthhh...", he looks at you and holds out a blue, velvety coloured book. "You may have it... the tome of perseverance..."
+~questsItems++
+~perseverance = true
 You approach Trax slowly, and grip the opposite end of the tome in your hands. As you hold the tome, you start feeling light, as if you're floating upwards like a balloon. You look at your arms and you can see yourself disintegrating, as if you're scattering into tiny pieces. Your vision fades to white for a minute.
 As your vision comes back, you feel your body rebuild itself as you land back outside the labyrinth, holding the Tome of Perseverance.
 Rax nods his head as you appear in front of him. "Sso you did it... congratulationss... you musst have met my brother, Trax... "
@@ -983,7 +985,10 @@ Rax nods his head as you appear in front of him. "Sso you did it... congratulati
 * * [Answer honestly]
 * * [Lie]
 
-- - Before you can respond, Verso interrupts - "
+- - Before you can respond, Verso interrupts - "We're using it to save the people of Luna. Now, lets go, {players_name}."
+Rax gives Verso a suspicious glance, and as you both turn around and walk off, you feel like Rax's eyes are pressing into your back.
+
+
 
 ->END
 
