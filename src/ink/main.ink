@@ -294,6 +294,19 @@ You nod, and head back to the town square.
 ->town_square
 }
 
+{questsItems == 3: 
+The old man sees you enter and smiles.
+"{players_name}! Great to see you! How are you doing?"
++ [Great, I've done my last lot of travelling!]
+"Wow! You must be sad It's over now. Well, good luck with whatever you do next!"
+You nod, and head back to the town square.
+->town_square
++ [Sooooo exhausted, glad my travelling is finally over.]
+"Wow! No more travelling eh? Well, good luck with whatever you do next!"
+You nod, and head back to the town square.
+->town_square
+}
+
 = _paperboy
 
 {You notice a boy|The boy continues} yelling in the middle of the square, clutching a pile of newspapers. "MURDERS ON THE RISE! MURDERS ON THE RISE! IS ANYBODY SAFE? FIND OUT IN TODAY'S ISSUE OF THE DAILY LUNA!"
