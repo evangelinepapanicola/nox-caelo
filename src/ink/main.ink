@@ -43,7 +43,7 @@ You stand up so Verso can breathe, and put Cerberus back on the ground.
 === town_square === 
 ~location = "town"
 
-{questsItems == 2: 
+{questsItems == 2 && not royal_palace: 
 As you re-enter Luna, a small man carrying a large sack runs up to you, who you can only assume is the postman.
 "{players_name}! {players_name}! I have post for you!" He hands you a letter and immediately takes off in another direction.
 Wary, you look down at the letter in your hands. It's in a fancy looking envelope with a wax seal. You open it.
@@ -74,7 +74,7 @@ You find yourself in the town square. {!People are roaming about, coming in and 
 {questsItems == 0: ->town_gates}
 {questsItems > 0: -> dungeons_info}
 
-* {scarletletter == true} [Head to the Royal Palace]
+* {scarletletter == true && not royal_palace} [Head to the Royal Palace]
 -> royal_palace
 
 = town_gates
@@ -1000,6 +1000,7 @@ You and Verso journey back to Luna, talking very little on the way back.
 ->town_square
 
 === royal_palace ===
+{visibleWeapon == true: Remembering that weapons are illegal in Luna, you make sure yours is fully obscured before heading to the Palace.}
 You walk up the long, winding path to the royal palace using the directions given on the letter from Scarlet.
 As you approach the palace gates, two guards stop you.
 ->royal_guards
@@ -1035,9 +1036,43 @@ You wonder what the extent of her powers are exactly, if she's able to instantly
 The chefs pour you both cups of tea. "Perfect, dig in, {players_name}!" Scarlet says, and immediately starts eating.
 After finishing her food, Scarlet leans forward, placing her chin in her hands and asks, "So, have you made any friends in Luna yet?"
 * [Tell her about Verso]
+You tell her about Verso, only giving vague details. 
+"Verso..." she says, with a stern look on her face. "I knew a Verso once."
+* * [Tell me more]
+    Scarlet pauses for a bit before responding, as if she's debating whether or not to tell you. "The Verso I knew... I haven't seen him in years. He was one of the Royal Mercenaries."
+* * * [What happened?]
+        "He...", she stumbles over her words for a moment. "I had to let him go."
+        "As a Royal Mercenary, you are allowed to carry a weapon - something that is illegal for regular citizens. Verso abused this power."
+        "He became jealous of the other mercenaries, who were often praised for their achievements. He started killing innocent people, claiming that they were criminals. All to make himself look like a hero."
+        "Eventually we found out, and he was sent to prison, of course."
+        "Anyway," Scarlet sighs. "I'm sorry to drop such an old, dark story on you like that. You must think I'm an awful leader, to let something like that happen."
+        * * * * [It wasn't your fault]
+                Scarlet forces a smile. "Now, you probably have things to do - I'll show you out."
+                ->time_to_leave
+        * * * * [...]
+                "So... I expect you have things to do. I'll show you out."
+                ->time_to_leave
+* * * [Oh... anyway]
+        "Yes, I guess it's time for you to get going. I expect you have things to do, places to see, people to meet!"
+        ->time_to_leave
+* * [What a funny coincidence!]
+She gives out a light chuckle, but does not look you in the eye. "Yeah, funny." 
+->other_friends
 * [None]
+"Oh really, what a shame. You must be quite lonely." she says, giving you a look of pity.
+->other_friends
 
-- -> END
+=other_friends
+"But... anyway, you surely must have made other friends, no?"
+"Perhaps some of the people you've come across already consider you a friend, while you may only think of them as an acquaintance." 
+"Plus, I may be busy, but you can always consider me a friend." Scarlet smiles brightly.
+Scarlet continues chatting with you, and you tell her about all the people you've met so far along your journey. Eventually, you realise you should probably get going.
+->time_to_leave
+
+=time_to_leave
+You and Scarlet keep chatting as she walks you back to the front of the palace.
+"Thanks so much for coming, {players_name}. It was truly lovely to meet you." She says politely, and you nod your head before making your way back to the town square.
+->town_square
 
 === final_battle_info ===
 
