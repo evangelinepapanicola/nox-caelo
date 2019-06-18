@@ -307,7 +307,22 @@ You nod, and head back to the town square.
 ->town_square
 }
 
+= _paperboy_sunglasses
+
+"Wow!" the boy gasps. "Those sunglasses are sooooo cooooool!"
+    "Can I have them? Can I? Pleaaaase?" he begs.
+    + [Sure]
+    You hand the boy your sunglasses.
+    "Oh my gosh, you're the best!"
+    ~coolSunglasses = false
+    + (refused)[No way]
+    "Awwww...", he says, disapointed.
+
+- ->->
+
 = _paperboy
+
+{coolSunglasses == true && visited_paperboy && not refused: -> _paperboy_sunglasses ->}
 
 {You notice a boy|The boy continues} yelling in the middle of the square, clutching a pile of newspapers. "MURDERS ON THE RISE! MURDERS ON THE RISE! IS ANYBODY SAFE? FIND OUT IN TODAY'S ISSUE OF THE DAILY LUNA!"
 
@@ -327,7 +342,7 @@ You ask the boy about the murders he's yelling about.
 The boy snarls, "I'm just doing my job, leave me be!"
 -> _paperboy
 
-+ [Take your leave]
++ (visited_paperboy) [Take your leave]
 ->town_square
 
 
@@ -442,7 +457,7 @@ You approach the desk. The receptionist doesn't seem to notice your presence.
             You tell the lady you're sure you'll fight. Just as you start to tell her you don't have a sponsor yet, you feel a hand on your shoulder. 
             "I'll sponsor." You look up, and a tall, muscular lady covered in scars, with a buzzcut, silver hair and dark, smudged makeup is standing by you. She gives you a mischievous grin. 
             The receptionist sighs. "Alrighty then, your spot's at 5pm. Don't be late."
-            ->talk_with_cereza
+            ->talk_with_sengva
         
 * [I want to fight.]
 The receptionist looks you up and down. "Uh, okay, well here's the list of challengers and rewards." She hands you a crumpled up piece of paper.
@@ -458,17 +473,17 @@ The lady looks at you, eyes wide, "Uh, excuse me? Oh little one... that's the re
             You tell the lady you're sure you'll fight. Just as you start to tell her you don't have a sponsor yet, you feel a hand on your shoulder. 
             "I'll sponsor." You look up, and a tall, muscular lady covered in scars, with a buzzcut, silver hair and dark, smudged makeup is standing by you. She gives you a mischievous grin. 
             The receptionist sighs. "Alrighty then, your spot's at 5pm. Don't be late."
-            ->talk_with_cereza
+            ->talk_with_sengva
             
 * [Is that guy okay?]
 "Who? Oh," She notices the bloodied man, who is now sat down at a table, tending to his wounds. "He'll be fine, little one. He had quite the fight. Not the worst I've seen."
 ->receptionist
 
-= talk_with_cereza
+= talk_with_sengva
 
 {!"Lets talk." The silver haired woman heads over to the table in the far corner of the room and sits down, indicating for you to follow.}
 
-{!You sit down, a million questions running through your head. Before you can say anything, she pipes up, "I'm Cereza, nice to meet you."}
+{!You sit down, a million questions running through your head. Before you can say anything, she pipes up, "I'm Sengva, nice to meet you."}
 {!You introduce yourself. "I can tell you're a newbie, {players_name}. It's very rare that anyone would come in here to challenge Marg the Destroyer. It's suicide.}
 * [Why did you sponsor me?]
 I'm curious to see what tricks you have up your sleeve. I'm a regular in this arena. I've seen the typical type of people come and go. Bounty hunters, mercenaries, people who are simply looking for thrills. But if I'm honest, you don't seem like much of a fighter. Which means you're probably after the Tome of Warfare. Why do you need such a powerful artefact?"
@@ -476,11 +491,11 @@ I'm curious to see what tricks you have up your sleeve. I'm a regular in this ar
         "Wow. You must be quite a loyal friend. How much are they paying you?"
         * * * [Nothing, actually...]
             She looks at you, wide-eyed. "Very well then."
-            ->talk_with_cereza
+            ->talk_with_sengva
     * * [Lie]
         You make up some story about being a tome collector.
-        "I see...", Cereza says slowly, with uncertainty. She can tell you're lying.
-        ->talk_with_cereza
+        "I see...", Sengva says slowly, with uncertainty. She can tell you're lying.
+        ->talk_with_sengva
 * [How do I beat this guy?]
 "Honestly, little one." She sighs. "If I knew, I'd tell you. Trust me. Not even I have defeated Marg the Destroyer. He's ruled this arena for 50 years. But honestly, the best advice I have for you, based on your uh, weapon of choice... 
 {weaponEquipped =="bow": <> try and use high ground to your advantage, and try and stay far back from him so he can't hit you."}
@@ -491,7 +506,7 @@ I'm curious to see what tricks you have up your sleeve. I'm a regular in this ar
 
 = _fight
 "{players_name}! You're up!" You hear the announcer call your name.
-"Looks like it's your time to shine, little one." Cereza pats you hard on the back, and the two of you head into the Arena. "GOOD LUCK!" Cereza yells as she goes to take her seat, while you nervously head into the center ring.
+"Looks like it's your time to shine, little one." Sengva pats you hard on the back, and the two of you head into the Arena. "GOOD LUCK!" Sengva yells as she goes to take her seat, while you nervously head into the center ring. Sengva looks after Cerberus for you in the meantime, sitting comfortably in her lap amongst the crowd.
 You hear the crowd roaring and chanting as you enter, it's almost deafening.
 "EVERYBODY PLEASE WELCOME YOUR NEW CHALLENGER! {players_name}! FROM! LUNAAAA!" #uppercase 
 The announcer yells, and the crowd roars even louder.
@@ -558,7 +573,7 @@ You shoot an arrow at his face- but he catches the arrow perfectly, throwing it 
         {fightSuccess == 0: He shakes it off, and prepares for the next attack.}
         ~fightSuccess++
 
-    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. {highGround == false: You try to remember the advice she gave you... and climb back on to the nearest high platform to give yourself a clearer shot.}
+    - - You try to focus, and for a minute it's almost like time stops. You look at Sengva with Cerberus sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. {highGround == false: You try to remember the advice she gave you... and climb back on to the nearest high platform to give yourself a clearer shot.}
     
         The fight continues.
         
@@ -629,7 +644,7 @@ You swing your sword at Marg's feet and he easily jumps to dodge it. He gives an
     + + [Strike forward]
         You try your hardest to strike your sword forward into his stomach, but he just narrowly dodges. You don't quite make it on time and he lands a nasty blow to your face, giving you a black eye.
 
-    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
+    - - You try to focus, and for a minute it's almost like time stops. You look at Sengva and Cerberus sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
     
         The fight continues.
         
@@ -697,7 +712,7 @@ With a leap you drive all of your strength into a sharp kick to Marg's stomach. 
     + + [Try to trip him up]
         You try your hardest to stick your leg out at the last second and trip him up, but it fails. You don't quite make it on time and he lands a nasty blow to your face, giving you a black eye.
 
-    - - You try to focus, and for a minute it's almost like time stops. You look at Cereza sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
+    - - You try to focus, and for a minute it's almost like time stops. You look at Sengva and Cerberus sitting on the other side of the arena chanting with the rest of the crowd, and she gives you a wink. You try to remember the advice she gave you... as you look back at Marg you notice a nasty wound on the underside of his chin.
     
         The fight continues.
         
@@ -724,23 +739,24 @@ With a leap you drive all of your strength into a sharp kick to Marg's stomach. 
 = fight_won
 Out of breath, you look around at the crowd as they cheer, chanting your name.
 "{players_name}! {players_name}! {players_name}! {players_name}!" #uppercase
+Cerberus runs out from the crowd, barking and sprinting before diving on top of you in excitement.
 You have won the fight.
 
-Leaning on Cereza for support, you limp back into the arena entrance. As you enter, the people raise their drinks and cheer once again. 
+Leaning on Sengva for support, you limp back into the arena entrance. As you enter, the people raise their drinks and cheer once again. 
 
-"That was incredible, {players_name}." Cereza looks at you, excitedly. "I've never seen anything quite like it. You have to stay, continue fighting here at the arena. I'll be your coach!"
+"That was incredible, {players_name}." Sengva looks at you, excitedly. "I've never seen anything quite like it. You have to stay, continue fighting here at the arena. I'll be your coach!"
 
 * [I'm sorry, I have a mission to complete...]
-    Cereza sighs, but gives you a look of understanding. "I had a feeling you'd say that. I understand. I'm proud of you, little one. Keep in touch, yeah?"
+    Sengva sighs, but gives you a look of understanding. "I had a feeling you'd say that. I understand. I'm proud of you, little one. Keep in touch, yeah?" Sengva pets Cerberus on the head firmly. "You too, fluffy one."
 * [You're kidding, right? That was too easy.]
-Cereza chuckes. "Hah, the confidence of a champion. I understand you have things to do. Good luck out there little one. Don't be a stranger, okay?"
+Sengva chuckes. "Hah, the confidence of a champion. I understand you have things to do. Good luck out there little one. Don't be a stranger, okay?" Sengva pets Cerberus on the head firmly. "You too, fluffy one."
 
 - "Impressive display." You hear a deep voice interrupt. You realise you're suddenly stood in a large shadow, and you turn around to see Marg, holding some ice to his chin. You gulp.
 Marg chuckles. "Don't worry, the fight is over. Congratulations, nobody has beaten me in a long, long time. Here - I believe this is yours." He hands you a large book with a red velvet hardback cover. You look at the title etched on to it: "The Tome of Warfare."
 
 ~questsItems++
 ~warfare = true
-You say your goodbyes to Cereza and the rest of the arena folk, and make your way out to find Verso again.
+You say your goodbyes to Sengva and the rest of the arena folk, and make your way out to find Verso again.
 
 Tome in hand, you journey back to Luna.
 
@@ -937,6 +953,7 @@ You approach him.
 "The tome...", the lizard hisses. "Many come into the labyrinth sseeking tome... many do not return..." he trails off. "You may enter, sshould you wissh to try and claimm it."
 Verso looks at you with a serious expression. "I'll be waiting for you out here."
 And with that, you make your way into the Labyrinth of Fury.
+The maze is quiet, damp and dark. You're glad you have Cerberus for company.
 ->in_the_maze
 
 =in_the_maze
@@ -1044,7 +1061,7 @@ You take a seat at the dining table.
 ~favouriteFood = "cake"
 * [Pizza]
 ~favouriteFood = "pizza"
-- "Perfect, that can be arranged," and she snaps her fingers. Seconds later, the doors open and five people in chef's clothing enter, carrying {favouriteFood == "applepie": plates upon plates of steaming hot apple pie. The smell of freshly cooked pastry and warm apple filling wafts toward you.}{favouriteFood == "cinnamon": plates upon plates of freshly baked cinnamon swirls. The smell of baked cinnamon, sugar and sweet pastry immediately wafts toward you.}{favouriteFood == "cake": plates upon plates of fudgy chocolate cake. It's still hot, and the smell of hot chocolate pudding immediately wafts toward you.}{favouriteFood == "pizza": plates upon plates of freshly cooked pizza, with all varieties of toppings. The smell of hot pizza dough and melted cheese immediately wafts toward you.}
+- "Perfect, that can be arranged," and she snaps her fingers. Seconds later, the doors open and five people in chef's clothing enter, carrying {favouriteFood == "applepie": plates upon plates of steaming hot apple pie. The smell of freshly cooked pastry and warm apple filling wafts toward you.}{favouriteFood == "cinnamon": plates upon plates of freshly baked cinnamon swirls. The smell of baked cinnamon, sugar and sweet pastry immediately wafts toward you.}{favouriteFood == "cake": plates upon plates of fudgy chocolate cake. It's still hot, and the smell of hot chocolate pudding immediately wafts toward you.}{favouriteFood == "pizza": plates upon plates of freshly cooked pizza, with all varieties of toppings. The smell of hot pizza dough and melted cheese immediately wafts toward you.} They also bring some luxury dog treats for Cerberus, who is very appreciative.
 You wonder what the extent of her powers are exactly, if she's able to instantly summon your favourite food like this.
 The chefs pour you both cups of tea. "Perfect, dig in, {players_name}!" Scarlet says, and immediately starts eating.
 After finishing her food, Scarlet leans forward, placing her chin in her hands and asks, "So, have you made any friends in Luna yet?"
@@ -1089,11 +1106,12 @@ You and Scarlet keep chatting as she walks you back to the front of the palace.
 
 === final_battle_info ===
 
-Are you ready for the final battle?
+"So, we did it. You finally have all three tomes." Verso says.
+"If you have any unfinished business in town, I suggest you go back and deal with it now."
 
-+ [Yes]
++ [I have unfinished business]
+You head back to the town square.
+->town_square
+
++ [No, I'm ready]
 -> final_battle
-
-+ [No]
-Come back when you're ready.
--> town_square
