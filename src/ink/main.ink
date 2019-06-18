@@ -43,7 +43,7 @@ You stand up so Verso can breathe, and put Cerberus back on the ground.
 === town_square === 
 ~location = "town"
 
-{questsItems == 2 && not royal_palace: 
+{questsItems == 2 && not royal_palace && scarletletter == false: 
 As you re-enter Luna, a small man carrying a large sack runs up to you, who you can only assume is the postman.
 "{players_name}! {players_name}! I have post for you!" He hands you a letter and immediately takes off in another direction.
 Wary, you look down at the letter in your hands. It's in a fancy looking envelope with a wax seal. You open it.

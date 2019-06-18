@@ -109,6 +109,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
     house: require("../assets/house.png"),
     forest: require("../assets/forest.png"),
     town: require("../assets/town-square.png"),
+    nighttown: require("../assets/town-square-night.png"),
     journey: require("../assets/journey.png"),
     labyrinth: require("../assets/labyrinth.png")
   };
@@ -286,6 +287,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
         house: require("../assets/house.png"),
         forest: require("../assets/forest.png"),
         town: require("../assets/town-square.png"),
+        nighttown: require("../assets/town-square-night.png"),
         journey: require("../assets/journey.png"),
         labyrinth: require("../assets/labyrinth.png")
       };

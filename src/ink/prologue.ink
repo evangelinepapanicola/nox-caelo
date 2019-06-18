@@ -3,6 +3,9 @@ DEV MODE: Choose how you'd like to test -
 + [Play as normal]
 ->normal_story
 
++ [Skip to epilogue]
+->final_battle
+
 + [Skip to fight sequence (sword)]
 ~weaponEquipped = "sword"
 ~money = 2
