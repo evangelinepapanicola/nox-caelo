@@ -41,7 +41,75 @@ GAME OVER #game-over
 ~location = "nighttown"
 You head over to the General Store on Crescent street as the sun sets, the door bells chiming as you enter.
 "Ahh, yer here - make yerself at home darlin!" The shopkeep pipes up as you come in.
-"Your room is upstairs, I'm about to head off for the night but I'll be back here 9 'o' clock sharp tomorrow morning."
+"Yer room is upstairs, I'm about to head off for the night but I'll be back 'ere 9 'o' clock sharp tomorrow morning."
+You nod, and thank her for letting you stay.
+You head upstairs{given_away_tomes:.}{not given_away_tomes: and place the tomes in a stack on your bedside table.} The room is simple but cosy. You hop into bed and Cerberus curls up next to you.
+Exhausted from all the days of travelling, sleep finds you very quickly.
+Until...
+~location = "fire"
+You wake up in the middle of the night - to the smell of smoke. {not given_away_tomes: You look over to your bedside table, and the tomes are gone.}
+-> investigate_disturbance
 
+=investigate_disturbance
+You decide to investigate.
++ {tried_door} [Climb out through the window]
+You open the window as wide as you can and slowly climb out. Despite being on the first floor, you aren't too high up and manage to safely climb down to the ground. You call out to Cerberus, and he leaps out into your arms.
+-> crescent_street_fire
++ {not tried_door} [Look out the window]
+You look outside to see a horrifying sight. The whole town is up in flames, people are running around, screaming.
+-> investigate_disturbance
++ (downstairs)[Go downstairs]
+You run downstairs. Everything is the same as before, but you can hear loud noises of chaos outside - people yelling, loud crashes...
++ + (tried_door)[Go outside]
+You try to open the front door, but it's locked shut. You remember the shopkeep saying she wouldn't return to open the store until 9am. Looks like you're stuck here for now.
+->downstairs
++ + [Go back upstairs]
+You head back upstairs.
+->investigate_disturbance
 
-->END
+=crescent_street_fire
+You're on Crescent street. Everything's on fire.
+
++ [Enter the General Store]
+  It's probably best not to go back inside.
+  -> crescent_street_fire
+
++ [Enter the Library]
+    Now probably isn't the time for reading.
+    -> crescent_street_fire
+
++ [Go to the town square]
+    ->town_square_fire
+
+=town_square_fire
+You find yourself in the town square. Everything is burning.
+
++ [Investigate the fountain]
+All the water has evaporated from the heat.
+-> town_square_fire
+
++ [Go down Crescent Street]
+-> crescent_street_fire
+
++ [Enter the alleyway]
+The alleyway is empty.
+-> town_square_fire
+
++ [Town gates]
+-> gathering_at_the_gates
+
+=gathering_at_the_gates
+As you arrive at the town gates, the first thing you notice is Verso sat on the ground cross legged. The three tomes are open and laid out on the ground, surrounding him in a triangle. He looks like he is deeply concentrating. You call out to him.
++ [What the hell is going on?]
+    Verso looks up, only just noticing your presence as you call out to him. He looks surprised to see you. "Oh, y̴̲̚ò̴͇ư̷͈ made it!" There's an element of disappointment in his voice. "I had to start early. Oh, the fires are awful, it's like some kind of otherworldly being is setting fire to the town." He seems strangely calm.
++ [What happened to waiting until dawn?]
+    Verso looks up, only just noticing your presence as you call out to him. He looks surprised to see you. "Oh, y̴̲̚ò̴͇ư̷͈ made it!" There's an element of disappointment in his voice. "I had to start early. Oh, the fires are awful, it's like some kind of otherworldly being is setting fire to the town." He seems strangely calm.
++ [Stop!]
+    Verso looks up, only just noticing your presence as you call out to him. He looks surprised to see you. "Oh, y̴̲̚ò̴͇ư̷͈ made it!" There's an element of disappointment in his voice. "I'm starting the plan, {players name}. w̵̪͂h̵̩̒y̵͎̒ do you want me to stop?
+
+- Before you can respond, you hear a group of footsteps running toward you, and you're interrupted -
+"HALT!" a voice yells. You turn around to see Sengva, and then behind her you see Lady Emeralda, followed by Rax and Trax.
+"Stop this madness" Emeralda exclaims. "{players_name}, this man is using you for his own selfish revenge. He cannot be allowed to use the tomes."
+"I was a fool. I allowed myself to be drugged, and in turn I handed over the tome I have spent my life protecting. After you left I found my loyal butler unconscious, and I know for a fact that man did it in order to slip some substance into my tea."
+Sengva chimes in. "Something seemed fishy to me. I couldn't understand why someone like you would yourself in such danger unless... I don't know, you were blackmailed. Either way, after seeing you fight so valiantly, I was curious. I had to see you again, {players_name}."
+Trax follows up. "If I may... it is our duty to maintain peaccee in these lands... we became ssusspicciouss of your partner, and now the god of wrathhh hass unleasshed flamess upon thiss town..."
