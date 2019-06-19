@@ -105,11 +105,38 @@ As you arrive at the town gates, the first thing you notice is Verso sat on the 
 + [What happened to waiting until dawn?]
     Verso looks up, only just noticing your presence as you call out to him. He looks surprised to see you. "Oh, y̴̲̚ò̴͇ư̷͈ made it!" There's an element of disappointment in his voice. "I had to start early. Oh, the fires are awful, it's like some kind of otherworldly being is setting fire to the town." He seems strangely calm.
 + [Stop!]
-    Verso looks up, only just noticing your presence as you call out to him. He looks surprised to see you. "Oh, y̴̲̚ò̴͇ư̷͈ made it!" There's an element of disappointment in his voice. "I'm starting the plan, {players name}. w̵̪͂h̵̩̒y̵͎̒ do you want me to stop?
+    Verso looks up, only just noticing your presence as you call out to him. He looks surprised to see you. "Oh, y̴̲̚ò̴͇ư̷͈ made it!" There's an element of disappointment in his voice. "I'm starting the plan, {players_name}. w̵̪͂h̵̩̒y̵͎̒ do you want me to stop?
 
 - Before you can respond, you hear a group of footsteps running toward you, and you're interrupted -
 "HALT!" a voice yells. You turn around to see Sengva, and then behind her you see Lady Emeralda, followed by Rax and Trax.
 "Stop this madness" Emeralda exclaims. "{players_name}, this man is using you for his own selfish revenge. He cannot be allowed to use the tomes."
 "I was a fool. I allowed myself to be drugged, and in turn I handed over the tome I have spent my life protecting. After you left I found my loyal butler unconscious, and I know for a fact that man did it in order to slip some substance into my tea."
-Sengva chimes in. "Something seemed fishy to me. I couldn't understand why someone like you would yourself in such danger unless... I don't know, you were blackmailed. Either way, after seeing you fight so valiantly, I was curious. I had to see you again, {players_name}."
-Trax follows up. "If I may... it is our duty to maintain peaccee in these lands... we became ssusspicciouss of your partner, and now the god of wrathhh hass unleasshed flamess upon thiss town..."
+Sengva chimes in. "Something seemed fishy to me. I couldn't understand why someone like you would put yourself in such danger unless... I don't know, you were blackmailed. Either way, after seeing you fight so valiantly, I was curious. I had to see you again, {players_name}."
+Trax follows up. "If I may... it is our duty to maintain peaccee in thesse landss... we became ssusspicciouss of your partner, and now the god of wrathhh hass unleasshed flamess upon thiss town..." 
+Rax adds, "We musst fight back... we cannot allow this injussticce... he will usse the tomess for evil..."
+You turn back to Verso, staring him down.
+"You don't believe these fools, do you {players_name}?"
++ + [I believe them. Those 'fools' are my friends!]
+-> against_verso
++ + [No, I believe you.]
+-> with_verso
+
+=== against_verso ===
+
+->END
+
+
+=== with_verso ===
+"Wise choice." Verso says, with a grin. "Now, keep them occupied while I finish the ritual."
+Seeing that you're siding with Verso, the others draw their weapons. You {visibleWeapon == true: draw your own in response.}{visibleWeapon == false: stand ready to defend yourself.}
+"Very well then." Emeralda says, the others looking at you with great disappointment.
+"I won't go easy on you." Sengva adds.
+And with that, Emeralda charges forward with a dagger in each hand.
++ [Dodge]
+You try to dodge her attack at the last second, but one of her daggers catches your cheek, leaving a gash that starts bleeding down your face.
++ [Aim for her stomach]
+{weaponEquipped == "bow": You think fast and fire an arrow from your bow directly towards her, catching her in the side. She wheezes, clutching the arrow lodged into her skin as she stumbles to the ground.}{weaponEquipped == "sword": As she dives toward you, you duck down and swipe your blade across her abdomen and she cries out in pain, clutching her wound as she stumbles to the ground.}{weaponEquipped == "fists": You duck under her arms and slam a fist directly into her stomach. She wheezes, doubled over, and stumbles on to her knees.}
+- As Emeralda falls, you hear Sengva charging toward you and as you look you see her leg swinging straight for your face -
++ + [Catch it with your hand]
++ + [Dodge]
+->END
