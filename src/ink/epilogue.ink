@@ -133,10 +133,26 @@ Seeing that you're siding with Verso, the others draw their weapons. You {visibl
 "I won't go easy on you." Sengva adds.
 And with that, Emeralda charges forward with a dagger in each hand.
 + [Dodge]
-You try to dodge her attack at the last second, but one of her daggers catches your cheek, leaving a gash that starts bleeding down your face.
-+ [Aim for her stomach]
-{weaponEquipped == "bow": You think fast and fire an arrow from your bow directly towards her, catching her in the side. She wheezes, clutching the arrow lodged into her skin as she stumbles to the ground.}{weaponEquipped == "sword": As she dives toward you, you duck down and swipe your blade across her abdomen and she cries out in pain, clutching her wound as she stumbles to the ground.}{weaponEquipped == "fists": You duck under her arms and slam a fist directly into her stomach. She wheezes, doubled over, and stumbles on to her knees.}
-- As Emeralda falls, you hear Sengva charging toward you and as you look you see her leg swinging straight for your face -
-+ + [Catch it with your hand]
-+ + [Dodge]
-->END
+    You try to dodge her attack at the last second, but one of her daggers catches your cheek, leaving a gash that starts bleeding down your face.
++ (emeralda_down)[Aim for her stomach]
+    {weaponEquipped == "bow": You think fast and fire an arrow from your bow directly towards her, catching her in the side. She wheezes, clutching the arrow lodged into her skin as she stumbles to the ground.}{weaponEquipped == "sword": As she dives toward you, you duck down and swipe your blade across her abdomen and she cries out in pain, clutching her wound as she stumbles to the ground.}{weaponEquipped == "fists": You duck under her arms and slam a fist directly into her stomach. She wheezes, doubled over, and stumbles on to her knees.}
+
+- You hear Sengva charging toward you and as you look you see her leg swinging straight for your face -
+    + + [Catch it with your hand]
+    You try to catch her shin with your hands, but you underestimate the force of her swing and are knocked to the ground.
+    + + (sengva_down)[Dodge]
+    You duck below her leg at the last second, and {weaponEquipped == "bow": jab one of your arrows into her other leg. She yelps in pain and stumbles over.}{weaponEquipped == "sword": swipe your sword at her other leg. She yelps in pain, and stumbles over holding the gash on her leg.}{weaponEquipped == "fists": kick her other leg, sending her off balance and crashing to the ground.}
+    - - You see a circle with light emanating from it appearing underneath your feet as Rax and Trax approach you, holding their arms in front of them. 
+        + + + (lizards_down)[Dash out of the circle]
+        You dash out of the circle just in time before you could be grappled by several ethereal hands rising from it. {weaponEquipped == "bow": You quickly fire an arrow at Trax, followed by an arrow at Rax, taking them both down before they can react.}{weaponEquipped == "sword": You throw your sword at Trax, knocking him down and leaving a gash in his side, before running, grabbing it and taking a swing at Rax, taking him out too.}{weaponEquipped == "fists": You run at the two lizards, uppercutting Rax with your left fist and tripping over Trax with your right leg.}
+        + + + [Attack from the circle]
+        Before you can attack, you realise you can't move. You feel several ethereal hands pulling you down to the ground. You try to resist, but it's too painful, and you fall to the ground.
+
+        - - - -> fight_pt_2
+
+= fight_pt_2
+You realise everyone is staring behind you, eyes wide, jaws dropped. You turn to see Verso, glowing as he transforms into a huge, red, demon-like dragon. He cackles. "H̸̲̑͠ã̵̹h̷͔̦̾̈́a̸͉̾͜h̷͙̀̿a̷͔͈̕!̶̜̾ ̸͚͗̍Y̷͖͐ọ̶̃ú̴̻̽ ̸͍͑̋f̵͎̦̈́̀ō̷̩̗o̷̺̅l̸̪͂s̵̯̈!̷̞͑͒"
+His new form is the last thing you see before flames hurtle towards you, as you fall unconscious.
+GAME OVER #game-over
++ + + + [Try for a different ending]
+-> final_battle

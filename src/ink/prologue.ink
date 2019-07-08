@@ -4,6 +4,9 @@ DEV MODE: Choose how you'd like to test -
 ->normal_story
 
 + [Skip to epilogue]
+~weaponEquipped = "sword"
+~money = 2
+~visibleWeapon = true
 ->final_battle
 
 + [Skip to fight sequence (sword)]
