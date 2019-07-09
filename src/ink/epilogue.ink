@@ -122,7 +122,39 @@ You turn back to Verso, staring him down.
 -> with_verso
 
 === against_verso ===
+"W̷̺̅h̸̘̏ạ̸̏t̷̺̑?̶̪̾"
+"Fine! I'll finish the ritual without you!" Verso yells. He goes back to focusing on the tomes.
+"Stop him!" Emeralda calls out. "He can't be allowed to complete that ritual!"
+And with that, all of you start running at him, but there appears to be some sort of invisible forcefield protecting him.
+You hear strange noises behind you, and when you turn around you notice huge, dark, shadowy creatures rising from portals in the ground. They start preparing to attack you and your friends.
+"He'ss sssummonning!" Trax exclaims.
+The shadows form into lookalikes of you and your friends. Shadow {players_name} approaches you{weaponEquipped == "sword":, sword in hand.}{weaponEquipped == "bow":, holding their bow at the ready.}{weaponEquipped == "fists":.}
++ {weaponEquipped == "bow"} [Fire an arrow at the shadow]
+    You fire an arrow at the shadow. The shadow catches it.
++ {weaponEquipped == "sword"} [Slash the shadow]
+    You attempt to slash your sword at the shadow, but the shadow catches your sword with their hand.
++ {weaponEquipped == "fists"} [Punch the shadow]
+    You try to punch Shadow {players_name} in the face, but they grab your fist.
++ [Guard]
+    {weaponEquipped == "bow": Shadow {players_name} fires an arrow at you, but you catch it and throw it on the ground.}{weaponEquipped == "sword": Shadow {players_name} attempts to slash you with their sword, but you duck out of the way just in time.}{weaponEquipped == "fists": Shadow {players_name} attempts to punch you in the face, but you duck out of the way just in time.}
 
+- (shadow_continued) Shadow {players_name} looks at you {&menacingly|threateningly|smugly}.
+
++ + {weaponEquipped == "bow"} [Fire an arrow at the shadow]
+    You fire an arrow at the shadow and it pierces through, causing the shadow to dissipate.
+    -> shadow_defeated
++ + {weaponEquipped == "sword"} [Slash the shadow]
+    You slash at the shadow, cutting through it, causing the shadow to dissipate.
+    ->shadow_defeated
++ + {weaponEquipped == "fists"} [Punch the shadow]
+    You swing your fist at the shadow and punch right through it, causing the shadow to dissipate.
+    ->shadow_defeated
++ + [Guard]
+    {weaponEquipped == "bow": Shadow {players_name} fires an arrow at you, but you catch it and throw it on the ground.}{weaponEquipped == "sword": Shadow {players_name} attempts to slash you with their sword, but you duck out of the way just in time.}{weaponEquipped == "fists": Shadow {players_name} attempts to punch you in the face, but you duck out of the way just in time.}
+    ->shadow_continued
+
+=shadow_defeated
+With the shadow defeated,
 ->END
 
 
