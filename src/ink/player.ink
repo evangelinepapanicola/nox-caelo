@@ -20,3 +20,4 @@ VAR warfare = false
 VAR charisma = false
 VAR scarletletter = false
 VAR favouriteFood = ""
+VAR boySunglasses = false

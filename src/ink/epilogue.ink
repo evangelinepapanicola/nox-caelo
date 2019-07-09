@@ -125,7 +125,7 @@ You turn back to Verso, staring him down.
 "W̷̺̅h̸̘̏ạ̸̏t̷̺̑?̶̪̾"
 "Fine! I'll finish the ritual without you!" Verso yells. He goes back to focusing on the tomes.
 "Stop him!" Emeralda calls out. "He can't be allowed to complete that ritual!"
-And with that, all of you start running at him, but there appears to be some sort of invisible forcefield protecting him.
+And with that, all of you start running at him, but there appears to be some sort of invisible barrier protecting him.
 You hear strange noises behind you, and when you turn around you notice huge, dark, shadowy creatures rising from portals in the ground. They start preparing to attack you and your friends.
 "He'ss sssummonning!" Trax exclaims.
 The shadows form into lookalikes of you and your friends. Shadow {players_name} approaches you{weaponEquipped == "sword":, sword in hand.}{weaponEquipped == "bow":, holding their bow at the ready.}{weaponEquipped == "fists":.}
@@ -154,7 +154,21 @@ The shadows form into lookalikes of you and your friends. Shadow {players_name} 
     ->shadow_continued
 
 =shadow_defeated
-With the shadow defeated,
+With your shadow defeated you look around to see if any of your friends need help, but they all seem to have taken care of their shadows too.
+"Hah, you think you can intimidate me with a weak imitation of myself, little boy?" Sengva yells out to Verso. 
+The group's focus returns to Verso. "We have to find a way to break through that barrier, or we're all done for!" Emeralda calls out.
+"H̴̖͂ą̶͝h̶̩́a̶̠͝.̶͍̅ Don't fool yourselves. You're out of time!" Verso exclaims, and he stands up.
+His body starts glowing brighter, brighter and brighter until Verso becomes a blur, and you see him transform into a a huge, red, demon-like dragon.
+The new, demonic Verso rises up, flying with his draconic wings. He calls out, "I̶t̶ ̸w̵a̴s̴ ̴f̸u̶n̴,̸ ̵r̸e̷a̵l̷l̴y̸ ̶g̶u̸y̶s̵!̸ ̵B̶u̶t̴ ̴I̵ ̴m̶u̸s̵t̷ ̶b̴e̵ ̶g̵o̶i̴n̴g̷ ̵n̴o̸w̶.̵ ̴I̵ ̶h̴a̷v̷e̷ ̵a̴ ̵q̶u̷e̸e̵n̵ ̴t̷o̵ ̴k̴i̸l̵l̶.̷"
+{boySunglasses == false: 
+He cackles, and a huge ball of fire is sent hurtling towards you all. You wince, thinking your time is finally up - until Rax pushes through and holds out his arms, projecting a huge barrier around you all, protecting the group from the flames.
+As the fire burns out, the dust settling around you - Verso is gone.
+}
+{boySunglasses == true: 
+"STOPP!" A voice yells, interrupting Verso. A familiar voice, but not one you were expecting...
+You turn around to see the paperboy, wearing the cool sunglasses you gave him. A firey explosion goes off behind him, making him look even more badass. "Begone, evil monster!", he cries out.
+Verso stops, with a confused look on his face. He appears speechless, and flies away.
+}
 ->END
 
 

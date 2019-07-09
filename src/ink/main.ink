@@ -315,6 +315,7 @@ You nod, and head back to the town square.
     You hand the boy your sunglasses.
     "Oh my gosh, you're the best!"
     ~coolSunglasses = false
+    ~boySunglasses = true
     + (refused)[No way]
     "Awwww...", he says, disapointed.
 
