@@ -169,7 +169,26 @@ As the fire burns out, the dust settling around you - Verso is gone.
 You turn around to see the paperboy, wearing the cool sunglasses you gave him. A firey explosion goes off behind him, making him look even more badass. "Begone, evil monster!", he cries out.
 Verso stops, with a confused look on his face. He appears speechless, and flies away.
 }
-->END
+"Hoo boy..." Sengva sighs. "What now?"
+"He's headed for the palace" Emeralda responds. "We have to get there as quickly as possible, Rax, Trax - can you teleport us?"
+"We could, but..." Trax begins. "It would be unwise to teleport directly to the palaccce... we have no idea of the dangersss ahead... we could teleport directly into a wall of fire by missstake..." Rax finishes.
+Emeralda clears her throat. "Very well then, we will just have to run there as fast as we can." The whole crew nods.
+-> the_final_palace
+
+= the_final_palace
+When you all arrive at the castle gates, all you can hear is the sound of crackling fire destroying the trees in the surrounding area. There are no guards, so you can walk right in.
+"Not a guard in sight..." Emeralda sighs. "Right, lets go everyone. Stay on guard."
+You all make your way into the palace, Emeralda at at the front leading the way. You're close behind, at the same pace as Sengva, followed by Trax and Rax at the back.
+The palace is eerily silent, but a complete mess. As you all make your down the long corridors, you see charred furniture, guards laying unconscious on the ground, shattered glass and much worse.
+As you get closer to the throne room, you start to hear all kinds of crashing noises and yelling.
+"That must be them!" Emeralda yells, and picks up the pace.
+She barges into the throne room, swinging the doors open.
+You see Scarlet, in full battle attire covered in bruises, scrapes and burns. Verso, in his huge demonic form looms above you all.
+"Scarlet!" Emeralda calls out. She runs up to Scarlet and hugs her briefly, knowing now isn't the time for an emotional reunion. "Thank god you're alive!"
+"Emeralda..." Scarlet coughs, wheezing mid-sentence. "I'm glad you're here."
+"H̸a̶h̵a̴h̴a̷!̴" Verso cackles. "O̷h̷,̸ ̴h̷o̸w̸ ̷l̴o̸v̷e̸l̵y̶.̸ H̴a̸v̸e̴ ̶y̴o̵u̶ ̵c̵o̵m̵e̸ ̴t̵o̵ ̴w̶a̷t̵c̴h̵ ̵y̸o̶u̸r̵ ̴f̷r̷i̵e̷n̶d̶ ̶f̵a̶l̴l̵?̶"
+Emeralda scowls. 
+"Verso... how far you've fallen. I spared your life after you cut short many others, yet you still seek revenge. To even go as far as making an oath with the god of wrath... oh how naive I was." Scarlet says, with pain in her voice.
 
 
 === with_verso ===
