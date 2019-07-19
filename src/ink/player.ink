@@ -21,3 +21,4 @@ VAR charisma = false
 VAR scarletletter = false
 VAR favouriteFood = ""
 VAR boySunglasses = false
+VAR versoHP = 10

@@ -189,7 +189,24 @@ You see Scarlet, in full battle attire covered in bruises, scrapes and burns. Ve
 "H̸a̶h̵a̴h̴a̷!̴" Verso cackles. "O̷h̷,̸ ̴h̷o̸w̸ ̷l̴o̸v̷e̸l̵y̶.̸ H̴a̸v̸e̴ ̶y̴o̵u̶ ̵c̵o̵m̵e̸ ̴t̵o̵ ̴w̶a̷t̵c̴h̵ ̵y̸o̶u̸r̵ ̴f̷r̷i̵e̷n̶d̶ ̶f̵a̶l̴l̵?̶"
 Emeralda scowls. 
 "Verso... how far you've fallen. I spared your life after you cut short many others, yet you still seek revenge. To even go as far as making an oath with the god of wrath... oh how naive I was." Scarlet says, with pain in her voice.
+"I won't make that mistake again."
+"Everyone - I'm going to prepare a magical attack, but it will take some time. I need you to take care of him in the meantime." Scarlet coughs.
+"Got it." Emeralda says, "Alright, let's bring down this demon!"
+The final battle begins.
++ [Attack]
+    {weaponEquipped == "sword": You run toward Verso and swing your sword upward at the demon, scraping it's leg.}{weaponEquipped == "bow": You fire an arrow at Verso and it catches him in the leg. He doesn't seem fazed.}{weaponEquipped == "fists": You run toward Verso and punch upward at the demon, slamming your fist into his leg. You pull your hand away sharply in pain, feeling like you've burnt your fist.}
+    ~versoHP--
++ [Defend]
+You hold a defensive stance, but Verso seems to distracted by your friends attacking him to attack you right now, so you're safe anyway.
 
+- Verso scowls, irritated by the attacks made against him. Scarlet continues to charge up her magical attack.
++ + [Attack]
+    {weaponEquipped == "sword": You swing your sword aggressively at him, but he dodges it with ease.}{weaponEquipped == "bow": You fire an arrow at Verso, but he catches it and immediately crushes it into tiny pieces in his hand.}{weaponEquipped == "fists": You try to uppercut the demon, but he dodges with ease.}
++ + [Defend]
+    You see Emeralda jab one of her blades into the side of the demon, and then struggle to pull it back out. Verso notices and goes to attack her with one of his claws, but you manage to pull her away just in time.
+    ~versoHP--
+
+- - Verso roars with anger, and you see his eyes light up as flames emerge from his mouth. Scarlet remains focused on charging up her magical attack.
 
 === with_verso ===
 "Wise choice." Verso says, with a grin. "Now, keep them occupied while I finish the ritual."
