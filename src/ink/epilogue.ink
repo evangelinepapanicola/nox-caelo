@@ -208,6 +208,42 @@ You hold a defensive stance, but Verso seems to distracted by your friends attac
 
 - - Verso roars with anger, and you see his eyes light up as flames emerge from his mouth. Scarlet remains focused on charging up her magical attack.
 
++ + + [Attack]
+        Just as you're about to attack, Verso spits out a huge gust of flames, spreading wide. You try to leap out of the way but you don't quite make it on time; the flames catch your left arm and you feel it burn and sting with pain. You look back and it seems everyone else was caught by it to, but they're still standing.
+
++ + + [Defend]
+        Noticing the flames emerging from Verso's mouth, you yell out to the rest of the group to warn them. Verso spits out a huge gust of flames, spreading wide, but Trax hears your warning and shields the whole party from the attack.
+        ~versoHP--
+
+- - - With that, you hear Scarlet yell, "It's time!" and you watch as golden circles of light rotate and expand beneath her feet, as her hands start to glow. She reaches down and drags her hands up through the air as huge, ethereal chains rise up from the ground as she does so. The chains wrap around Verso and slam him into the ground, holding him there, unable to move. "Attack now!" Scarlet yells out.
+~versoHP = versoHP - 5
+
++ + + + [Attack]
+        "Let's go little one!" Sengva shouts as she punches Verso with full force. She lays her hands out to boost you up and you leap from her hands high into the air, before {weaponEquipped == "sword": plunging your sword into the creature as you land.}{weaponEquipped == "fists": slamming your leg against the creature with a kick as you land, using the momentum from the leap to hit with full force.}{weaponEquipped == "bow": firing an arrow from your bow directly into the creature's skull.}
+        ~versoHP--
+
++ + + + [Defend]
+        Doesn't seem like there's anything to defend against right now, since Verso is pinned down.
+
+- - - - Verso is still tied down.
+
++ + + + + [Attack]
+            Emeralda rolls forward and slashes both of her daggers against the creature. You follow up by {weaponEquipped == "sword": slashing Verso with your sword.}{weaponEquipped == "fists": throwing two punches at Verso's wing.}{weaponEquipped == "bow": piercing Verso's wing with one of your arrows.}
+            ~versoHP--
+
++ + + + + [Defend]
+            Doesn't seem like there's anything to defend against right now, since Verso is pinned down.
+
+- - - - - Verso remains tied down and is attempting to break free.
+
++ + + + + + [Attack]
+            Rax and Trax fire icy magical attacks at Verso as you {weaponEquipped == "sword": slam your sword down onto the the creature.}{weaponEquipped == "fists": uppercut the creature under the chin.}{weaponEquipped == "bow": fire arrow after arrow from your bow, piercing the creature's flesh.}
+            ~versoHP--
+
++ + + + + + [Defend]
+            Doesn't seem like there's anything to defend against right now, since Verso is pinned down.
+
+
 === with_verso ===
 "Wise choice." Verso says, with a grin. "Now, keep them occupied while I finish the ritual."
 Seeing that you're siding with Verso, the others draw their weapons. You {visibleWeapon == true: draw your own in response.}{visibleWeapon == false: stand ready to defend yourself.}
