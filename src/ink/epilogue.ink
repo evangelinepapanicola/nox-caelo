@@ -243,6 +243,33 @@ You hold a defensive stance, but Verso seems to distracted by your friends attac
 + + + + + + [Defend]
             Doesn't seem like there's anything to defend against right now, since Verso is pinned down.
 
+- - - - - - {versoHP > 0: -> final_boss_fail}{versoHP =< 0: ->the_end}
+
+=== final_boss_fail ===
+->END
+
+=== the_end ===
+Verso wails at the attack, screeching loud, before collapsing fully to the ground. 
+"Is it over?" Emeralda says, panting.
+Almost out of breath, Scarlet responds, "I think... we've won."
+You scan the room to see Trax and Rax nod solemnly in unison. Sengva wipes the sweat from her brow.
+As the last few flames begin to fizzle, the room becomes dark. You can still see the faint glow of everyone's faces with the remaining light.
+Scarlet sighs. "Thank you, everyone. I don't know how I'll ever repay you. I can't apologise enough for dragging you all into this mess. I can't believe I ever trusted that monster."
+"Psh, don't be silly" Sengva says with a grin. "We all wanted to help. We couldn't just stand there and let that angry child burn down the kingdom!"
+"If I may-" Emeralda interrupts, "We care about you, Scarlet." Emeralda puts a hand on Scarlet's shoulder and squeezes it. "I'd never let you go through this alone."
+Emeralda removes her hand from Scarlet's shoulder and lets it hang by her side. Suddenly, dark, ethereal chains spring from the ground and wrap around you, restraining you. As you struggle you can barely breathe, and you look around and everyone except Scarlet is also restrained. In the darkness, you see golden, draconic eyes flash open on the other side of the room. Verso rises.
+"D̸o̵n̶'̷t̵ ̸m̵o̴v̸e̷ ̸a̵ ̵s̷i̴n̶g̸l̸e̸ ̴s̵t̴e̷p̴.̶ ̷I̸f̷ ̶y̸o̷u̶ ̶m̴o̴v̵e̵.̴.̶.̷ ̶I̶'̴l̵l̸.̴.̷.̶"
+"I̷ ̸c̸a̵n̸ ̴c̷r̸u̵s̸h̸ ̴y̴o̶u̵r̸ ̴p̴r̸e̸c̸i̷o̵u̷s̷ ̶f̴r̴i̸e̷n̷d̷s̵ ̵i̸n̸ ̴a̶n̶ ̵i̶n̸s̵t̵a̸n̴t̸!̵"
+"Why! What do you want from me?" Scarlet cries out.
+"Y̵o̶u̶r̵ ̶d̴e̷m̵i̴s̸e̶.̵ ̵Y̷o̵u̸ ̴r̶u̶i̶n̵e̸d̷ ̶m̷y̶ ̴l̴i̶f̶e̸!̶" Verso roars, but you can tell it isn't with his full might.
+"F̷u̷n̴n̷y̸.̸ ̸Y̷o̴u̷ ̸a̷n̶d̸ ̶y̵o̵u̴r̵ ̴f̶r̴i̷e̶n̶d̷s̴ ̵h̶a̴v̷e̷ ̶d̵o̷n̶e̷ ̴q̴u̶i̴t̶e̷ ̵a̸ ̷n̷u̷m̵b̴e̶r̵ ̴o̸n̸ ̵m̶e̷.̶ ̵E̷v̷e̴n̵ ̸t̴h̴o̷u̴g̷h̶ ̶I̸ ̴s̵t̸a̸n̶d̷ ̷h̶e̸r̸e̸ ̴a̵g̸a̶i̸n̷s̸t̴ ̴y̷o̴u̶.̸.̷.̸ ̸I̶ ̷k̸n̴o̶w̴ ̴I̵ ̸c̶o̵u̸l̸d̵n̸'̷t̷ ̵w̸i̷t̸h̷s̸t̴a̷n̵d̶ ̵a̴n̸o̶t̵h̶e̸r̴ ̴h̸i̷t̸.̷.̷.̷"
+"S̸o̵.̵ ̷W̸h̴a̵t̴ ̶w̸i̷l̵l̸ ̴i̵t̷ ̷b̵e̵,̶ ̷S̴c̷a̸r̶l̸e̵t̶?̵ ̸I̶f̷ ̶y̸o̷u̸ ̶t̶a̵k̶e̵ ̸m̵y̴ ̶l̵i̶f̸e̶,̵ ̵I̸'̸l̴l̵ ̶t̵a̷k̶e̶ ̸y̷o̷u̵r̷ ̶f̵r̷i̷e̸n̸d̶s̶ ̵w̶i̷t̶h̶ ̷m̴e̶.̵ ̶O̸r̵ ̶I̶'̵l̷l̵ ̴t̶a̸k̸e̶ ̶y̶o̷u̵r̷s̵,̶ ̶a̵n̷d̸ ̸s̴p̸a̸r̵e̷ ̶y̸o̶u̴r̵ ̷p̸r̴e̷c̸i̸o̵u̷s̵ ̶f̶r̶i̸e̸n̷d̴s̵.̵"
+"He's lying!" Emeralda yells out. "He won't spare anyone, Scarlet!"
+"D-damn it..." Scarlet clenches her fists. "You know I can't let you die!"
+"Go ahead, Verso. Do it, kill me - do your worst!" Scarlet yells fiercely.
+Verso cackles. "V̷e̷r̷y̴ ̴w̴e̶l̸l̷ ̸t̴h̵e̶n̴.̶" With a final swipe of his claw he pierces Scarlet through the chest, withdrawing as she collapses to the ground.
+"SCARLET!" Emeralda screams. In anger and adrenaline, she breaks through the ethereal power restaining her. Verso's eyes draw wide, but before he can utter a word, Emeralda charges toward him, her daggers in hand, and attacks him. As she pierces his flesh one final time Verso cries out loudly, before crashing to the ground again. The magical restraints on you drop, and you look around to see Sengva, Trax and Rax's have too. You all stay on guard as you watch Verso's draconic form dissolve, leaving behind his original, human form.
+"He'sss not breathhing..." Rax says quietly. "We are sssafe, I'm sssure of it..."
 
 === with_verso ===
 "Wise choice." Verso says, with a grin. "Now, keep them occupied while I finish the ritual."
