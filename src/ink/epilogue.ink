@@ -192,6 +192,8 @@ Emeralda scowls.
 "I won't make that mistake again."
 "Everyone - I'm going to prepare a magical attack, but it will take some time. I need you to take care of him in the meantime." Scarlet coughs.
 "Got it." Emeralda says, "Alright, let's bring down this demon!"
+->final_boss_start
+=final_boss_start
 The final battle begins.
 + [Attack]
     {weaponEquipped == "sword": You run toward Verso and swing your sword upward at the demon, scraping it's leg.}{weaponEquipped == "bow": You fire an arrow at Verso and it catches him in the leg. He doesn't seem fazed.}{weaponEquipped == "fists": You run toward Verso and punch upward at the demon, slamming your fist into his leg. You pull your hand away sharply in pain, feeling like you've burnt your fist.}
@@ -219,7 +221,7 @@ You hold a defensive stance, but Verso seems to distracted by your friends attac
 ~versoHP = versoHP - 5
 
 + + + + [Attack]
-        "Let's go little one!" Sengva shouts as she punches Verso with full force. She lays her hands out to boost you up and you leap from her hands high into the air, before {weaponEquipped == "sword": plunging your sword into the creature as you land.}{weaponEquipped == "fists": slamming your leg against the creature with a kick as you land, using the momentum from the leap to hit with full force.}{weaponEquipped == "bow": firing an arrow from your bow directly into the creature's skull.}
+        "Let's go little one!" Sengva shouts as she punches Verso with full force. She lays her hands out to boost you up and you leap from her hands high into the air, before {weaponEquipped == "sword": plunging your sword into the creature as you land.}{weaponEquipped == "fists": slamming your leg against the creature with a kick as you land, using the momentum from the leap to hit with full force.}{weaponEquipped == "bow": firing an arrow from your bow directly into the creature's skull.} Cerberus growls and bites the creature aggressively.
         ~versoHP--
 
 + + + + [Defend]
@@ -243,13 +245,17 @@ You hold a defensive stance, but Verso seems to distracted by your friends attac
 + + + + + + [Defend]
             Doesn't seem like there's anything to defend against right now, since Verso is pinned down.
 
-- - - - - - {versoHP > 0: -> final_boss_fail}{versoHP =< 0: ->the_end}
+- - - - - - {versoHP > 0: -> final_boss_fail}{versoHP <= 0: ->the_end}
 
 === final_boss_fail ===
-->END
+You hear a crash, as Verso breaks free. He rises up high, out of reach. You can see the fury in his eyes as he unleashes a sweeping fire attack. Out of stamina, you find yourself unable to move, and you fall to the ground, taking the full brunt of the attack. Your vision fades to black.
+GAME OVER #game-over
++ [Retry]
+~versoHP = 10
+-> final_boss_start
 
 === the_end ===
-Verso wails at the attack, screeching loud, before collapsing fully to the ground. 
+Verso wails, screeching loud, before collapsing fully to the ground. 
 "Is it over?" Emeralda says, panting.
 Almost out of breath, Scarlet responds, "I think... we've won."
 You scan the room to see Trax and Rax nod solemnly in unison. Sengva wipes the sweat from her brow.
@@ -270,6 +276,63 @@ Emeralda removes her hand from Scarlet's shoulder and lets it hang by her side. 
 Verso cackles. "V̷e̷r̷y̴ ̴w̴e̶l̸l̷ ̸t̴h̵e̶n̴.̶" With a final swipe of his claw he pierces Scarlet through the chest, withdrawing as she collapses to the ground.
 "SCARLET!" Emeralda screams. In anger and adrenaline, she breaks through the ethereal power restaining her. Verso's eyes draw wide, but before he can utter a word, Emeralda charges toward him, her daggers in hand, and attacks him. As she pierces his flesh one final time Verso cries out loudly, before crashing to the ground again. The magical restraints on you drop, and you look around to see Sengva, Trax and Rax's have too. You all stay on guard as you watch Verso's draconic form dissolve, leaving behind his original, human form.
 "He'sss not breathhing..." Rax says quietly. "We are sssafe, I'm sssure of it..."
+Emeralda rushes over to where Scarlet is lying, and kneels down next to her body. She checks to see if she's breathing. She checks again, and again and again. Nothing.
+"Scarlet... no... no...", Emeralda sobs quietly. Teardrop marks form on Scarlet's clothes.
++ [I am so, so sorry.]
+    Emeralda does not respond, but tears continue to roll down her cheeks.
++ [...]
+    Tears continue to roll down Emeralda's cheeks.
+
+- Rax and Trax approach. "Not all hope iss losst... we could possssibly sssave her..." Rax says gently.
+"H-How?" Emeralda says weakly, with disbelief.
+"The god of perssseverancce hass granted uss many powerss...", Trax says. "We have the power to bring her back... but it isss a difficult ssspell to exccecute... we will need time..." Rax adds.
+"Please, I would appreciate anything you can do." Emeralda says.
+-> the_aftermath
+
+=== the_aftermath ===
+~location = "town"
+A month later, the sun shines down on the kingdom of Luna.
+You've been helping the townsfolk recover from the fires, making supplies and helping to rebuild houses.
+Scarlet remains in Trax and Rax's care as they continue to focus heavily on the spell to bring her back. Emeralda has not left her bedside the entire time.
+Sengva had to return to Ignis Arena to keep an eye on things, but has been visiting Luna once a week to visit everyone.
+Another month comes, and on her fifth visit, you're all gathered around Scarlet at the moment she opens her eyes. Emeralda is overcome with tears of joy, and you all smile at eachother with relief.
+The next few months are months of recovery, for both Scarlet and the kingdom.
+One morning, you receive a letter:
+Dear {players_name}, #italic
+I have some exciting news, please come to the palace at your earliest opportunity. #italic
+I look forward to seeing you. #italic
+Warm regards, #italic
+Scarlet #italic
+You rush to the palace right away.
+Scarlet gathers you, Sengva, Emeralda, Rax and Trax in her throne room - where the fight against Verso took place. You feel uneasy stepping into the room once again, but relieved seeing Scarlet alive and healthy.
+"Thank you everyone for coming. Firstly, I want to once again express my gratitude for everything each one of you have done for me. I am forever in your debt." Scarlet says, with her hand on her heart.
+"Secondly, Emeralda and I have some important news that we would like to share with you before we announce it to the general public. As of tomorrow, I will be stepping down from my duties as the queen of Luna, and Lady Emeralda will be retiring also." Scarlet says.
+"But who will guard the Tome of Charisma - and who will rule Luna?" Sengva says curiously.
+"That," Scarlet says, "Will depend on {players_name}'s decision."
++ [I don't understand.]
++ [...Huh?]
+- Scarlet chuckles. "I'm sorry, let me explain. Emeralda and I have been studying for the past month for a way to get you back home, without using dark powers such as that of the god of wrath, like Verso did. We thought about how much you and your companion Cerberus must miss your previous realm." Cerberus barks.
+"We can get you back. But it will require one final use of the three tomes - and once we open the portal, the tomes will be destroyed. I highly doubt we'd be able to see you again. We would look for another suitable candidate to rule Luna."
+"There is another option, but it is rather selfish of me..." Scarlet says, looking away briefly. "You could stay. If you do, I'd like you to rule Luna in my stead. I would also request that we destroy the Tomes regardless. I would hate for such power to fall into irresponsible hands again."
+"So, {players_name}, I'm sorry to give you such a big decision, but I must know... what would you like to do?"
++ [I want to stay.]
+-> stay_in_luna
++ [I want to go home.]
+-> go_home
+
+=== go_home ===
+"Very well then." Scarlet says.
+"Oh little one..." Sengva puts an arm around you and gives you a noogie. "Don't let anyone in your realm take you for granted, we'll miss you!" She picks up Cerberus, who licks her face lovingly. "You too, furry one!"
+Emeralda puts a hand on your shoulder. "I'm sorry for what Verso put you through. Thank you for all your help in defeating him, you have been a true ally. May we meet again, in another life."
+Trax nods. "You have been a big help, brave one... the god of perssseverancce looks upon you favourably..."
+"Ssstay ssafe, {players_name}... We will misss you..." Rax finishes.
+Scarlet smiles. "You are incredible, {players_name}. I only wish that you live a peaceful life upon returning home. Now, shall we open the portal? I expect you are eager to return."
++ [Group hug]
+You call everyone in for a group hug, and you all stand there holding eachother for a minute or so. As you pull away and wipe a tear from your eye, you tell Scarlet you're ready.
++ [I'm ready to go]
+- Scarlet and Emeralda lay the tomes out and begin speaking an incantation. The tomes light up, and a large, circular portal opens in front of you.
+"It's ready, you can go!" Emeralda says.
+Holding Cerberus, you wave goodbye to everyone and step through the portal. It immediately closes behind you.
 
 === with_verso ===
 "Wise choice." Verso says, with a grin. "Now, keep them occupied while I finish the ritual."
