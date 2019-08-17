@@ -112,7 +112,8 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
     nighttown: require("../assets/town-square-night.png"),
     fire: require("../assets/town-square-fire.png"),
     journey: require("../assets/journey.png"),
-    labyrinth: require("../assets/labyrinth.png")
+    labyrinth: require("../assets/labyrinth.png"),
+    end: require("../assets/end.png")
   };
 
   let currentArea = story.variablesState["location"];
@@ -313,7 +314,8 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
         nighttown: require("../assets/town-square-night.png"),
         fire: require("../assets/town-square-fire.png"),
         journey: require("../assets/journey.png"),
-        labyrinth: require("../assets/labyrinth.png")
+        labyrinth: require("../assets/labyrinth.png"),
+        end: require("../assets/end.png")
       };
 
       let currentArea = story.variablesState["location"];

@@ -336,6 +336,7 @@ Holding Cerberus, you wave goodbye to everyone and step through the portal. It i
 ~location = "forest"
 Clutching Cerberus in your arms, you feel yourself falling, falling, falling... until you land in a heap back in the Luna Woods.
 From there you return home, thinking back on your adventure. 
+~location = "end"
 THE END #game-over
 Please click here to view the credits! #credits
 -> END
@@ -352,6 +353,7 @@ Now that the tomes are gone, Trax and Rax no longer guard the labyrinth, which i
 Cerberus is now the most pampered dog you've ever seen, but you know he could still put up a fight.
 Occasionally, you wonder what things would be like if you chose to go back home, but deep down you knew you always wanted to stay with your friends.
 As you look up at the beautiful night sky above the kingdom of Luna, you feel at home.
+~location = "end"
 THE END #game-over
 Please click here to view the credits! #credits
 -> END
