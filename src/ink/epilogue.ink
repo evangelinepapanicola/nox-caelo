@@ -252,7 +252,7 @@ You hear a crash, as Verso breaks free. He rises up high, out of reach. You can 
 GAME OVER #game-over
 + [Retry]
 ~versoHP = 10
--> final_boss_start
+-> against_verso.final_boss_start
 
 === the_end ===
 Verso wails, screeching loud, before collapsing fully to the ground. 
@@ -333,6 +333,28 @@ You call everyone in for a group hug, and you all stand there holding eachother 
 - Scarlet and Emeralda lay the tomes out and begin speaking an incantation. The tomes light up, and a large, circular portal opens in front of you.
 "It's ready, you can go!" Emeralda says.
 Holding Cerberus, you wave goodbye to everyone and step through the portal. It immediately closes behind you.
+~location = "forest"
+Clutching Cerberus in your arms, you feel yourself falling, falling, falling... until you land in a heap back in the Luna Woods.
+From there you return home, thinking back on your adventure. 
+THE END #game-over
++ [View the credits] #credits
+-> END
+
+=== stay_in_luna ===
+"Really?" Scarlet says, surprised. "You are strange, you know that right {players_name}?"
+"I can't believe you'd rather stay here after everything that's happened, but I'm so glad. You're going to be an amazing ruler." Scarlet draws you in for a hug.
+~location = "nighttown"
+As the evening comes, you all celebrate with a feast and a party. It hasn't quite sunk in yet that you're going to be ruling an entire kingdom, but you know that as long as you have your friends to support you, you'll be alright.
+As the months go by, you settle into your new role quite well.
+Meanwhile, Emeralda and Scarlet are having a relaxing retirement - travelling the world together.
+Sengva still works at Ignis Arena, and you visit often to watch some of the battles there. Marg always challenges you to a rematch.
+Now that the tomes are gone, Trax and Rax no longer guard the labyrinth, which is now pretty much abandoned. Instead, they spend their days happily protecting the people of Luna and the palace.
+Cerberus is now the most pampered dog you've ever seen, but you know he could still put up a fight.
+Occasionally, you wonder what things would be like if you chose to go back home, but deep down you knew you always wanted to stay with your friends.
+As you look up at the beautiful night sky above the kingdom of Luna, you feel at home.
+THE END #game-over
++ [View the credits] #credits
+-> END
 
 === with_verso ===
 "Wise choice." Verso says, with a grin. "Now, keep them occupied while I finish the ritual."
