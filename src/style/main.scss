@@ -116,11 +116,11 @@ p.show {
     transition: opacity 0.5s;
 }
 
-span.choice {
+p.credits, span.choice {
     display: inline-flex;
 }
 
-span.choice a {
+p.credits, span.choice a {
     background-color: $lightest-purple;
     padding: 5px 20px;
     border-radius: 25px;

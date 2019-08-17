@@ -179,6 +179,26 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
 
   //}
 
+  let creditsbtn = document.querySelector("p.credits");
+
+  if (creditsbtn != null) {
+
+  document.getElementById("dialogbox").removeEventListener("click", clickToProceed);
+  document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+
+  let creditswrap = document.createElement('a');
+
+  creditsbtn.parentNode.insertBefore(creditswrap, creditsbtn);
+
+  creditswrap.appendChild(creditsbtn);
+
+  creditswrap.classList.add('choice');
+  creditswrap.setAttribute("href", "http://evangelinepapanicola.co.uk");
+  creditswrap.setAttribute("target", "_blank");
+  creditswrap.setAttribute("rel", "noopener");
+
+  }
+
   // Create HTML choices from ink choices
   story.currentChoices.forEach(function(choice) {
     document
@@ -228,7 +248,9 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
   // === REST OF STORY / ON CLICK EVENT ===
 
   // Generate story text - loop through available content
-  document.getElementById("dialogbox").addEventListener("click", function(e) {
+  document.getElementById("dialogbox").addEventListener("click", clickToProceed);
+  
+  function clickToProceed(e) {
     // Get ink to generate the next paragraph
     var logbutton = document.getElementById("logbtn");
     if (e.target !== logbutton && story.canContinue) {
@@ -355,6 +377,26 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
       showAfter(delay, paragraphElement);
       //paragraphElement.classList.add("show");
 
+      let creditsbtn = document.querySelector("p.credits");
+
+      if (creditsbtn != null) {
+
+      document.getElementById("dialogbox").removeEventListener("click", clickToProceed);
+      document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+
+      let creditswrap = document.createElement('a');
+
+      creditsbtn.parentNode.insertBefore(creditswrap, creditsbtn);
+
+      creditswrap.appendChild(creditsbtn);
+
+      creditswrap.classList.add('choice');
+      creditswrap.setAttribute("href", "http://evangelinepapanicola.co.uk");
+      creditswrap.setAttribute("target", "_blank");
+      creditswrap.setAttribute("rel", "noopener");
+
+      }
+
       //}
 
       // Create HTML choices from ink choices
@@ -398,12 +440,14 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
           // Comment out this line if you want to leave the header visible when clearing
           setVisible(".header", false, storyContainer);
 
+
+
           // Aaand loop
           //continueStory(story, storyContainer);
         });
       });
     }
-  });
+  };
 }
 
 export function restart(story) {

@@ -337,7 +337,7 @@ Holding Cerberus, you wave goodbye to everyone and step through the portal. It i
 Clutching Cerberus in your arms, you feel yourself falling, falling, falling... until you land in a heap back in the Luna Woods.
 From there you return home, thinking back on your adventure. 
 THE END #game-over
-+ [View the credits] #credits
+Please click here to view the credits! #credits
 -> END
 
 === stay_in_luna ===
@@ -353,7 +353,7 @@ Cerberus is now the most pampered dog you've ever seen, but you know he could st
 Occasionally, you wonder what things would be like if you chose to go back home, but deep down you knew you always wanted to stay with your friends.
 As you look up at the beautiful night sky above the kingdom of Luna, you feel at home.
 THE END #game-over
-+ [View the credits] #credits
+Please click here to view the credits! #credits
 -> END
 
 === with_verso ===
