@@ -317,7 +317,7 @@ You nod, and head back to the town square.
     ~coolSunglasses = false
     ~boySunglasses = true
     + (refused)[No way]
-    "Awwww...", he says, disapointed.
+    "Awwww...", he says, disappointed.
 
 - ->->
 
@@ -394,7 +394,7 @@ Have you heard about the murders going on here?
                 ->three_locations
                 
     + + {not fox_house}[What's Fox House like?]
-    "Fox House is, despite the name, not a house full of cute fuzzy foxes." Verso says, in a disapointed tone.
+    "Fox House is, despite the name, not a house full of cute fuzzy foxes." Verso says, in a disappointed tone.
     "Fox House is where you'll find Lady Emeralda, who is closely guarding the Tome of Charisma. It'll take a lot of convincing for her to hand it over."
         * * * [Head to Fox House]
                 -> fox_house
