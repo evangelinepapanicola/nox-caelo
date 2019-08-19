@@ -1,6 +1,6 @@
 <p align="center"><a href="#" target="_blank" rel="noopener"><img src="src/assets/logo.png" alt="nox caelo"></a></p>
 
-# nox-caelo
+# nox caelo
 
 A very basic text-adventure/visual novel style game created by Evangeline Papanicola, using [Inkle's Ink](https://www.inklestudios.com/ink/) scripting language and [Vue.js](https://vuejs.org/).
 
