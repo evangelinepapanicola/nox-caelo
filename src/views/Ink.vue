@@ -77,8 +77,8 @@
 import * as inkjs from "inkjs";
 import * as ink from "../libs/ink";
 
-console.log(inkjs);
-console.log(ink);
+//console.log(inkjs);
+//console.log(ink);
 const localStorageStateKey = "noxcaelo-state";
 
 export default {
@@ -113,7 +113,7 @@ export default {
           this.saveMade = false;
         }
 
-        console.log(this.story);
+       // console.log(this.story);
 
         ink.continueStory(
           this.story,
@@ -124,7 +124,7 @@ export default {
   },
   methods: {
     saveState: function() {
-      console.log("called savestate");
+     // console.log("called savestate");
       window.localStorage.setItem(
         localStorageStateKey,
         this.story.state.ToJson()

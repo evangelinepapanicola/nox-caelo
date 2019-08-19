@@ -43,7 +43,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
     paragraphText = story.Continue();
   }
 
-  console.log(paragraphText);
+  //console.log(paragraphText);
   var tags = story.currentTags;
 
   var customClasses = [];
@@ -154,7 +154,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
   // Add any custom classes derived from ink tags
   for (var i = 0; i < customClasses.length; i++)
     paragraphElement.classList.add(customClasses[i]);
-  console.log(customClasses);
+ // console.log(customClasses);
   //console.log(splitTag.val);
 
   // // Fade in paragraph after a short delay
@@ -251,7 +251,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
 
       document.getElementById("logbtn").disabled = false;
       var paragraphText = story.Continue();
-      console.log(paragraphText);
+      //console.log(paragraphText);
       var tags = story.currentTags;
 
       var customClasses = [];
@@ -363,7 +363,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
       // Add any custom classes derived from ink tags
       for (var i = 0; i < customClasses.length; i++)
         paragraphElement.classList.add(customClasses[i]);
-      console.log(customClasses);
+      //console.log(customClasses);
       //console.log(splitTag.val);
       // // Fade in paragraph after a short delay
       showAfter(delay, paragraphElement);
@@ -422,7 +422,7 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
             var c = existingChoices[i];
             c.parentNode.removeChild(c);
           }
-          console.log(this);
+          //console.log(this);
           var choicelogElement = document.createElement("span");
           choicelogElement.classList.add("logchoice");
           choicelogElement.innerHTML = this.textContent;
