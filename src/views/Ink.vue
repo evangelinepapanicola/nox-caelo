@@ -120,7 +120,6 @@ export default {
           this.storyContainer,
           localStorageStateKey
         );
-
       });
   },
   methods: {

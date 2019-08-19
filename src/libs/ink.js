@@ -1,26 +1,9 @@
 import * as inkjs from "inkjs";
 
-// var storyContainer = document.getElementById('story');
-// let story;
-// fetch( 'story.json' )
-//   .then( function( response ) {
-//     return response.json();
-//   } )
-//   .then( function( storyContent ) {
-//     console.log(storyContent);
-//     story = new inkjs.Story( storyContent );
-//     console.log(story);
-//     continueStory();
-//   } );
-
 export function showAfter(delay, el) {
   setTimeout(function() {
     el.classList.add("show");
   }, delay);
-
-  // document.getElementById("dialogbox").addEventListener("click", function() {
-  //   el.classList.add("show");
-  // });
 }
 
 export function scrollToBottom() {
@@ -183,21 +166,26 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
   let creditsbtn = document.querySelector("p.credits");
 
   if (creditsbtn != null) {
+    document
+      .getElementById("dialogbox")
+      .removeEventListener("click", clickToProceed);
+    document
+      .getElementById("dialogbox")
+      .setAttribute("style", "cursor:default");
 
-  document.getElementById("dialogbox").removeEventListener("click", clickToProceed);
-  document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+    let creditswrap = document.createElement("a");
 
-  let creditswrap = document.createElement('a');
+    creditsbtn.parentNode.insertBefore(creditswrap, creditsbtn);
 
-  creditsbtn.parentNode.insertBefore(creditswrap, creditsbtn);
+    creditswrap.appendChild(creditsbtn);
 
-  creditswrap.appendChild(creditsbtn);
-
-  creditswrap.classList.add('choice');
-  creditswrap.setAttribute("href", "http://evangelinepapanicola.co.uk");
-  creditswrap.setAttribute("target", "_blank");
-  creditswrap.setAttribute("rel", "noopener");
-
+    creditswrap.classList.add("choice");
+    creditswrap.setAttribute(
+      "href",
+      "https://github.com/evangelinepapanicola/nox-caelo#credits"
+    );
+    creditswrap.setAttribute("target", "_blank");
+    creditswrap.setAttribute("rel", "noopener");
   }
 
   // Create HTML choices from ink choices
@@ -249,8 +237,10 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
   // === REST OF STORY / ON CLICK EVENT ===
 
   // Generate story text - loop through available content
-  document.getElementById("dialogbox").addEventListener("click", clickToProceed);
-  
+  document
+    .getElementById("dialogbox")
+    .addEventListener("click", clickToProceed);
+
   function clickToProceed(e) {
     // Get ink to generate the next paragraph
     var logbutton = document.getElementById("logbtn");
@@ -382,21 +372,26 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
       let creditsbtn = document.querySelector("p.credits");
 
       if (creditsbtn != null) {
+        document
+          .getElementById("dialogbox")
+          .removeEventListener("click", clickToProceed);
+        document
+          .getElementById("dialogbox")
+          .setAttribute("style", "cursor:default");
 
-      document.getElementById("dialogbox").removeEventListener("click", clickToProceed);
-      document.getElementById("dialogbox").setAttribute("style", "cursor:default");
+        let creditswrap = document.createElement("a");
 
-      let creditswrap = document.createElement('a');
+        creditsbtn.parentNode.insertBefore(creditswrap, creditsbtn);
 
-      creditsbtn.parentNode.insertBefore(creditswrap, creditsbtn);
+        creditswrap.appendChild(creditsbtn);
 
-      creditswrap.appendChild(creditsbtn);
-
-      creditswrap.classList.add('choice');
-      creditswrap.setAttribute("href", "http://evangelinepapanicola.co.uk");
-      creditswrap.setAttribute("target", "_blank");
-      creditswrap.setAttribute("rel", "noopener");
-
+        creditswrap.classList.add("choice");
+        creditswrap.setAttribute(
+          "href",
+          "https://github.com/evangelinepapanicola/nox-caelo#credits"
+        );
+        creditswrap.setAttribute("target", "_blank");
+        creditswrap.setAttribute("rel", "noopener");
       }
 
       //}
@@ -442,14 +437,12 @@ export function continueStory(story, storyContainer, localStorageStateKey) {
           // Comment out this line if you want to leave the header visible when clearing
           setVisible(".header", false, storyContainer);
 
-
-
           // Aaand loop
           //continueStory(story, storyContainer);
         });
       });
     }
-  };
+  }
 }
 
 export function restart(story) {
