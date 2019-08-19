@@ -1005,7 +1005,7 @@ As your vision comes back, you feel your body rebuild itself as you land back ou
 Rax nods his head as you appear in front of him. "Sso you did it... congratulationss... you musst have met my brother, Trax... "
 ->talk_with_rax
 = talk_with_rax
-* [I sure did]
+* [I sure did meet your brother]
 "He'ss been guarding the tome for the past 200 yearss..."
 -> talk_with_rax
 * [How did I get back out here?]
